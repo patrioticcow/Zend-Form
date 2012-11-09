@@ -35,4 +35,10 @@ div.container a.brand {
 #the_form li:hover{
 	background: #EEE;
 }
+
+.form_ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
 /**/

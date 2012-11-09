@@ -2,46 +2,68 @@ $(document).ready(function()
 {
 	$('#add_form_text').live("click", function(e){
 		e.preventDefault();
-		
-		var formId = $('#add_form_data');
-		addForm(formId, 'input', 'form_input');
+		addForm($('#add_form_data'), 'input', 'form_input');
+	});
+
+    $('#add_form_number').live("click", function(e){
+		e.preventDefault();
+		addForm($('#add_form_data'), 'input', 'form_number');
 	});
 	
 	$('#add_form_paragraph').live("click", function(e){
 		e.preventDefault();
-		
-		var formId = $('#add_form_data');
-		addForm(formId, 'textarea', 'form_paragraph');
+		addForm($('#add_form_data'), 'textarea', 'form_paragraph');
 	});
-	
-	
+
+	$('#add_form_checkbox').live("click", function(e){
+		e.preventDefault();
+		addForm($('#add_form_data'), 'input', 'form_checkbox');
+	});
+
+    $("button:contains('remove')").live("click", function(e){
+        e.preventDefault();
+        $(this).parent('li').remove();
+
+        var remIdTemp = $(this).attr('id');
+        var mainCheckbox = $('code').text();
+        $('#' + mainCheckbox + ' #check_' + remIdTemp).remove();
+    });
+
+    $("#add_new_checkbox_field").live("click", function(e){
+        e.preventDefault();
+        var mainCheckbox = $('code').text();
+        var prevLi = $(this).prev('li');
+        var prevId = prevLi.find("button:contains('remove')").attr('id').replace(/[^\d.]/g, "");
+        var nextIdNr = parseFloat(prevId) + 1;
+        var nextId = 'rem' + nextIdNr; //rem1
+        var nextIdNext = 'check_rem' + nextIdNr;
+        var nextIdPrev = 'check_rem' + prevId;
+
+        prevLi.clone().insertBefore(this).find("button:contains('remove')").attr({'id':nextId});
+        $('#' + mainCheckbox).find('#' + nextIdPrev).clone().insertAfter('#' + nextIdPrev).attr({'id':nextIdNext});
+    });
+
 	/**
 	 * edit individual field form preferences
 	 */
-	var addForm = function(formId, fieldTipe, formClass){
+	var addForm = function(formId, fieldType, formClass){
+
 		var formField = formId.attr('class');
 		var formJson = formId.serializeFormJSON();
-		var formSel = $('#' + formField + ' ' + fieldTipe + '.' + formClass);
+		var formSel = $('#' + formField + ' ' + fieldType + '.' + formClass);
 		var formReq = $('#' + formField + ' input[name="required"]');
-		
-		$('#' + formField + ' label').text(formJson.text_label);
+
+		$('#' + formField + ' label.main_label').text(formJson.text_label);
 		formSel.attr("placeholder", formJson.placeholder_text);
-		
-		var hasAttr = $('#' + formField + ' input').attr("required");
-			
-		if(formJson.required === 'yes'){
-			if(hasAttr === undefined ){
-				formSel.attr("required", "true");
-			}
-			formReq.attr("value", "1");
-		}
-		
-		if(formJson.required === 'no'){
-			if(hasAttr == 'required' ){
-				formSel.removeAttr("required");
-			}
-			formReq.attr("value", "0");
-		}
+
+        formJson.required === 'yes' ? formReq.attr("value", "1") : formReq.attr("value", "0");
+
+        if(formClass === 'form_checkbox'){
+            console.log(formField);
+            console.log(formJson);
+
+            //each formJson, add to it's class
+        }
 	};
 
 });

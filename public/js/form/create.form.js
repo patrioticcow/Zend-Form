@@ -17,13 +17,12 @@ $(document).ready(function() {
 	/**
 	 * single_line_text
 	 */
-	$('#single_line_text').click(function (e) {
-		
+	$('#single_line_text').click(function () {
 		var liId = "edit_form_text" + uniqueId;
 		
 		line_text(liId, theForm, fieldProp, uniqueId, "edit_form_text");
 		
-		$('#'+ liId +' .edit_li').click(function (e) {
+		$('#'+ liId +' .edit_li').click(function () {
 			secondTab.tab('show');
 			$.get('/form/input', { name: "Edit Input Field", id: liId}).done(function(data) {
 				fieldProp.html(data);
@@ -36,12 +35,12 @@ $(document).ready(function() {
 	/**
 	 * line_number
 	 */
-	$('#line_number').click(function (e) {
+	$('#line_number').click(function () {
 		var liId = "edit_form_number" + uniqueId;
 		
 		line_number(liId, theForm, fieldProp, uniqueId, "edit_form_number");
 		
-		$('#'+ liId +' .edit_li').click(function (e) {
+		$('#'+ liId +' .edit_li').click(function () {
 			secondTab.tab('show');
 			$.get('/form/number', { name: "Edit Number Field", id: liId}).done(function(data) {
 				fieldProp.html(data);
@@ -54,13 +53,12 @@ $(document).ready(function() {
 	/**
 	 * line_paragraph
 	 */
-	$('#line_paragraph').click(function (e) {
-		
+	$('#line_paragraph').click(function () {
 		var liId = "edit_form_paragraph" + uniqueId;
 		
 		line_paragraph(liId, theForm, fieldProp, uniqueId, "edit_form_paragraph");
 		
-		$('#'+ liId +' .edit_li').click(function (e) {
+		$('#'+ liId +' .edit_li').click(function () {
 			secondTab.tab('show');
 			$.get('/form/paragraph', { name: "Edit Textarea Field", id: liId}).done(function(data) {
 				fieldProp.html(data);
@@ -74,14 +72,15 @@ $(document).ready(function() {
 	 * line_checkbox
 	 */
 	$('#line_checkbox').click(function (e) {
-		
 		var liId = "edit_form_checkbox" + uniqueId;
 		
 		line_checkbox(liId, theForm, fieldProp, uniqueId, "edit_form_checkbox");
 		
 		$('#'+ liId +' .edit_li').click(function (e) {
+            var lenghtNr = $(this).parent('li').find('.checkbox').length;
+
 			secondTab.tab('show');
-			$.get('/form/checkbox', { name: "Edit Checkbox Field", id: liId}).done(function(data) {
+			$.get('/form/checkbox', { name: "Edit Checkbox Field", id: liId, 'lenght': lenghtNr}).done(function(data) {
 				fieldProp.html(data);
 		    });
 		});
@@ -93,7 +92,6 @@ $(document).ready(function() {
 	 * line_radio
 	 */
 	$('#line_radio').click(function (e) {
-		
 		var liId = "edit_form_radio" + uniqueId;
 		
 		line_radio(liId, theForm, fieldProp, uniqueId, "edit_form_radio");
@@ -112,7 +110,6 @@ $(document).ready(function() {
 	 * line_dropdown
 	 */
 	$('#line_dropdown').click(function (e) {
-		
 		var liId = "edit_form_dropdown" + uniqueId;
 		
 		line_dropdown(liId, theForm, fieldProp, uniqueId, "edit_form_dropdown");
@@ -141,12 +138,20 @@ $(document).ready(function() {
 		        var addLineText = lineTextJson($(this));
 		        console.log(addLineText);
 		    }
+            if($(this).hasClass('edit_form_paragraph') === true) {
+		        var addParagraphText = lineParagraphJson($(this));
+		        console.log(addParagraphText);
+		    }
+            if($(this).hasClass('edit_form_number') === true) {
+		        var addNumberText = lineNumberJson($(this));
+		        console.log(addNumberText);
+		    }
+            if($(this).hasClass('edit_form_checkbox') === true) {
+		        var addNumberText = lineNumberJson($(this));
+		        console.log(addNumberText);
+		    }
 		});
 	});
-	
-	function trim(str){
-	    return str.split(' ').join();
-	}
 	
 	// maybe i'll do a plugin
 	/*

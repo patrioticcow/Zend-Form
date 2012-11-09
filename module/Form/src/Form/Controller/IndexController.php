@@ -29,7 +29,19 @@ class IndexController extends AbstractActionController
 		return $result;
 	}
 
+	public function numberAction()
+	{
+		$result = $this->getAjax();
+		return $result;
+	}
+
 	public function paragraphAction()
+	{
+	    $result = $this->getAjax();
+	    return $result;
+	}
+
+    public function checkboxAction()
 	{
 	    $result = $this->getAjax();
 	    return $result;

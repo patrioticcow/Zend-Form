@@ -49,6 +49,26 @@ return array(
                 			),
                 		),
                 	),
+                    'number' => array(
+                		'type' => 'Literal',
+                		'options' => array(
+                			'route' => '/number',
+                			'defaults' => array(
+                				'controller' => 'Index',
+                				'action'     => 'number',
+                			),
+                		),
+                	),
+                    'checkbox' => array(
+                		'type' => 'Literal',
+                		'options' => array(
+                			'route' => '/checkbox',
+                			'defaults' => array(
+                				'controller' => 'Index',
+                				'action'     => 'checkbox',
+                			),
+                		),
+                	),
                 ),
             ),
         ),
