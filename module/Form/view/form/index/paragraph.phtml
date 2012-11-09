@@ -1,0 +1,26 @@
+<?= '<div>'.$this->result->name.'</div>'; ?>
+
+<form action="/form" method="post" name="add_form_data" id="add_form_data" class="<?= $this->result->id; ?>">
+	<ul class="nav nav-list">
+		<li>
+			<label>Replace Label Text</label>
+			<input type="text" name="text_label" maxlength="255" value="">
+		</li>
+		<li>
+			<label>Placeholder Text</label>
+			<input type="text" name="placeholder_text" maxlength="255" value="">
+		</li>
+		<li>
+			<label>Required</label>
+			<select name="required">
+				<option value="no">No</option>
+				<option value="yes">Yes</option>
+			</select>
+		</li>
+		<li>
+			<button class="btn btn-primary" id="add_form_paragraph">Save</button>
+		</li>
+	</ul>
+</form>
+
+<?= '<small>'.$this->result->id.'</small>'; ?>

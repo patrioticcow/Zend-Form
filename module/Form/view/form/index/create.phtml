@@ -1,0 +1,11 @@
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="span7">
+        	<form action="/form" method="post" name="generate_form" id="generate_form">
+	    		<ul id="the_form"></ul>
+	    		<button class="btn" id="generate_form_button">Generate Form</button>
+        	</form>
+        </div>
+        <?= $this->partial('layout/left-menu', array('form'=>$this->form));?>
+    </div>
+</div>

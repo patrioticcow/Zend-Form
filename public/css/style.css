@@ -1,0 +1,38 @@
+body {
+    padding-top: 60px;
+    padding-bottom: 40px;
+}
+.sidebar-nav {
+    padding: 9px 0;
+}
+.show-grid {
+    background-color: #EEE;
+    text-align: center;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    min-height: 40px;
+    line-height: 40px;
+}
+
+div.container a.brand {
+    background: url("../images/zf2-logo.png") no-repeat scroll 0 10px transparent;
+    margin-left: 0;
+    padding: 8px 20px 12px 40px;
+}
+
+/**/
+#the_form {
+	margin: 0;
+	padding: 0;
+}
+
+#the_form li{
+	list-style: none;
+	margin: 0 0 10px 0;
+}
+
+#the_form li:hover{
+	background: #EEE;
+}
+/**/
