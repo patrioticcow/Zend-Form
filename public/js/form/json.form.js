@@ -13,22 +13,72 @@ var lineParagraphJson = function(formElements) {
     return (data);
 };
 
-var commonsJson = function(formElements, typeType, classType){
-    var myData = new Array();
+var lineCheckboxJson = function(formElements) {
+    var data = commonsJson(formElements, 'line_checkbox', 'form_checkbox');
+    return (data);
+};
 
-    formElements.each(function(index, data) {
+var lineRadioJson = function(formElements) {
+    var data = commonsJson(formElements, 'line_radio', 'form_radio');
+    return (data);
+};
+
+var commonsJson = function(formElements, typeType, classType){
+    var myData = [];
+
+    formElements.each(function() {
         var li = $(this);
         var order = li.attr('id').replace(/[^\d.]/g, "");
 
-        myData.push({
-            'type' : typeType,
-            'order' : order,
-            'data' : {
-                'placeholder': li.find('.' + classType).attr("placeholder"),
-                'label': li.find('[for="' + classType + '"]').text(),
-                'required': li.find('[name="required"]').attr("value")
-            }
-        });
+        if(classType === 'form_checkbox'){
+            var innerData = [];
+
+            $('span.span_checkbox').each(function(){
+                innerData.push({
+                    'label': $(this).find('label.checkbox').text(),
+                    'checkbox_label': $(this).find('label.checkbox').text(),
+                    'default': $(this).find('[checked="checked"]').attr("checked")
+                });
+            });
+
+            myData.push({
+                'type' : typeType,
+                'order' : order,
+                'data' : {
+                    'innerData': innerData
+                }
+            });
+
+        } else if(classType === 'form_radio'){
+                var innerData = [];
+
+            $('span.span_radio').each(function(){
+                innerData.push({
+                    'label': $(this).find('label.radio').text(),
+                    'checkbox_label': $(this).find('label.radio').text(),
+                    'default': $(this).find('[checked="checked"]').attr("checked")
+                });
+            });
+
+            myData.push({
+                'type' : typeType,
+                'order' : order,
+                'data' : {
+                    'innerData': innerData
+                }
+            });
+        } else {
+            myData.push({
+                'type' : typeType,
+                'order' : order,
+                'data' : {
+                    'placeholder': li.find('.' + classType).attr("placeholder"),
+                    'label': li.find('[for="' + classType + '"]').text(),
+                    'required': li.find('[name="required"]').attr("value")
+                }
+            });
+        }
+
     });
 
     return(myData);

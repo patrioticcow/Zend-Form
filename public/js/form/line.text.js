@@ -1,19 +1,19 @@
 var line_text = function (liId, theForm, fieldProp, uniqueId, liClass)
 {
 	var li = addLi(liId, liClass).appendTo(theForm);
-	
+
 	$("<input/>", {
 		type: "hidden",
 		name: "required",
 		value: "0",
 	}).appendTo(li);
-	
+
 	$("<label/>", {
 		text: "Text",
         "class" : "main_label",
 		"for": "form_input",
 	}).appendTo(li);
-		
+
 	$("<input/>", {
 		type: "text",
 		"class": "form_input",
@@ -22,7 +22,7 @@ var line_text = function (liId, theForm, fieldProp, uniqueId, liClass)
 
 	formButton("Delete", "delete_li").appendTo(li);
 	formButton("Edit", "edit_li").appendTo(li);
-	
+
 	$("<div/>", {
 		"style": "clear:both;"
 	}).appendTo(li);
@@ -31,28 +31,28 @@ var line_text = function (liId, theForm, fieldProp, uniqueId, liClass)
 var line_number = function (liId, theForm, fieldProp, uniqueId, liClass)
 {
 	var li = addLi(liId, liClass).appendTo(theForm);
-	
+
 	$("<input/>", {
 		type: "hidden",
 		name: "required",
 		value: "0",
 	}).appendTo(li);
-	
+
 	$("<label/>", {
 		text: "Number Label",
         "class" : "main_label",
 		"for": "form_number",
 	}).appendTo(li);
-	
+
 	$("<input/>", {
 		type: "text",
 		"class": "form_number",
 		placeholder: "1234567890"
 	}).appendTo(li);
-	
+
 	formButton("Delete", "delete_li").appendTo(li);
 	formButton("Edit", "edit_li").appendTo(li);
-	
+
 	$("<div/>", {
 		"style": "clear:both;"
 	}).appendTo(li);
@@ -61,28 +61,28 @@ var line_number = function (liId, theForm, fieldProp, uniqueId, liClass)
 var line_paragraph = function (liId, theForm, fieldProp, uniqueId, liClass)
 {
 	var li = addLi(liId, liClass).appendTo(theForm);
-	
+
 	$("<input/>", {
 		type: "hidden",
 		name: "required",
 		value: "0",
 	}).appendTo(li);
-	
+
 	$("<label/>", {
 		text: "Paragraph",
         "class" : "main_label",
 		"for": "form_paragraph",
 	}).appendTo(li);
-	
+
 	$("<textarea/>", {
 		type: "text",
 		"class": "form_paragraph",
 		placeholder: "Type something..."
 	}).appendTo(li);
-	
+
 	formButton("Delete", "delete_li").appendTo(li);
 	formButton("Edit", "edit_li").appendTo(li);
-	
+
 	$("<div/>", {
 		"style": "clear:both;"
 	}).appendTo(li);
@@ -91,34 +91,34 @@ var line_paragraph = function (liId, theForm, fieldProp, uniqueId, liClass)
 var line_checkbox = function (liId, theForm, fieldProp, uniqueId, liClass)
 {
 	var li = addLi(liId, liClass).appendTo(theForm);
-	
+
 	$("<label/>", {
 		text: "Checkboxes Label",
         "class" : "main_label",
 	}).appendTo(li);
 
-	var checkbox_span = $("<span/>", {
-		"class": "span_checkbox",
-	}).appendTo(li);
-	
 	for (var i=0;i<2;i++)
 	{
+        var checkbox_span = $("<span/>", {
+            "class": "span_checkbox",
+            "id":"check_rem" + i,
+        }).appendTo(li);
+
 		var checkbox = $("<label/>", {
 			text: "Checkbox",
 			"class":"checkbox",
-			"id":"check_rem" + i,
 		}).appendTo(checkbox_span);
 
 		$("<input/>", {
 			type: "checkbox",
 			'disabled': "disabled",
 			id: "form_checkbox_" + i,
-		}).appendTo(checkbox);
+		}).insertAfter(checkbox);
 	}
-	
+
 	formButton("Delete", "delete_li").appendTo(li);
 	formButton("Edit", "edit_li").appendTo(li);
-	
+
 	$("<div/>", {
 		"style": "clear:both;"
 	}).appendTo(li);
@@ -126,33 +126,35 @@ var line_checkbox = function (liId, theForm, fieldProp, uniqueId, liClass)
 
 var line_radio = function (liId, theForm, fieldProp, uniqueId, liClass)
 {
-	var li = addLi(liId, liClass).appendTo(theForm);
-	
-	$("<label/>", {
-		text: "Multiple Choices ",
-        "class" : "main_label",
-	}).appendTo(li);
-	
-	var radio_span = $("<span/>", {
-		"class": "span_radio",
-	}).appendTo(li);
-	
-	for (var i=0;i<2;i++)
-	{
-		var radio = $("<label/>", {
-			text: "Radio " + i,
-			"class":"radio",
-		}).appendTo(radio_span);
+    var li = addLi(liId, liClass).appendTo(theForm);
 
-		$("<input/>", {
-			type: "radio",
-			id: "form_radio_" + i,
-		}).appendTo(radio);
-	}
-	
+    $("<label/>", {
+        text: "Radio Label",
+        "class" : "main_label",
+    }).appendTo(li);
+
+    for (var i=0;i<2;i++)
+    {
+        var radio_span = $("<span/>", {
+            "class": "span_radio",
+            "id":"radio_rem" + i,
+        }).appendTo(li);
+
+        var radio = $("<label/>", {
+            text: "Radio",
+            "class":"radio",
+        }).appendTo(radio_span);
+
+        $("<input/>", {
+            type: "radio",
+            'disabled': "disabled",
+            id: "form_radio_" + i,
+        }).insertAfter(radio);
+    }
+
 	formButton("Delete", "delete_li").appendTo(li);
 	formButton("Edit", "edit_li").appendTo(li);
-	
+
 	$("<div/>", {
 		"style": "clear:both;"
 	}).appendTo(li);
@@ -161,28 +163,27 @@ var line_radio = function (liId, theForm, fieldProp, uniqueId, liClass)
 var line_dropdown = function (liId, theForm, fieldProp, uniqueId, liClass)
 {
 	var li = addLi(liId, liClass).appendTo(theForm);
-	
+
 	$("<label/>", {
 		text: "Drop Down",
         "class" : "main_label",
 		"for": "form_dropdown",
 	}).appendTo(li);
-	
+
 	var radio = $("<select/>", {
 		"class":"dropdown",
-		id: "form_dropdown_" + i,
 	}).appendTo(li);
-	
-	for (var i=0;i<=2;i++)
+
+	for (var i=0;i<2;i++)
 	{
 		$("<option/>", {
 			text: "Dropdown " + i,
 		}).appendTo(radio);
 	}
-	
+
 	formButton("Delete", "delete_li").appendTo(li);
 	formButton("Edit", "edit_li").appendTo(li);
-	
+
 	$("<div/>", {
 		"style": "clear:both;"
 	}).appendTo(li);

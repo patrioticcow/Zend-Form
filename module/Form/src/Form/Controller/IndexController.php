@@ -47,6 +47,18 @@ class IndexController extends AbstractActionController
 	    return $result;
 	}
 
+    public function radioAction()
+	{
+	    $result = $this->getAjax();
+	    return $result;
+	}
+
+    public function dropdownAction()
+	{
+	    $result = $this->getAjax();
+	    return $result;
+	}
+
 	public function getAjax() {
 		$request = $this->getRequest ();
 	    $results = $request->getQuery ();

@@ -69,6 +69,26 @@ return array(
                 			),
                 		),
                 	),
+                    'radio' => array(
+                		'type' => 'Literal',
+                		'options' => array(
+                			'route' => '/radio',
+                			'defaults' => array(
+                				'controller' => 'Index',
+                				'action'     => 'radio',
+                			),
+                		),
+                	),
+                    'dropdown' => array(
+                		'type' => 'Literal',
+                		'options' => array(
+                			'route' => '/dropdown',
+                			'defaults' => array(
+                				'controller' => 'Index',
+                				'action'     => 'dropdown',
+                			),
+                		),
+                	),
                 ),
             ),
         ),
