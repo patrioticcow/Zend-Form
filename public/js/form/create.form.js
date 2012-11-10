@@ -117,8 +117,10 @@ $(document).ready(function() {
 		line_dropdown(liId, theForm, fieldProp, uniqueId, "edit_form_dropdown");
 
 		$('#'+ liId +' .edit_li').click(function () {
+            var lenghtNr = $(this).parent('li').find('.dropdown').find('option').length;
+
 			secondTab.tab('show');
-			$.get('/form/dropdown', { name: "Edit Drop Down Field", id: liId}).done(function(data) {
+			$.get('/form/dropdown', { name: "Edit Drop Down Field", id: liId, 'lenght': lenghtNr}).done(function(data) {
 				fieldProp.html(data);
 			});
 		});
@@ -155,6 +157,10 @@ $(document).ready(function() {
             if($(this).hasClass('edit_form_radio') === true) {
 		        var addRadioText = lineRadioJson($(this));
 		        console.log(addRadioText);
+		    }
+            if($(this).hasClass('edit_form_dropdown') === true) {
+		        var addDropdownText = lineDropdownJson($(this));
+		        console.log(addDropdownText);
 		    }
 		});
 	});

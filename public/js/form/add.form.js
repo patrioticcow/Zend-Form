@@ -128,6 +128,56 @@ $(document).ready(function()
             .find('input').attr({'id': 'form_radio_' + nextIdNr});
     });
 
+    /**
+     * add_form_dropdown
+     */
+    $('#add_form_dropdown').live("click", function(e){
+        e.preventDefault();
+        addForm($('#add_form_data'), 'input', 'form_dropdown');
+    });
+
+    $("button:contains('remove')").live("click", function(e){
+        e.preventDefault();
+        $(this).parent('li').remove();
+
+        var remIdTemp = $(this).attr('id');
+        var mainRadio = $('code').text();
+        $('#' + mainRadio + ' #dropdown_' + remIdTemp).remove();
+    });
+
+    $("button:contains('set default')").live("click", function(e){
+        e.preventDefault();
+        var defId = $(this).attr('id').replace(/[^\d.]/g, "");
+        var mainRadio = $('code').text();
+
+        $('#' + mainRadio).find('option').removeAttr('selected');
+        $('#dropdown_rem' + defId).attr({'selected':'selected'});
+    });
+
+    $("#add_new_dropdown_field").live("click", function(e){
+        e.preventDefault();
+        var mainRadio = $('code').text();
+        var prevLi = $(this).parent('ul').children('li').last();
+        var prevId = prevLi.find("button:contains('remove')").attr('id').replace(/[^\d.]/g, "");
+        var nextIdNr = parseFloat(prevId) + 1;
+        var nextId = 'rem' + nextIdNr; //rem1
+        var nextIdNext = 'dropdown_rem' + nextIdNr;
+
+        // clone in the edit side
+        prevLi.clone()
+            .insertAfter(prevLi)
+            .find(".input-small").attr({'name':nextId})
+            .end()
+            .find("button:contains('remove')").attr({'id':nextId})
+            .end()
+            .find("button:contains('set default')").attr({'id':'def' + nextIdNr});
+
+        // clone in the view side
+        $('#' + mainRadio)
+            .find('option').last()
+            .clone().appendTo('select')
+            .attr({'id':nextIdNext});
+    });
 
     /**
      * edit individual field form preferences
@@ -153,9 +203,16 @@ $(document).ready(function()
                 $('#' + formField + ' #check_' + index).find('label.checkbox').text(value);
             });
         }
+
         if(formClass === 'form_radio'){
             $.each(formJson, function(index, value) {
                 $('#' + formField + ' #radio_' + index).find('label.radio').text(value);
+            });
+        }
+
+        if(formClass === 'form_dropdown'){
+            $.each(formJson, function(index, value) {
+                $('#' + formField).find(' #dropdown_' + index).html(value);
             });
         }
 	};

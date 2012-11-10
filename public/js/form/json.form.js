@@ -23,6 +23,11 @@ var lineRadioJson = function(formElements) {
     return (data);
 };
 
+var lineDropdownJson = function(formElements) {
+    var data = commonsJson(formElements, 'line_dropdown', 'form_dropdown');
+    return (data);
+};
+
 var commonsJson = function(formElements, typeType, classType){
     var myData = [];
 
@@ -30,7 +35,7 @@ var commonsJson = function(formElements, typeType, classType){
         var li = $(this);
         var order = li.attr('id').replace(/[^\d.]/g, "");
 
-        if(classType === 'form_checkbox'){
+        if (classType === 'form_checkbox'){
             var innerData = [];
 
             $('span.span_checkbox').each(function(){
@@ -45,12 +50,13 @@ var commonsJson = function(formElements, typeType, classType){
                 'type' : typeType,
                 'order' : order,
                 'data' : {
+                    'label': $(this).find('label.main_label').html(),
                     'innerData': innerData
                 }
             });
 
-        } else if(classType === 'form_radio'){
-                var innerData = [];
+        } else if (classType === 'form_radio'){
+            var innerData = [];
 
             $('span.span_radio').each(function(){
                 innerData.push({
@@ -64,6 +70,25 @@ var commonsJson = function(formElements, typeType, classType){
                 'type' : typeType,
                 'order' : order,
                 'data' : {
+                    'label': $(this).find('label.main_label').html(),
+                    'innerData': innerData
+                }
+            });
+        } else if (classType === 'form_dropdown'){
+            var innerData = [];
+
+            $('option.dropdown_option').each(function(){
+                innerData.push({
+                    'dropdown_label': $(this).html(),
+                    'default': $(this).attr("selected")
+                });
+            });
+
+            myData.push({
+                'type' : typeType,
+                'order' : order,
+                'data' : {
+                    'label': $(this).find('label.main_label').text(),
                     'innerData': innerData
                 }
             });

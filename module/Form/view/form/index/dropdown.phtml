@@ -4,7 +4,7 @@
 	<ul class="nav nav-list">
 		<li>
 			<label>Replace Label Text</label>
-			<input type="text" name="text_label" maxlength="255" value="">
+			<input type="text" name="text_label" maxlength="255" value="Drop Down">
 		</li>
         <li>
             <fieldset class="choices">
@@ -12,17 +12,17 @@
                 <ul class="element_choices">
                     <?php for($i=0; $i<$this->result->lenght; $i++){ ?>
                     <li class="duplicate_input">
-                        <input class="input-small" type="text" value="Checkbox" name="rem<?php echo $i;?>">
+                        <input class="input-small" type="text" value="Dropdown" name="rem<?php echo $i;?>">
                         <button class="btn btn-mini" id="rem<?php echo $i;?>">remove</button>
                         <button class="btn btn-mini" id="def<?php echo $i;?>">set default</button>
                     </li>
                     <?php } ?>
-                    <button class="btn btn-mini" id="add_new_checkbox_field">add new field</button>
+                    <button class="btn btn-mini" id="add_new_dropdown_field">add new field</button>
                 </ul>
             </fieldset>
         </li>
 		<li>
-			<br><button class="btn btn-primary" id="add_form_checkbox">Save</button>
+			<br><button class="btn btn-primary" id="add_form_dropdown">Save</button>
 		</li>
 	</ul>
 </form>

@@ -167,7 +167,7 @@ var line_dropdown = function (liId, theForm, fieldProp, uniqueId, liClass)
 	$("<label/>", {
 		text: "Drop Down",
         "class" : "main_label",
-		"for": "form_dropdown",
+		"for": "form_dropdown"
 	}).appendTo(li);
 
 	var radio = $("<select/>", {
@@ -177,7 +177,9 @@ var line_dropdown = function (liId, theForm, fieldProp, uniqueId, liClass)
 	for (var i=0;i<2;i++)
 	{
 		$("<option/>", {
-			text: "Dropdown " + i,
+			text: "Dropdown",
+			"id": "dropdown_rem" + i,
+			"class": "dropdown_option"
 		}).appendTo(radio);
 	}
 
