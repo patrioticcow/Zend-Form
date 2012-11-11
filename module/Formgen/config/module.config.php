@@ -89,6 +89,46 @@ return array(
                 			),
                 		),
                 	),
+                    'password' => array(
+                        'type' => 'Literal',
+                        'options' => array(
+                            'route' => '/password',
+                            'defaults' => array(
+                                'controller' => 'Index',
+                                'action'     => 'password',
+                            ),
+                        ),
+                    ),
+                    'passwordverify' => array(
+                        'type' => 'Literal',
+                        'options' => array(
+                            'route' => '/passwordverify',
+                            'defaults' => array(
+                                'controller' => 'Index',
+                                'action'     => 'passwordverify',
+                            ),
+                        ),
+                    ),
+                    'email' => array(
+                        'type' => 'Literal',
+                        'options' => array(
+                            'route' => '/email',
+                            'defaults' => array(
+                                'controller' => 'Index',
+                                'action'     => 'email',
+                            ),
+                        ),
+                    ),
+                    'test' => array(
+                		'type' => 'Literal',
+                		'options' => array(
+                			'route' => '/test',
+                			'defaults' => array(
+                				'controller' => 'Index',
+                				'action'     => 'test',
+                			),
+                		),
+                	),
                 ),
             ),
         ),

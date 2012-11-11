@@ -2,11 +2,7 @@ var line_text = function (liId, theForm, fieldProp, uniqueId, liClass)
 {
 	var li = addLi(liId, liClass).appendTo(theForm);
 
-	$("<input/>", {
-		type: "hidden",
-		name: "required",
-		value: "0"
-	}).appendTo(li);
+    hiddenRequired().appendTo(li);
 
 	$("<label/>", {
 		text: "Text",
@@ -20,23 +16,87 @@ var line_text = function (liId, theForm, fieldProp, uniqueId, liClass)
 		placeholder: "Type something..."
 	}).appendTo(li);
 
+    hiddenInputName().appendTo(li);
+    hiddenCLass().appendTo(li);
+    hiddenId().appendTo(li);
+    hiddenMin().appendTo(li);
+    hiddenMax().appendTo(li);
+
 	formButton("Delete", "delete_li").appendTo(li);
 	formButton("Edit", "edit_li").appendTo(li);
 
-	$("<div/>", {
-		"style": "clear:both;"
-	}).appendTo(li);
+    clearBoth().appendTo(li);
+};
+
+var line_password = function (liId, theForm, fieldProp, uniqueId, liClass)
+{
+    var li = addLi(liId, liClass).appendTo(theForm);
+
+    hiddenRequired().appendTo(li);
+
+    $("<label/>", {
+        text: "Password",
+        "class" : "main_label",
+        "for": "form_input"
+    }).appendTo(li);
+
+    $("<input/>", {
+        type: "text",
+        "class": "form_input",
+        placeholder: "Password Here..."
+    }).appendTo(li);
+
+    hiddenInputName().appendTo(li);
+    hiddenCLass().appendTo(li);
+    hiddenId().appendTo(li);
+    hiddenMin().appendTo(li);
+    hiddenMax().appendTo(li);
+
+    formButton("Delete", "delete_li").appendTo(li);
+    formButton("Edit", "edit_li").appendTo(li);
+
+    clearBoth().appendTo(li);
+};
+
+var line_password_verify = function (liId, theForm, fieldProp, uniqueId, liClass)
+{
+    var li = addLi(liId, liClass).appendTo(theForm);
+
+    hiddenRequired().appendTo(li);
+
+    $("<input/>", {
+        type: "hidden",
+        name: "token",
+        value: "password"
+    }).appendTo(li);
+
+    $("<label/>", {
+        text: "Verify Password",
+        "class" : "main_label",
+        "for": "form_input"
+    }).appendTo(li);
+
+    $("<input/>", {
+        type: "text",
+        "class": "form_input",
+        placeholder: "Verify Password Here..."
+    }).appendTo(li);
+
+    hiddenInputName().appendTo(li);
+    hiddenCLass().appendTo(li);
+    hiddenId().appendTo(li);
+
+    formButton("Delete", "delete_li").appendTo(li);
+    formButton("Edit", "edit_li").appendTo(li);
+
+    clearBoth().appendTo(li);
 };
 
 var line_number = function (liId, theForm, fieldProp, uniqueId, liClass)
 {
 	var li = addLi(liId, liClass).appendTo(theForm);
 
-	$("<input/>", {
-		type: "hidden",
-		name: "required",
-		value: "0"
-	}).appendTo(li);
+    hiddenRequired().appendTo(li);
 
 	$("<label/>", {
 		text: "Number Label",
@@ -50,23 +110,21 @@ var line_number = function (liId, theForm, fieldProp, uniqueId, liClass)
 		placeholder: "1234567890"
 	}).appendTo(li);
 
+    hiddenInputName().appendTo(li);
+    hiddenCLass().appendTo(li);
+    hiddenId().appendTo(li);
+
 	formButton("Delete", "delete_li").appendTo(li);
 	formButton("Edit", "edit_li").appendTo(li);
 
-	$("<div/>", {
-		"style": "clear:both;"
-	}).appendTo(li);
+    clearBoth().appendTo(li);
 };
 
 var line_paragraph = function (liId, theForm, fieldProp, uniqueId, liClass)
 {
 	var li = addLi(liId, liClass).appendTo(theForm);
 
-	$("<input/>", {
-		type: "hidden",
-		name: "required",
-		value: "0"
-	}).appendTo(li);
+    hiddenRequired().appendTo(li);
 
 	$("<label/>", {
 		text: "Paragraph",
@@ -80,12 +138,14 @@ var line_paragraph = function (liId, theForm, fieldProp, uniqueId, liClass)
 		placeholder: "Type something..."
 	}).appendTo(li);
 
+    hiddenInputName().appendTo(li);
+    hiddenCLass().appendTo(li);
+    hiddenId().appendTo(li);
+
 	formButton("Delete", "delete_li").appendTo(li);
 	formButton("Edit", "edit_li").appendTo(li);
 
-	$("<div/>", {
-		"style": "clear:both;"
-	}).appendTo(li);
+    clearBoth().appendTo(li);
 };
 
 var line_checkbox = function (liId, theForm, fieldProp, uniqueId, liClass)
@@ -118,12 +178,14 @@ var line_checkbox = function (liId, theForm, fieldProp, uniqueId, liClass)
 		}).insertBefore(checkboxx);
 	}
 
+    hiddenInputName().appendTo(li);
+    hiddenCLass().appendTo(li);
+    hiddenId().appendTo(li);
+
 	formButton("Delete", "delete_li").appendTo(li);
 	formButton("Edit", "edit_li").appendTo(li);
 
-	$("<div/>", {
-		"style": "clear:both;"
-	}).appendTo(li);
+    clearBoth().appendTo(li);
 };
 
 var line_radio = function (liId, theForm, fieldProp, uniqueId, liClass)
@@ -156,12 +218,14 @@ var line_radio = function (liId, theForm, fieldProp, uniqueId, liClass)
         }).insertBefore(radioo);
     }
 
+    hiddenInputName().appendTo(li);
+    hiddenCLass().appendTo(li);
+    hiddenId().appendTo(li);
+
 	formButton("Delete", "delete_li").appendTo(li);
 	formButton("Edit", "edit_li").appendTo(li);
 
-	$("<div/>", {
-		"style": "clear:both;"
-	}).appendTo(li);
+    clearBoth().appendTo(li);
 };
 
 var line_dropdown = function (liId, theForm, fieldProp, uniqueId, liClass)
@@ -187,12 +251,14 @@ var line_dropdown = function (liId, theForm, fieldProp, uniqueId, liClass)
 		}).appendTo(radio);
 	}
 
+    hiddenInputName().appendTo(li);
+    hiddenCLass().appendTo(li);
+    hiddenId().appendTo(li);
+
 	formButton("Delete", "delete_li").appendTo(li);
 	formButton("Edit", "edit_li").appendTo(li);
 
-	$("<div/>", {
-		"style": "clear:both;"
-	}).appendTo(li);
+    clearBoth().appendTo(li);
 };
 
 var addLi = function(liId, liClass){
@@ -211,4 +277,67 @@ var formButton = function(textForm, deleteLi){
 			text: textForm
 		})
 	);
+};
+
+var hiddenInputName = function(){
+    return(
+        $("<input/>", {
+            type: "hidden",
+            name: "input_name"
+        })
+    );
+};
+
+var hiddenCLass = function(){
+    return(
+        $("<input/>", {
+            type: "hidden",
+            name: "class"
+        })
+    );
+};
+
+var hiddenId = function(){
+    return(
+        $("<input/>", {
+            type: "hidden",
+            name: "id"
+        })
+    );
+};
+
+var hiddenMin = function(){
+    return(
+        $("<input/>", {
+            type: "hidden",
+            name: "min"
+        })
+    );
+};
+
+var hiddenMax = function(){
+    return(
+        $("<input/>", {
+            type: "hidden",
+            name: "max"
+        })
+    );
+};
+
+var hiddenRequired = function(){
+    return(
+        $("<input/>", {
+            type: "hidden",
+            name: "required",
+            value: "0"
+        })
+    );
+};
+
+var clearBoth = function(){
+    return(
+        $("<div/>", {
+            "style": "clear:both;"
+        })
+    );
 };

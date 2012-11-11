@@ -2,8 +2,10 @@
 
 namespace Formgen\Controller;
 
-use Zend\Mvc\Controller\AbstractActionController, Zend\View\Model\JsonModel, Zend\View\Model\ViewModel;
+use Zend\Mvc\Controller\AbstractActionController, Zend\View\Model\ViewModel;
 use Zend\View\Renderer\PhpRenderer;
+use Formgen\Form\AddUser, Formgen\Form\AddUserValidator;
+use Formgen\Model\User;
 
 class IndexController extends AbstractActionController
 {
@@ -11,7 +13,29 @@ class IndexController extends AbstractActionController
 		return array ();
 	}
 
-	public function createAction() {
+    public function testAction()
+    {
+        $form = new AddUser();
+        $request = $this->getRequest();
+
+        if($request->isPost())
+        {
+            $user = new User();
+            $formValidator = new AddUserValidator();
+
+            $form->setInputFilter($formValidator->getInputFilter());
+            $form->setData($request->getPost());
+
+            if($form->isValid()){
+                $user->exchangeArray($form->getData());
+            }
+        }
+
+        return ['form' => $form];
+	}
+
+	public function createAction()
+    {
 		$headScript = new PhpRenderer ();
 		$headScript->headScript ()->appendFile ( '/js/form/create.form.js' );
 		$headScript->headScript ()->appendFile ( '/js/form/line.text.js' );
@@ -24,6 +48,18 @@ class IndexController extends AbstractActionController
 	}
 
 	public function inputAction()
+	{
+		$result = $this->getAjax();
+		return $result;
+	}
+
+	public function passwordAction()
+	{
+		$result = $this->getAjax();
+		return $result;
+	}
+
+	public function passwordverifyAction()
 	{
 		$result = $this->getAjax();
 		return $result;
@@ -54,6 +90,12 @@ class IndexController extends AbstractActionController
 	}
 
     public function dropdownAction()
+	{
+	    $result = $this->getAjax();
+	    return $result;
+	}
+
+    public function emailAction()
 	{
 	    $result = $this->getAjax();
 	    return $result;

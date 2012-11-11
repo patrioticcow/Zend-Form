@@ -23,12 +23,12 @@ class AddUserValidator implements InputFilterAwareInterface
             $factory = new InputFactory();
 
             $inputFilter->add($factory->createInput([
-                'name' => 'user_id',
+                'name' => 'hidden',
                 'required' => false,
             ]));
 
             $inputFilter->add($factory->createInput([
-                'name' => 'username',
+                'name' => 'text',
                 'required' => true,
                 'filters' => [
                     ['name' => 'StripTags'],
@@ -47,6 +47,27 @@ class AddUserValidator implements InputFilterAwareInterface
             ]));
 
             $inputFilter->add($factory->createInput([
+                'name' => 'number',
+                'required' => true,
+                'filters' => [
+                    ['name' => 'StripTags'],
+                    ['name' => 'StringTrim'],
+                ],
+                'validators' => [
+                    [
+                        'name' => 'StringLength',
+                        'options' => [
+                            'encoding' => 'UTF-8',
+                            'min'      => 3,
+                            'max'      => 100,
+                        ],
+                    ],[
+                        'name' => 'Digits',
+                    ],
+                ],
+            ]));
+
+            $inputFilter->add($factory->createInput([
                 'name' => 'email',
                 'required' => true,
                 'filters' => [
@@ -57,11 +78,17 @@ class AddUserValidator implements InputFilterAwareInterface
                     [
                         'name' => 'EmailAddress',
                         'options' => [
-                            'encoding' => 'UTF-8',
-                            'min'      => 5,
-                            'max'      => 255,
+                            'encoding' => 'UTF-8', 'min'=>5, 'max'=>255,
                             'messages' => array(
-                                \Zend\Validator\EmailAddress::INVALID_FORMAT => 'Email address format is invalid'
+                                'emailAddressInvalidFormat' => 'Email address format is not invalid'
+                            )
+                        ],
+                    ],[
+                        'name' => 'NotEmpty',
+                        'break_chain_on_failure' => true,
+                        'options' => [
+                            'messages' => array(
+                                'isEmpty' => 'Email address is required'
                             )
                         ],
                     ],

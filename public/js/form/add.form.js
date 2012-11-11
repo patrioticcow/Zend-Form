@@ -9,6 +9,30 @@ $(document).ready(function()
 	});
 
     /**
+     * add_form_password
+     */
+    $('#add_form_password').live("click", function(e){
+        e.preventDefault();
+        addForm($('#add_form_data'), 'input', 'form_input');
+    });
+
+    /**
+     * add_form_password_verify
+     */
+    $('#add_form_password_verify').live("click", function(e){
+        e.preventDefault();
+        addForm($('#add_form_data'), 'input', 'form_input');
+    });
+
+    /**
+     * add_form_email
+     */
+    $('#add_form_email').live("click", function(e){
+        e.preventDefault();
+        addForm($('#add_form_data'), 'input', 'form_email');
+    });
+
+    /**
      * add_form_number
      */
     $('#add_form_number').live("click", function(e){
@@ -192,10 +216,32 @@ $(document).ready(function()
 		var formSel = $('#' + formField + ' ' + fieldType + '.' + formClass);
 		var formReq = $('#' + formField + ' input[name="required"]');
 
-		$('#' + formField + ' label.main_label').text(formJson.text_label);
+        // set label text
+		$('#' + formField + ' label.main_label').html(formJson.text_label);
+
+        // set placeholder text
 		formSel.attr("placeholder", formJson.placeholder_text);
 
-        formJson.required === 'yes' ? formReq.attr("value", "1") : formReq.attr("value", "0");
+        // set hidden required
+        formJson.required === 'yes' ? formReq.attr("value", "true") : formReq.attr("value", "false");
+
+        // set token
+        $('#' + formField + ' input[name="token"]').attr("value", formJson.token);
+
+        // set hidden min
+        $('#' + formField + ' input[name="min"]').attr("value", formJson.number_min);
+
+        // set input name
+        $('#' + formField + ' input[name="input_name"]').attr("value", formJson.input_name);
+
+        // set hidden max
+        $('#' + formField + ' input[name="max"]').attr("value", formJson.number_max);
+
+        // set hidden class
+        $('#' + formField + ' input[name="class"]').attr("value", formJson.number_class);
+
+        // set hidden id
+        $('#' + formField + ' input[name="id"]').attr("value", formJson.number_id);
 
         // transfer text content form the edit side to the main form side
         if(formClass === 'form_checkbox'){

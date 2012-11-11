@@ -11,7 +11,7 @@ class AddUser extends Form
     public function __construct($name = null)
     {
 
-        parent::__construct('album');
+        parent::__construct('formgen');
 
         $this->setAttribute('method', 'post');
 
@@ -21,15 +21,22 @@ class AddUser extends Form
         ));
 
         $this->add(array(
-            'name' => 'user_id',
+            'name' => 'hidden',
             'type' => 'Zend\Form\Element\Hidden',
         ));
 
         $this->add(array(
-            'name'       => 'username',
+            'name'       => 'text',
             'type'       => 'Zend\Form\Element\Text',
             'attributes' => array('maxlength' => '100', 'size' => '100'),
-            'options'    => array('label' => 'Username'),
+            'options'    => array('label' => 'Single Line Text'),
+        ));
+
+        $this->add(array(
+            'name'       => 'number',
+            'type'       => 'Zend\Form\Element\Text',
+            'attributes' => array('maxlength' => '100', 'size' => '100'),
+            'options'    => array('label' => 'Number Label'),
         ));
 
         $this->add(array(
@@ -57,7 +64,7 @@ class AddUser extends Form
         $this->add(array(
             'name' => 'submit',
             'type' => 'Zend\Form\Element\Submit',
-            'attributes' => array('value' => 'Save', 'class'=>'btn btn-primary'),
+            'attributes' => array('value' => 'Create', 'class'=>'btn btn-primary'),
             'options' => array(),
         ));
     }

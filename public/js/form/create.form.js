@@ -24,7 +24,7 @@ $(document).ready(function() {
 
 		$('#'+ liId +' .edit_li').click(function () {
 			secondTab.tab('show');
-			$.get('/form/input', { name: "Edit Input Field", id: liId}).done(function(data) {
+			$.get('/formgen/input', { name: "Edit Input Field", id: liId}).done(function(data) {
 				fieldProp.html(data);
 		    });
 		});
@@ -42,7 +42,61 @@ $(document).ready(function() {
 
 		$('#'+ liId +' .edit_li').click(function () {
 			secondTab.tab('show');
-			$.get('/form/number', { name: "Edit Number Field", id: liId}).done(function(data) {
+			$.get('/formgen/number', { name: "Edit Number Field", id: liId}).done(function(data) {
+				fieldProp.html(data);
+		    });
+		});
+
+		uniqueId++;
+	});
+
+	/**
+	 * line_password
+	 */
+	$('#line_password').click(function () {
+		var liId = "edit_form_password" + uniqueId;
+
+        line_password(liId, theForm, fieldProp, uniqueId, "edit_form_password");
+
+		$('#'+ liId +' .edit_li').click(function () {
+			secondTab.tab('show');
+			$.get('/formgen/password', { name: "Edit Password Field", id: liId}).done(function(data) {
+				fieldProp.html(data);
+		    });
+		});
+
+		uniqueId++;
+	});
+
+	/**
+	 * line_password_verify
+	 */
+	$('#line_password_verify').click(function () {
+		var liId = "edit_form_password_verify" + uniqueId;
+
+        line_password_verify(liId, theForm, fieldProp, uniqueId, "edit_form_password_verify");
+
+		$('#'+ liId +' .edit_li').click(function () {
+			secondTab.tab('show');
+			$.get('/formgen/passwordverify', { name: "Edit Password Verify Field", id: liId}).done(function(data) {
+				fieldProp.html(data);
+		    });
+		});
+
+		uniqueId++;
+	});
+
+	/**
+	 * line_email
+	 */
+	$('#line_email').click(function () {
+		var liId = "edit_form_email" + uniqueId;
+
+		line_number(liId, theForm, fieldProp, uniqueId, "edit_form_email");
+
+		$('#'+ liId +' .edit_li').click(function () {
+			secondTab.tab('show');
+			$.get('/formgen/email', { name: "Edit Email Field", id: liId}).done(function(data) {
 				fieldProp.html(data);
 		    });
 		});
@@ -60,7 +114,7 @@ $(document).ready(function() {
 
 		$('#'+ liId +' .edit_li').click(function () {
 			secondTab.tab('show');
-			$.get('/form/paragraph', { name: "Edit Textarea Field", id: liId}).done(function(data) {
+			$.get('/formgen/paragraph', { name: "Edit Textarea Field", id: liId}).done(function(data) {
 				fieldProp.html(data);
 			});
 		});
@@ -80,7 +134,7 @@ $(document).ready(function() {
             var lenghtNr = $(this).parent('li').find('.checkbox').length;
 
 			secondTab.tab('show');
-			$.get('/form/checkbox', { name: "Edit Checkbox Field", id: liId, 'lenght': lenghtNr}).done(function(data) {
+			$.get('/formgen/checkbox', { name: "Edit Checkbox Field", id: liId, 'lenght': lenghtNr}).done(function(data) {
 				fieldProp.html(data);
 		    });
 		});
@@ -100,7 +154,7 @@ $(document).ready(function() {
             var lenghtNr = $(this).parent('li').find('.radio').length;
 
 			secondTab.tab('show');
-			$.get('/form/radio', { name: "Edit Radio Field", id: liId, 'lenght': lenghtNr}).done(function(data) {
+			$.get('/formgen/radio', { name: "Edit Radio Field", id: liId, 'lenght': lenghtNr}).done(function(data) {
 				fieldProp.html(data);
 		    });
 		});
@@ -120,7 +174,7 @@ $(document).ready(function() {
             var lenghtNr = $(this).parent('li').find('.dropdown').find('option').length;
 
 			secondTab.tab('show');
-			$.get('/form/dropdown', { name: "Edit Drop Down Field", id: liId, 'lenght': lenghtNr}).done(function(data) {
+			$.get('/formgen/dropdown', { name: "Edit Drop Down Field", id: liId, 'lenght': lenghtNr}).done(function(data) {
 				fieldProp.html(data);
 			});
 		});
@@ -142,6 +196,14 @@ $(document).ready(function() {
 		        var addLineText = lineTextJson($(this));
 		        console.log(addLineText);
 		    }
+            if($(this).hasClass('edit_form_password') === true) {
+		        var addLinePassword = linePasswordJson($(this));
+		        console.log(addLinePassword);
+		    }
+            if($(this).hasClass('edit_form_email') === true) {
+                var addLineEmail = lineEmailJson($(this));
+                console.log(addLineEmail);
+            }
             if($(this).hasClass('edit_form_paragraph') === true) {
 		        var addParagraphText = lineParagraphJson($(this));
 		        console.log(addParagraphText);
@@ -161,6 +223,18 @@ $(document).ready(function() {
             if($(this).hasClass('edit_form_dropdown') === true) {
 		        var addDropdownText = lineDropdownJson($(this));
 		        console.log(addDropdownText);
+		    }
+            if($(this).hasClass('edit_form_password') === true) {
+		        var addPasswordText = linePasswordJson($(this));
+		        console.log(addPasswordText);
+		    }
+            if($(this).hasClass('edit_form_password_verify') === true) {
+		        var addPasswordVerifyText = linePasswordVerifyJson($(this));
+		        console.log(addPasswordVerifyText);
+		    }
+            if($(this).hasClass('edit_form_email') === true) {
+		        var addEmailText = lineEmailJson($(this));
+		        console.log(addEmailText);
 		    }
 		});
 	});

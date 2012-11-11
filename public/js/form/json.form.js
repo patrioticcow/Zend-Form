@@ -1,10 +1,25 @@
 var lineTextJson = function(formElements) {
-    var data = commonsJson(formElements, 'line_text', 'form_input');
+    var data = commonsJson(formElements, 'text', 'form_input', "Zend\Form\Element\Text");
+    return (data);
+};
+
+var linePasswordJson = function(formElements) {
+    var data = commonsJson(formElements, 'text', 'form_input_password', "Zend\Form\Element\Password");
+    return (data);
+};
+
+var linePasswordVerifyJson = function(formElements) {
+    var data = commonsJson(formElements, 'text', 'form_input_password_verify', "Zend\Form\Element\Password");
+    return (data);
+};
+
+var lineEmailJson = function(formElements) {
+    var data = commonsJson(formElements, 'text', 'form_input_email', "Zend\Form\Element\Email");
     return (data);
 };
 
 var lineNumberJson = function(formElements) {
-    var data = commonsJson(formElements, 'line_number', 'form_number');
+    var data = commonsJson(formElements, 'text', 'form_number', "Zend\Form\Element\Text");
     return (data);
 };
 
@@ -28,7 +43,7 @@ var lineDropdownJson = function(formElements) {
     return (data);
 };
 
-var commonsJson = function(formElements, typeType, classType){
+var commonsJson = function(formElements, typeName, classType, typeType){
     var myData = [];
 
     formElements.each(function() {
@@ -47,11 +62,14 @@ var commonsJson = function(formElements, typeType, classType){
             });
 
             myData.push({
+                'name' : li.find('[name="input_name"]').attr("value"),
                 'type' : typeType,
                 'order' : order,
                 'data' : {
                     'label': $(this).find('label.main_label').html(),
-                    'innerData': innerData
+                    'innerData': innerData,
+                    'class': li.find('[name="class"]').attr("value"),
+                    'id': li.find('[name="id"]').attr("value")
                 }
             });
 
@@ -67,11 +85,14 @@ var commonsJson = function(formElements, typeType, classType){
             });
 
             myData.push({
+                'name' : li.find('[name="input_name"]').attr("value"),
                 'type' : typeType,
                 'order' : order,
                 'data' : {
                     'label': $(this).find('label.main_label').html(),
-                    'innerData': innerData
+                    'innerData': innerData,
+                    'class': li.find('[name="class"]').attr("value"),
+                    'id': li.find('[name="id"]').attr("value")
                 }
             });
         } else if (classType === 'form_dropdown'){
@@ -85,21 +106,86 @@ var commonsJson = function(formElements, typeType, classType){
             });
 
             myData.push({
+                'name' : li.find('[name="input_name"]').attr("value"),
                 'type' : typeType,
                 'order' : order,
                 'data' : {
                     'label': $(this).find('label.main_label').text(),
-                    'innerData': innerData
+                    'innerData': innerData,
+                    'class': li.find('[name="class"]').attr("value"),
+                    'id': li.find('[name="id"]').attr("value")
                 }
             });
-        } else {
+        } else if (classType === 'form_input'){
             myData.push({
+                'name' : li.find('[name="input_name"]').attr("value"),
                 'type' : typeType,
                 'order' : order,
                 'data' : {
                     'placeholder': li.find('.' + classType).attr("placeholder"),
                     'label': li.find('[for="' + classType + '"]').text(),
-                    'required': li.find('[name="required"]').attr("value")
+                    'required': li.find('[name="required"]').attr("value"),
+                    'class': li.find('[name="class"]').attr("value"),
+                    'id': li.find('[name="id"]').attr("value"),
+                    "lenght" : {
+                        'min' : li.find('[name="min"]').attr("value"),
+                        'max' : li.find('[name="max"]').attr("value")
+                    }
+                }
+            });
+        } else if (classType === 'form_input_password'){
+            myData.push({
+                'name' : li.find('[name="input_name"]').attr("value"),
+                'type' : typeType,
+                'order' : order,
+                'data' : {
+                    'placeholder': li.find('.' + classType).attr("placeholder"),
+                    'label': li.find('[for="' + classType + '"]').text(),
+                    'class': li.find('[name="class"]').attr("value"),
+                    'id': li.find('[name="id"]').attr("value"),
+                    "lenght" : {
+                        'min' : li.find('[name="min"]').attr("value"),
+                        'max' : li.find('[name="max"]').attr("value")
+                    }
+                }
+            });
+        } else if (classType === 'form_input_password_verify'){
+            myData.push({
+                'name' : li.find('[name="input_name"]').attr("value"),
+                'type' : typeType,
+                'order' : order,
+                'data' : {
+                    'placeholder': li.find('.' + classType).attr("placeholder"),
+                    'label': li.find('[for="' + classType + '"]').text(),
+                    'class': li.find('[name="class"]').attr("value"),
+                    'id': li.find('[name="id"]').attr("value"),
+                    "token" : li.find('[name="token"]').attr("value")
+                }
+            });
+        } else if (classType === 'form_number'){
+            myData.push({
+                'name' : li.find('[name="input_name"]').attr("value"),
+                'type' : typeType,
+                'order' : order,
+                'data' : {
+                    'placeholder': li.find('.' + classType).attr("placeholder"),
+                    'label': li.find('[for="' + classType + '"]').text(),
+                    'required': li.find('[name="required"]').attr("value"),
+                    'class': li.find('[name="class"]').attr("value"),
+                    'id': li.find('[name="id"]').attr("value")
+                }
+            });
+        } else {
+            myData.push({
+                'name' : li.find('[name="input_name"]').attr("value"),
+                'type' : typeType,
+                'order' : order,
+                'data' : {
+                    'placeholder': li.find('.' + classType).attr("placeholder"),
+                    'label': li.find('[for="' + classType + '"]').text(),
+                    'required': li.find('[name="required"]').attr("value"),
+                    'class': li.find('[name="class"]').attr("value"),
+                    'id': li.find('[name="id"]').attr("value")
                 }
             });
         }
