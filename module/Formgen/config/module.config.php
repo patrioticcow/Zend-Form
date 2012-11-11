@@ -2,17 +2,17 @@
 return array(
     'controllers' => array(
         'invokables' => array(
-            'Form\Controller\Index' => 'Form\Controller\IndexController',
+            'Formgen\Controller\Index' => 'Formgen\Controller\IndexController',
         ),
     ),
     'router' => array(
         'routes' => array(
-            'form' => array(
+            'formgen' => array(
                 'type'    => 'Literal',
                 'options' => array(
-                    'route'    => '/form',
+                    'route'    => '/formgen',
                     'defaults' => array(
-                        '__NAMESPACE__' => 'Form\Controller',
+                        '__NAMESPACE__' => 'Formgen\Controller',
                         'controller'    => 'Index',
                         'action'        => 'index',
                     ),
@@ -100,11 +100,11 @@ return array(
         'not_found_template'       => 'error/404',
         'exception_template'       => 'error/index',
         'template_map' => array(
-            'layout/left-menu'        => __DIR__ . '/../view/form/layout/left_menu.phtml',
+            'layout/left-menu'        => __DIR__ . '/../view/formgen/layout/left_menu.phtml',
             'layout/layout'           => __DIR__ . '/../../Application/view/layout/layout.phtml',
         	'layout/top_menu'     	  => __DIR__ . '/../../Application/view/layout/top_menu.phtml',
         	'layout/footer'     	  => __DIR__ . '/../../Application/view/layout/footer.phtml',
-            'admin/index/index' 	  => __DIR__ . '/../view/form/index/index.phtml',
+            'admin/index/index' 	  => __DIR__ . '/../view/formgen/index/index.phtml',
             'error/404'               => __DIR__ . '/../../Application/view/error/404.phtml',
             'error/index'             => __DIR__ . '/../../Application/view/error/index.phtml',
         ),

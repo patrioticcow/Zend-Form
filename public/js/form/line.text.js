@@ -5,13 +5,13 @@ var line_text = function (liId, theForm, fieldProp, uniqueId, liClass)
 	$("<input/>", {
 		type: "hidden",
 		name: "required",
-		value: "0",
+		value: "0"
 	}).appendTo(li);
 
 	$("<label/>", {
 		text: "Text",
         "class" : "main_label",
-		"for": "form_input",
+		"for": "form_input"
 	}).appendTo(li);
 
 	$("<input/>", {
@@ -35,13 +35,13 @@ var line_number = function (liId, theForm, fieldProp, uniqueId, liClass)
 	$("<input/>", {
 		type: "hidden",
 		name: "required",
-		value: "0",
+		value: "0"
 	}).appendTo(li);
 
 	$("<label/>", {
 		text: "Number Label",
         "class" : "main_label",
-		"for": "form_number",
+		"for": "form_number"
 	}).appendTo(li);
 
 	$("<input/>", {
@@ -65,13 +65,13 @@ var line_paragraph = function (liId, theForm, fieldProp, uniqueId, liClass)
 	$("<input/>", {
 		type: "hidden",
 		name: "required",
-		value: "0",
+		value: "0"
 	}).appendTo(li);
 
 	$("<label/>", {
 		text: "Paragraph",
         "class" : "main_label",
-		"for": "form_paragraph",
+		"for": "form_paragraph"
 	}).appendTo(li);
 
 	$("<textarea/>", {
@@ -94,26 +94,28 @@ var line_checkbox = function (liId, theForm, fieldProp, uniqueId, liClass)
 
 	$("<label/>", {
 		text: "Checkboxes Label",
-        "class" : "main_label",
+        "class" : "main_label"
 	}).appendTo(li);
 
 	for (var i=0;i<2;i++)
 	{
         var checkbox_span = $("<span/>", {
             "class": "span_checkbox",
-            "id":"check_rem" + i,
+            "id":"check_rem" + i
         }).appendTo(li);
 
-		var checkbox = $("<label/>", {
+		var checkboxx = $("<label/>", {
 			text: "Checkbox",
 			"class":"checkbox",
+			"style":"float:left"
 		}).appendTo(checkbox_span);
 
 		$("<input/>", {
 			type: "checkbox",
 			'disabled': "disabled",
 			id: "form_checkbox_" + i,
-		}).insertAfter(checkbox);
+            "style":"float:left"
+		}).insertBefore(checkboxx);
 	}
 
 	formButton("Delete", "delete_li").appendTo(li);
@@ -130,26 +132,28 @@ var line_radio = function (liId, theForm, fieldProp, uniqueId, liClass)
 
     $("<label/>", {
         text: "Radio Label",
-        "class" : "main_label",
+        "class" : "main_label"
     }).appendTo(li);
 
     for (var i=0;i<2;i++)
     {
         var radio_span = $("<span/>", {
             "class": "span_radio",
-            "id":"radio_rem" + i,
+            "id":"radio_rem" + i
         }).appendTo(li);
 
-        var radio = $("<label/>", {
+        var radioo = $("<label/>", {
             text: "Radio",
             "class":"radio",
+            "style":"float:left"
         }).appendTo(radio_span);
 
         $("<input/>", {
             type: "radio",
             'disabled': "disabled",
             id: "form_radio_" + i,
-        }).insertAfter(radio);
+            "style":"float:left"
+        }).insertBefore(radioo);
     }
 
 	formButton("Delete", "delete_li").appendTo(li);
@@ -171,7 +175,7 @@ var line_dropdown = function (liId, theForm, fieldProp, uniqueId, liClass)
 	}).appendTo(li);
 
 	var radio = $("<select/>", {
-		"class":"dropdown",
+		"class":"dropdown"
 	}).appendTo(li);
 
 	for (var i=0;i<2;i++)

@@ -71,7 +71,7 @@ $(document).ready(function()
         // clone in the view side
         $('#' + mainCheckbox)
             .find('span').last()
-            .clone().insertBefore('.delete_li')
+            .clone().insertBefore('#' + mainCheckbox + ' .delete_li')
             .attr({'id':nextIdNext})
             .find('input').attr({'id': 'form_checkbox_' + nextIdNr});
     });
@@ -123,7 +123,7 @@ $(document).ready(function()
         // clone in the view side
         $('#' + mainRadio)
             .find('span').last()
-            .clone().insertBefore('.delete_li')
+            .clone().insertBefore('#' + mainRadio + ' .delete_li')
             .attr({'id':nextIdNext})
             .find('input').attr({'id': 'form_radio_' + nextIdNr});
     });
@@ -175,7 +175,7 @@ $(document).ready(function()
         // clone in the view side
         $('#' + mainRadio)
             .find('option').last()
-            .clone().appendTo('select')
+            .clone().appendTo('#' + mainRadio + ' select')
             .attr({'id':nextIdNext});
     });
 

@@ -4,7 +4,7 @@ return array(
     	'ZendDeveloperTools',
     	'BjyProfiler',
         'Application',
-        'Form',
+        'Formgen',
     ),
     'module_listener_options' => array(
         'config_glob_paths'    => array(

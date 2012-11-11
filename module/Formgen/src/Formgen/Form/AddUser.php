@@ -1,10 +1,12 @@
 <?php
 
-namespace Form\Forms;
+namespace Formgen\Form;
 
+use Zend\Captcha;
+use Zend\Form\Element;
 use Zend\Form\Form;
 
-class AddInput extends Form
+class AddUser extends Form
 {
     public function __construct($name = null)
     {
@@ -14,10 +16,20 @@ class AddInput extends Form
         $this->setAttribute('method', 'post');
 
         $this->add(array(
-            'name'       => 'label',
+            'name' => 'csrf',
+            'type' => 'Zend\Form\Element\Csrf',
+        ));
+
+        $this->add(array(
+            'name' => 'user_id',
+            'type' => 'Zend\Form\Element\Hidden',
+        ));
+
+        $this->add(array(
+            'name'       => 'username',
             'type'       => 'Zend\Form\Element\Text',
-            'attributes' => array('maxlength' => '255', 'size' => '100'),
-            'options'    => array('label' => 'Label '),
+            'attributes' => array('maxlength' => '100', 'size' => '100'),
+            'options'    => array('label' => 'Username'),
         ));
 
         $this->add(array(
@@ -45,7 +57,7 @@ class AddInput extends Form
         $this->add(array(
             'name' => 'submit',
             'type' => 'Zend\Form\Element\Submit',
-            'attributes' => array('value' => 'Add Input', 'class'=>'btn btn-primary', 'id'=>'add_input'),
+            'attributes' => array('value' => 'Save', 'class'=>'btn btn-primary'),
             'options' => array(),
         ));
     }

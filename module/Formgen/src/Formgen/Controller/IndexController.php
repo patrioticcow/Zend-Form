@@ -1,6 +1,6 @@
 <?php
 
-namespace Form\Controller;
+namespace Formgen\Controller;
 
 use Zend\Mvc\Controller\AbstractActionController, Zend\View\Model\JsonModel, Zend\View\Model\ViewModel;
 use Zend\View\Renderer\PhpRenderer;
