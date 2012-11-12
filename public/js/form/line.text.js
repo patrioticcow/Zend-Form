@@ -92,6 +92,48 @@ var line_password_verify = function (liId, theForm, fieldProp, uniqueId, liClass
     clearBoth().appendTo(li);
 };
 
+var line_email = function (liId, theForm, fieldProp, uniqueId, liClass)
+{
+    var li = addLi(liId, liClass).appendTo(theForm);
+
+    hiddenRequired().appendTo(li);
+
+    $("<input/>", {
+        type: "hidden",
+        name: "invalid_type",
+        value: "Email address format is not invalid"
+    }).appendTo(li);
+
+    $("<input/>", {
+        type: "hidden",
+        name: "is_empty_type",
+        value: "Email address is required"
+    }).appendTo(li);
+
+    $("<label/>", {
+        text: "Email",
+        "class" : "main_label",
+        "for": "form_input"
+    }).appendTo(li);
+
+    $("<input/>", {
+        type: "text",
+        "class": "form_input",
+        placeholder: "Email Address..."
+    }).appendTo(li);
+
+    hiddenInputName().appendTo(li);
+    hiddenCLass().appendTo(li);
+    hiddenId().appendTo(li);
+    hiddenMin().appendTo(li);
+    hiddenMax().appendTo(li);
+
+    formButton("Delete", "delete_li").appendTo(li);
+    formButton("Edit", "edit_li").appendTo(li);
+
+    clearBoth().appendTo(li);
+};
+
 var line_number = function (liId, theForm, fieldProp, uniqueId, liClass)
 {
 	var li = addLi(liId, liClass).appendTo(theForm);

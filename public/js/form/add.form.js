@@ -5,7 +5,7 @@ $(document).ready(function()
      */
 	$('#add_form_text').live("click", function(e){
 		e.preventDefault();
-		addForm($('#add_form_data'), 'input', 'form_input');
+		addForm($('#add_form_data'), 'input', 'form_input', 'text');
 	});
 
     /**
@@ -13,7 +13,7 @@ $(document).ready(function()
      */
     $('#add_form_password').live("click", function(e){
         e.preventDefault();
-        addForm($('#add_form_data'), 'input', 'form_input');
+        addForm($('#add_form_data'), 'input', 'form_input', 'password');
     });
 
     /**
@@ -21,7 +21,7 @@ $(document).ready(function()
      */
     $('#add_form_password_verify').live("click", function(e){
         e.preventDefault();
-        addForm($('#add_form_data'), 'input', 'form_input');
+        addForm($('#add_form_data'), 'input', 'form_input', 'password_verify');
     });
 
     /**
@@ -29,7 +29,7 @@ $(document).ready(function()
      */
     $('#add_form_email').live("click", function(e){
         e.preventDefault();
-        addForm($('#add_form_data'), 'input', 'form_email');
+        addForm($('#add_form_data'), 'input', 'form_input', 'email');
     });
 
     /**
@@ -37,7 +37,7 @@ $(document).ready(function()
      */
     $('#add_form_number').live("click", function(e){
 		e.preventDefault();
-		addForm($('#add_form_data'), 'input', 'form_number');
+		addForm($('#add_form_data'), 'input', 'form_number', 'number');
 	});
 
     /**
@@ -45,7 +45,7 @@ $(document).ready(function()
      */
 	$('#add_form_paragraph').live("click", function(e){
 		e.preventDefault();
-		addForm($('#add_form_data'), 'textarea', 'form_paragraph');
+		addForm($('#add_form_data'), 'textarea', 'form_paragraph', 'paragraph');
 	});
 
     /**
@@ -53,7 +53,7 @@ $(document).ready(function()
      */
 	$('#add_form_checkbox').live("click", function(e){
 		e.preventDefault();
-		addForm($('#add_form_data'), 'input', 'form_checkbox');
+		addForm($('#add_form_data'), 'input', 'form_checkbox', 'checkbox');
 	});
 
     $("button:contains('remove')").live("click", function(e){
@@ -105,7 +105,7 @@ $(document).ready(function()
      */
     $('#add_form_radio').live("click", function(e){
         e.preventDefault();
-        addForm($('#add_form_data'), 'input', 'form_radio');
+        addForm($('#add_form_data'), 'input', 'form_radio', 'radio');
     });
 
     $("button:contains('remove')").live("click", function(e){
@@ -157,7 +157,7 @@ $(document).ready(function()
      */
     $('#add_form_dropdown').live("click", function(e){
         e.preventDefault();
-        addForm($('#add_form_data'), 'input', 'form_dropdown');
+        addForm($('#add_form_data'), 'input', 'form_dropdown', 'dropdown');
     });
 
     $("button:contains('remove')").live("click", function(e){
@@ -209,7 +209,7 @@ $(document).ready(function()
      * @param fieldType
      * @param formClass
      */
-	var addForm = function addForm(formId, fieldType, formClass){
+	var addForm = function addForm(formId, fieldType, formClass, specificType){
 
 		var formField = formId.attr('class');
 		var formJson = formId.serializeFormJSON();
@@ -226,8 +226,9 @@ $(document).ready(function()
         formJson.required === 'yes' ? formReq.attr("value", "true") : formReq.attr("value", "false");
 
         // set token
-        $('#' + formField + ' input[name="token"]').attr("value", formJson.token);
-
+        if(specificType === 'password_verify'){
+            $('#' + formField + ' input[name="token"]').attr("value", formJson.token);
+        }
         // set hidden min
         $('#' + formField + ' input[name="min"]').attr("value", formJson.number_min);
 
@@ -243,20 +244,26 @@ $(document).ready(function()
         // set hidden id
         $('#' + formField + ' input[name="id"]').attr("value", formJson.number_id);
 
+        // set email
+        if(specificType === 'email'){
+            $('#' + formField + ' input[name="invalid_type"]').attr("value", formJson.invalid_type);
+            $('#' + formField + ' input[name="is_empty_type"]').attr("value", formJson.is_empty_type);
+        }
+
         // transfer text content form the edit side to the main form side
-        if(formClass === 'form_checkbox'){
+        if(specificType === 'checkbox'){
             $.each(formJson, function(index, value) {
                 $('#' + formField + ' #check_' + index).find('label.checkbox').text(value);
             });
         }
 
-        if(formClass === 'form_radio'){
+        if(specificType === 'radio'){
             $.each(formJson, function(index, value) {
                 $('#' + formField + ' #radio_' + index).find('label.radio').text(value);
             });
         }
 
-        if(formClass === 'form_dropdown'){
+        if(specificType === 'dropdown'){
             $.each(formJson, function(index, value) {
                 $('#' + formField).find(' #dropdown_' + index).html(value);
             });

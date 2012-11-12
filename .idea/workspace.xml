@@ -23,16 +23,16 @@
       <file leaf-file-name="line.text.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/js/form/line.text.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="69" column="24" selection-start="1653" selection-end="1653" vertical-scroll-proportion="0.0">
+            <state line="114" column="29" selection-start="2702" selection-end="2712" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="create.form.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="create.form.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/js/form/create.form.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="76" column="18" selection-start="1758" selection-end="1758" vertical-scroll-proportion="0.0">
+            <state line="197" column="13" selection-start="4807" selection-end="4807" vertical-scroll-proportion="0.017797552">
               <folding />
             </state>
           </provider>
@@ -41,70 +41,25 @@
       <file leaf-file-name="add.form.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/js/form/add.form.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="228" column="47" selection-start="7494" selection-end="7499" vertical-scroll-proportion="0.0">
+            <state line="238" column="85" selection-start="8059" selection-end="8059" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="json.form.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="json.form.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/js/form/json.form.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="159" column="69" selection-start="6315" selection-end="6315" vertical-scroll-proportion="0.5709382">
+            <state line="56" column="32" selection-start="1822" selection-end="1822" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="passwordverify.phtml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/module/Formgen/view/formgen/index/passwordverify.phtml">
+      <file leaf-file-name="email.phtml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/module/Formgen/view/formgen/index/email.phtml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="13" selection-start="706" selection-end="706" vertical-scroll-proportion="-17.034483">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="left_menu.phtml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/module/Formgen/view/formgen/layout/left_menu.phtml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="62" selection-start="1210" selection-end="1210" vertical-scroll-proportion="-13.448276">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="input.phtml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/module/Formgen/view/formgen/index/input.phtml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="32" selection-start="1010" selection-end="1010" vertical-scroll-proportion="-26.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="password.phtml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/module/Formgen/view/formgen/index/password.phtml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="43" selection-start="475" selection-end="475" vertical-scroll-proportion="-11.655172">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AddUser.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/module/Formgen/src/Formgen/Form/AddUser.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="56" column="38" selection-start="1625" selection-end="1640" vertical-scroll-proportion="-20.62069">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AddUserValidator.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/module/Formgen/src/Formgen/Form/AddUserValidator.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="124" column="49" selection-start="4251" selection-end="4256" vertical-scroll-proportion="-23.724138">
+            <state line="33" column="35" selection-start="1194" selection-end="1194" vertical-scroll-proportion="-29.586206">
               <folding />
             </state>
           </provider>
@@ -120,22 +75,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/module/Formgen/src/Formgen/Form/AddUserValidator.php" />
-        <option value="$PROJECT_DIR$/module/Formgen/view/formgen/index/input.phtml" />
         <option value="$PROJECT_DIR$/module/Formgen/view/formgen/index/number.phtml" />
         <option value="$PROJECT_DIR$/module/Formgen/view/formgen/index/paragraph.phtml" />
         <option value="$PROJECT_DIR$/module/Formgen/view/formgen/index/radio.phtml" />
         <option value="$PROJECT_DIR$/module/Formgen/view/formgen/index/dropdown.phtml" />
         <option value="$PROJECT_DIR$/module/Formgen/view/formgen/index/checkbox.phtml" />
-        <option value="$PROJECT_DIR$/module/Formgen/view/formgen/layout/left_menu.phtml" />
         <option value="$PROJECT_DIR$/module/Formgen/src/Formgen/Controller/IndexController.php" />
         <option value="$PROJECT_DIR$/module/Formgen/config/module.config.php" />
         <option value="$PROJECT_DIR$/module/Formgen/view/formgen/index/password.phtml" />
         <option value="$PROJECT_DIR$/module/Formgen/view/formgen/index/passwordverify.phtml" />
-        <option value="$PROJECT_DIR$/public/js/form/create.form.js" />
+        <option value="$PROJECT_DIR$/module/Formgen/view/formgen/layout/left_menu.phtml" />
+        <option value="$PROJECT_DIR$/module/Formgen/view/formgen/index/email.phtml" />
         <option value="$PROJECT_DIR$/public/js/form/line.text.js" />
         <option value="$PROJECT_DIR$/public/js/form/add.form.js" />
+        <option value="$PROJECT_DIR$/module/Formgen/src/Formgen/Form/AddUser.php" />
         <option value="$PROJECT_DIR$/public/js/form/json.form.js" />
+        <option value="$PROJECT_DIR$/public/js/form/create.form.js" />
       </list>
     </option>
   </component>
@@ -612,13 +567,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/module/Formgen/view/formgen/index/paragraph.phtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="13" selection-start="1053" selection-end="1053" vertical-scroll-proportion="-26.896551">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/module/Formgen/view/formgen/index/radio.phtml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="34" column="13" selection-start="1525" selection-end="1525" vertical-scroll-proportion="-28.206896">
@@ -640,30 +588,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/module/Formgen/view/formgen/layout/left_menu.phtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="62" selection-start="1210" selection-end="1210" vertical-scroll-proportion="-13.448276">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/Formgen/src/Formgen/Controller/IndexController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="96" column="4" selection-start="2006" selection-end="2006" vertical-scroll-proportion="0.6632184">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/module/Formgen/config/module.config.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="117" column="54" selection-start="4390" selection-end="4390" vertical-scroll-proportion="0.8551724">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/Formgen/view/formgen/index/password.phtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="43" selection-start="475" selection-end="475" vertical-scroll-proportion="-11.655172">
           <folding />
         </state>
       </provider>
@@ -675,23 +602,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/module/Formgen/src/Formgen/Form/AddUserValidator.php">
+    <entry file="file://$PROJECT_DIR$/module/Formgen/src/Formgen/Controller/IndexController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="124" column="49" selection-start="4251" selection-end="4256" vertical-scroll-proportion="-23.724138">
+        <state line="96" column="0" selection-start="2002" selection-end="2002" vertical-scroll-proportion="0.6862069">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/form/create.form.js">
+    <entry file="file://$PROJECT_DIR$/module/Formgen/view/formgen/layout/left_menu.phtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="76" column="18" selection-start="1758" selection-end="1758" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/Formgen/src/Formgen/Form/AddUser.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="56" column="38" selection-start="1625" selection-end="1640" vertical-scroll-proportion="-20.62069">
+        <state line="27" column="78" selection-start="1355" selection-end="1365" vertical-scroll-proportion="0.17931035">
           <folding />
         </state>
       </provider>
@@ -703,23 +623,58 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/form/line.text.js">
+    <entry file="file://$PROJECT_DIR$/module/Formgen/view/formgen/index/password.phtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="69" column="24" selection-start="1653" selection-end="1653" vertical-scroll-proportion="0.0">
+        <state line="13" column="43" selection-start="475" selection-end="475" vertical-scroll-proportion="0.38850576">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/js/form/add.form.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="228" column="47" selection-start="7494" selection-end="7499" vertical-scroll-proportion="0.0">
+        <state line="238" column="85" selection-start="8059" selection-end="8059" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/form/line.text.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="114" column="29" selection-start="2702" selection-end="2712" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/Formgen/src/Formgen/Form/AddUserValidator.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="82" column="82" selection-start="2698" selection-end="2698" vertical-scroll-proportion="-73.51724">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/Formgen/src/Formgen/Form/AddUser.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="61" column="0" selection-start="1842" selection-end="1842" vertical-scroll-proportion="1.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/Formgen/view/formgen/index/email.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="33" column="35" selection-start="1194" selection-end="1194" vertical-scroll-proportion="-29.586206">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/js/form/json.form.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="159" column="69" selection-start="6315" selection-end="6315" vertical-scroll-proportion="0.5709382">
+        <state line="56" column="32" selection-start="1822" selection-end="1822" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/form/create.form.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="197" column="13" selection-start="4807" selection-end="4807" vertical-scroll-proportion="0.017797552">
           <folding />
         </state>
       </provider>

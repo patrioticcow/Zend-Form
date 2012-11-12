@@ -92,7 +92,7 @@ $(document).ready(function() {
 	$('#line_email').click(function () {
 		var liId = "edit_form_email" + uniqueId;
 
-		line_number(liId, theForm, fieldProp, uniqueId, "edit_form_email");
+        line_email(liId, theForm, fieldProp, uniqueId, "edit_form_email");
 
 		$('#'+ liId +' .edit_li').click(function () {
 			secondTab.tab('show');
@@ -196,14 +196,6 @@ $(document).ready(function() {
 		        var addLineText = lineTextJson($(this));
 		        console.log(addLineText);
 		    }
-            if($(this).hasClass('edit_form_password') === true) {
-		        var addLinePassword = linePasswordJson($(this));
-		        console.log(addLinePassword);
-		    }
-            if($(this).hasClass('edit_form_email') === true) {
-                var addLineEmail = lineEmailJson($(this));
-                console.log(addLineEmail);
-            }
             if($(this).hasClass('edit_form_paragraph') === true) {
 		        var addParagraphText = lineParagraphJson($(this));
 		        console.log(addParagraphText);

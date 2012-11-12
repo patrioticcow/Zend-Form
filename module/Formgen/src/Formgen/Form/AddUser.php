@@ -60,7 +60,6 @@ class AddUser extends Form
             'options' => array('label' => 'Password Verify'),
         ));
 
-
         $this->add(array(
             'name' => 'submit',
             'type' => 'Zend\Form\Element\Submit',
