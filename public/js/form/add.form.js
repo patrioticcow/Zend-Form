@@ -57,6 +57,14 @@ $(document).ready(function()
 	});
 
     /**
+     * add_form_fileupload
+     */
+    $('#add_form_fileupload').live("click", function(e){
+        e.preventDefault();
+        addForm($('#add_form_data'), 'input', 'form_input', 'fileupload');
+    });
+
+    /**
      * add_form_checkbox
      */
 	$('#add_form_checkbox').live("click", function(e){

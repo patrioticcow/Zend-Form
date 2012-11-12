@@ -323,6 +323,33 @@ var line_dropdown = function (liId, theForm, fieldProp, uniqueId, liClass)
     clearBoth().appendTo(li);
 };
 
+var line_upload = function (liId, theForm, fieldProp, uniqueId, liClass)
+{
+    var li = addLi(liId, liClass).appendTo(theForm);
+
+    hiddenRequired('required', '0').appendTo(li);
+
+    $("<label/>", {
+        text: "Form Upload",
+        "class" : "main_label",
+        "for": "form_input"
+    }).appendTo(li);
+
+    $("<input/>", {
+        type: "file",
+        "class": "form_input",
+    }).appendTo(li);
+
+    hiddenRequired('input_name', '').appendTo(li);
+    hiddenRequired('class', '').appendTo(li);
+    hiddenRequired('id', '').appendTo(li);
+
+    formButton("Delete", "delete_li").appendTo(li);
+    formButton("Edit", "edit_li").appendTo(li);
+
+    clearBoth().appendTo(li);
+};
+
 var addLi = function(liId, liClass){
 	var list = $("<li/>", {
 		"id": liId,

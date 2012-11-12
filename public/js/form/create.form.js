@@ -200,6 +200,24 @@ $(document).ready(function() {
 		uniqueId++;
 	});
 
+    /**
+     * line_upload
+     */
+    $('#line_upload').click(function () {
+        var liId = "edit_form_text" + uniqueId;
+
+        line_upload(liId, theForm, fieldProp, uniqueId, "edit_form_upload");
+
+        $('#'+ liId +' .edit_li').click(function () {
+            secondTab.tab('show');
+            $.get('/formgen/upload', { name: "Edit Input Field", id: liId}).done(function(data) {
+                fieldProp.html(data);
+            });
+        });
+
+        uniqueId++;
+    });
+
 	/**
 	 * generate the form
 	 * convert form to json

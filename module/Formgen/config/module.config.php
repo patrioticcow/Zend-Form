@@ -129,6 +129,16 @@ return array(
                             ),
                         ),
                     ),
+                    'upload' => array(
+                        'type' => 'Literal',
+                        'options' => array(
+                            'route' => '/upload',
+                            'defaults' => array(
+                                'controller' => 'Index',
+                                'action'     => 'upload',
+                            ),
+                        ),
+                    ),
                     'test' => array(
                 		'type' => 'Literal',
                 		'options' => array(

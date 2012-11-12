@@ -48,6 +48,11 @@ var lineDropdownJson = function(formElements) {
     return (data);
 };
 
+var lineFileuploadJson = function(formElements) {
+    var data = commonsJson(formElements, 'form_input', 'form_fileupload', "Zend\Form\Element\File");
+    return (data);
+};
+
 var commonsJson = function(formElements, typeName, classType, typeType){
     var myData = [];
 
