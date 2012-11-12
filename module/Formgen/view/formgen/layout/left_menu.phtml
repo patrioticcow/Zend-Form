@@ -43,6 +43,29 @@
 		  	</div>
 		  	<div class="tab-pane" id="tab_form_prop">
 		  		<h3>Form Properties</h3>
+                <form>
+                    <ul class="nav nav-list">
+                        <li>
+                            <label>Form Title</label>
+                            <input type="text" name="form_title" maxlength="255" value="Untitled Form">
+                        </li>
+                        <li>
+                            <label>Description</label>
+                            <input type="text" name="form_description" maxlength="255" value="This is your form description.">
+                        </li>
+                        <li>
+                            <label>Class</label>
+                            <input type="text" name="form_class" maxlength="255" placeholder="class1 class2..">
+                        </li>
+                        <li>
+                            <label>Id</label>
+                            <input type="text" name="form_id" maxlength="255" placeholder="custom id">
+                        </li>
+                        <li>
+                            <button class="btn btn-primary" id="add_form_properties">Save</button>
+                        </li>
+                    </ul>
+                </form>
 		  	</div>
 		</div>
     </div>

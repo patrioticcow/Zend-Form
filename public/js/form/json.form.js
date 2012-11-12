@@ -1,3 +1,15 @@
+var formPropertiesJson = function(formData) {
+    var data = [];
+    data.push({
+        'name' : 'form_properties',
+        'title' : formData.find('.form_title_placeholder').html(),
+        'description' : formData.find('.form_description_placeholder').html(),
+        'class' : formData.find('[name="form_class_placeholder"]').attr('value'),
+        'id' : formData.find('[name="form_id_placeholder"]').attr('value')
+    });
+    return (data);
+};
+
 var lineTextJson = function(formElements) {
     var data = commonsJson(formElements, 'form_input', 'form_input', "Zend\Form\Element\Text");
     return (data);
@@ -48,7 +60,7 @@ var lineDropdownJson = function(formElements) {
     return (data);
 };
 
-var lineFileuploadJson = function(formElements) {
+var lineUploadJson = function(formElements) {
     var data = commonsJson(formElements, 'form_input', 'form_fileupload', "Zend\Form\Element\File");
     return (data);
 };

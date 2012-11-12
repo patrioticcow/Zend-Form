@@ -32,7 +32,7 @@ div.container a.brand {
 	margin: 0 0 10px 0;
 }
 
-#the_form li:hover{
+#the_form li:hover, .form_title_head:hover{
 	background: #EEE;
 }
 

@@ -3,6 +3,7 @@ $(document).ready(function() {
 	var uniqueId = 1;
 	var theForm = $('#the_form');
 	var secondTab = $('#add_form_element li:eq(1) a');
+	var thirdTab = $('#add_form_element li:eq(2) a');
 	var fieldProp = $('#field_properties');
 
 	$('.delete_li').live("click", function () {
@@ -13,6 +14,31 @@ $(document).ready(function() {
 		e.preventDefault();
 		$(this).tab('show');
 	});
+
+    $('.edit_form_properties').click(function (e) {
+		e.preventDefault();
+        thirdTab.tab('show');
+	});
+
+    /**
+     * add_form_properties
+     */
+    $('#add_form_properties').click(function(e){
+        e.preventDefault();
+        var formTitle = $('.form_title_head');
+        formTitle.find('.form_title_placeholder').html(
+            $('[name="form_title"]').attr('value')
+        );
+        formTitle.find('.form_description_placeholder').html(
+            $('[name="form_description"]').attr('value')
+        );
+        formTitle.find('[name="form_class_placeholder"]').attr('value',
+            $('[name="form_class"]').attr('value')
+        );
+        formTitle.find('[name="form_id_placeholder"]').attr('value',
+            $('[name="form_id"]').attr('value')
+        );
+    });
 
 	/**
 	 * single_line_text
@@ -225,50 +251,61 @@ $(document).ready(function() {
 	$('#generate_form_button').live("click", function(e){
 		e.preventDefault();
 
+        var allData = [];
+
 		var li = $('#the_form li');
+
+        var addFormProperties = formPropertiesJson($('.form_title_head'));
+        allData.push({'form_properties' : addFormProperties});
 
 		li.each(function(index, data) {
 		    if($(this).hasClass('edit_form_text') === true) {
 		        var addLineText = lineTextJson($(this));
-		        console.log(addLineText);
+                allData.push({'line_text' : addLineText});
 		    }
             if($(this).hasClass('edit_form_date') === true) {
 		        var addLineDate = lineDateJson($(this));
-		        console.log(addLineDate);
+                allData.push({'line_date' : addLineDate});
 		    }
             if($(this).hasClass('edit_form_paragraph') === true) {
 		        var addParagraphText = lineParagraphJson($(this));
-		        console.log(addParagraphText);
+                allData.push({'line_paragraph' : addParagraphText});
 		    }
             if($(this).hasClass('edit_form_number') === true) {
 		        var addNumberText = lineNumberJson($(this));
-		        console.log(addNumberText);
+                allData.push({'line_number' : addNumberText});
 		    }
             if($(this).hasClass('edit_form_checkbox') === true) {
 		        var addCheckboxText = lineCheckboxJson($(this));
-		        console.log(addCheckboxText);
+                allData.push({'line_checkbox' : addCheckboxText});
 		    }
             if($(this).hasClass('edit_form_radio') === true) {
 		        var addRadioText = lineRadioJson($(this));
-		        console.log(addRadioText);
+                allData.push({'line_radio' : addRadioText});
 		    }
             if($(this).hasClass('edit_form_dropdown') === true) {
 		        var addDropdownText = lineDropdownJson($(this));
-		        console.log(addDropdownText);
+                allData.push({'line_dropdown' : addDropdownText});
 		    }
             if($(this).hasClass('edit_form_password') === true) {
 		        var addPasswordText = linePasswordJson($(this));
-		        console.log(addPasswordText);
+                allData.push({'line_password' : addPasswordText});
 		    }
             if($(this).hasClass('edit_form_password_verify') === true) {
 		        var addPasswordVerifyText = linePasswordVerifyJson($(this));
-		        console.log(addPasswordVerifyText);
+                allData.push({'line_password_verify' : addPasswordVerifyText});
 		    }
             if($(this).hasClass('edit_form_email') === true) {
 		        var addEmailText = lineEmailJson($(this));
-		        console.log(addEmailText);
+                allData.push({'line_email' : addEmailText});
+		    }
+            if($(this).hasClass('edit_form_upload') === true) {
+		        var addUploadText = lineUploadJson($(this));
+                allData.push({'line_upload' : addUploadText});
 		    }
 		});
+
+        console.log(allData);
 	});
 
 	// maybe i'll do a plugin

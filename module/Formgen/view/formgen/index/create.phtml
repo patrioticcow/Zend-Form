@@ -2,6 +2,15 @@
     <div class="row-fluid">
         <div class="span7">
         	<form action="/form" method="post" name="generate_form" id="generate_form">
+                <div class="form_title_head">
+                    <input type="hidden" name="form_class_placeholder" value="">
+                    <input type="hidden" name="form_id_placeholder" value="">
+                    <h2 class="form_title_placeholder">Untitled Form</h2>
+                    <p class="form_description_placeholder">This is your form description.</p>
+                    <button type="button" class="btn btn-link pull-right edit_form_properties">Edit</button>
+                    <div style="clear: both"></div>
+                </div>
+                <br>
 	    		<ul id="the_form"></ul>
 	    		<button class="btn" id="generate_form_button">Generate Form</button>
         	</form>

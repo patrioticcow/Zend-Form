@@ -330,7 +330,7 @@ var line_upload = function (liId, theForm, fieldProp, uniqueId, liClass)
     hiddenRequired('required', '0').appendTo(li);
 
     $("<label/>", {
-        text: "Form Upload",
+        text: "File Upload",
         "class" : "main_label",
         "for": "form_input"
     }).appendTo(li);
