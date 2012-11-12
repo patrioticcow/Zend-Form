@@ -2,7 +2,7 @@ var line_text = function (liId, theForm, fieldProp, uniqueId, liClass)
 {
 	var li = addLi(liId, liClass).appendTo(theForm);
 
-    hiddenRequired().appendTo(li);
+    hiddenRequired('required', '0').appendTo(li);
 
 	$("<label/>", {
 		text: "Text",
@@ -16,14 +16,48 @@ var line_text = function (liId, theForm, fieldProp, uniqueId, liClass)
 		placeholder: "Type something..."
 	}).appendTo(li);
 
-    hiddenInputName().appendTo(li);
-    hiddenCLass().appendTo(li);
-    hiddenId().appendTo(li);
-    hiddenMin().appendTo(li);
-    hiddenMax().appendTo(li);
+    hiddenRequired('input_name', '').appendTo(li);
+    hiddenRequired('class', '').appendTo(li);
+    hiddenRequired('id', '').appendTo(li);
+    hiddenRequired('min', '').appendTo(li);
+    hiddenRequired('max', '').appendTo(li);
 
 	formButton("Delete", "delete_li").appendTo(li);
 	formButton("Edit", "edit_li").appendTo(li);
+
+    clearBoth().appendTo(li);
+};
+
+var line_date = function (liId, theForm, fieldProp, uniqueId, liClass)
+{
+    var li = addLi(liId, liClass).appendTo(theForm);
+
+    hiddenRequired('required', '0').appendTo(li);
+    hiddenRequired('date_min', '').appendTo(li);
+    hiddenRequired('date_max', '').appendTo(li);
+    hiddenRequired('locale', 'en').appendTo(li);
+    hiddenRequired('date_format', 'yyyy-MM-dd').appendTo(li);
+
+    $("<label/>", {
+        text: "Date",
+        "class" : "main_label",
+        "for": "form_input"
+    }).appendTo(li);
+
+    $("<input/>", {
+        type: "text",
+        "class": "form_input",
+        placeholder: "Type something..."
+    }).appendTo(li);
+
+    hiddenRequired('input_name', '').appendTo(li);
+    hiddenRequired('class', '').appendTo(li);
+    hiddenRequired('id', '').appendTo(li);
+    hiddenRequired('min', '').appendTo(li);
+    hiddenRequired('max', '').appendTo(li);
+
+    formButton("Delete", "delete_li").appendTo(li);
+    formButton("Edit", "edit_li").appendTo(li);
 
     clearBoth().appendTo(li);
 };
@@ -32,7 +66,8 @@ var line_password = function (liId, theForm, fieldProp, uniqueId, liClass)
 {
     var li = addLi(liId, liClass).appendTo(theForm);
 
-    hiddenRequired().appendTo(li);
+    hiddenRequired('required', '0').appendTo(li);
+    hiddenRequired('date_min', 'password').appendTo(li);
 
     $("<label/>", {
         text: "Password",
@@ -46,11 +81,11 @@ var line_password = function (liId, theForm, fieldProp, uniqueId, liClass)
         placeholder: "Password Here..."
     }).appendTo(li);
 
-    hiddenInputName().appendTo(li);
-    hiddenCLass().appendTo(li);
-    hiddenId().appendTo(li);
-    hiddenMin().appendTo(li);
-    hiddenMax().appendTo(li);
+    hiddenRequired('input_name', '').appendTo(li);
+    hiddenRequired('class', '').appendTo(li);
+    hiddenRequired('id', '').appendTo(li);
+    hiddenRequired('min', '').appendTo(li);
+    hiddenRequired('max', '').appendTo(li);
 
     formButton("Delete", "delete_li").appendTo(li);
     formButton("Edit", "edit_li").appendTo(li);
@@ -62,13 +97,8 @@ var line_password_verify = function (liId, theForm, fieldProp, uniqueId, liClass
 {
     var li = addLi(liId, liClass).appendTo(theForm);
 
-    hiddenRequired().appendTo(li);
-
-    $("<input/>", {
-        type: "hidden",
-        name: "token",
-        value: "password"
-    }).appendTo(li);
+    hiddenRequired('required', '0').appendTo(li);
+    hiddenRequired('token', 'password').appendTo(li);
 
     $("<label/>", {
         text: "Verify Password",
@@ -82,9 +112,9 @@ var line_password_verify = function (liId, theForm, fieldProp, uniqueId, liClass
         placeholder: "Verify Password Here..."
     }).appendTo(li);
 
-    hiddenInputName().appendTo(li);
-    hiddenCLass().appendTo(li);
-    hiddenId().appendTo(li);
+    hiddenRequired('input_name', '').appendTo(li);
+    hiddenRequired('class', '').appendTo(li);
+    hiddenRequired('id', '').appendTo(li);
 
     formButton("Delete", "delete_li").appendTo(li);
     formButton("Edit", "edit_li").appendTo(li);
@@ -96,19 +126,9 @@ var line_email = function (liId, theForm, fieldProp, uniqueId, liClass)
 {
     var li = addLi(liId, liClass).appendTo(theForm);
 
-    hiddenRequired().appendTo(li);
-
-    $("<input/>", {
-        type: "hidden",
-        name: "invalid_type",
-        value: "Email address format is not invalid"
-    }).appendTo(li);
-
-    $("<input/>", {
-        type: "hidden",
-        name: "is_empty_type",
-        value: "Email address is required"
-    }).appendTo(li);
+    hiddenRequired('required', '0').appendTo(li);
+    hiddenRequired('invalid_type', 'Email address format is not invalid').appendTo(li);
+    hiddenRequired('is_empty_type', 'Email address is required').appendTo(li);
 
     $("<label/>", {
         text: "Email",
@@ -122,11 +142,11 @@ var line_email = function (liId, theForm, fieldProp, uniqueId, liClass)
         placeholder: "Email Address..."
     }).appendTo(li);
 
-    hiddenInputName().appendTo(li);
-    hiddenCLass().appendTo(li);
-    hiddenId().appendTo(li);
-    hiddenMin().appendTo(li);
-    hiddenMax().appendTo(li);
+    hiddenRequired('input_name', '').appendTo(li);
+    hiddenRequired('class', '').appendTo(li);
+    hiddenRequired('id', '').appendTo(li);
+    hiddenRequired('min', '').appendTo(li);
+    hiddenRequired('max', '').appendTo(li);
 
     formButton("Delete", "delete_li").appendTo(li);
     formButton("Edit", "edit_li").appendTo(li);
@@ -138,7 +158,7 @@ var line_number = function (liId, theForm, fieldProp, uniqueId, liClass)
 {
 	var li = addLi(liId, liClass).appendTo(theForm);
 
-    hiddenRequired().appendTo(li);
+    hiddenRequired('required', '0').appendTo(li);
 
 	$("<label/>", {
 		text: "Number Label",
@@ -152,9 +172,9 @@ var line_number = function (liId, theForm, fieldProp, uniqueId, liClass)
 		placeholder: "1234567890"
 	}).appendTo(li);
 
-    hiddenInputName().appendTo(li);
-    hiddenCLass().appendTo(li);
-    hiddenId().appendTo(li);
+    hiddenRequired('input_name', '').appendTo(li);
+    hiddenRequired('class', '').appendTo(li);
+    hiddenRequired('id', '').appendTo(li);
 
 	formButton("Delete", "delete_li").appendTo(li);
 	formButton("Edit", "edit_li").appendTo(li);
@@ -166,7 +186,7 @@ var line_paragraph = function (liId, theForm, fieldProp, uniqueId, liClass)
 {
 	var li = addLi(liId, liClass).appendTo(theForm);
 
-    hiddenRequired().appendTo(li);
+    hiddenRequired('required', '0').appendTo(li);
 
 	$("<label/>", {
 		text: "Paragraph",
@@ -180,9 +200,9 @@ var line_paragraph = function (liId, theForm, fieldProp, uniqueId, liClass)
 		placeholder: "Type something..."
 	}).appendTo(li);
 
-    hiddenInputName().appendTo(li);
-    hiddenCLass().appendTo(li);
-    hiddenId().appendTo(li);
+    hiddenRequired('input_name', '').appendTo(li);
+    hiddenRequired('class', '').appendTo(li);
+    hiddenRequired('id', '').appendTo(li);
 
 	formButton("Delete", "delete_li").appendTo(li);
 	formButton("Edit", "edit_li").appendTo(li);
@@ -220,9 +240,9 @@ var line_checkbox = function (liId, theForm, fieldProp, uniqueId, liClass)
 		}).insertBefore(checkboxx);
 	}
 
-    hiddenInputName().appendTo(li);
-    hiddenCLass().appendTo(li);
-    hiddenId().appendTo(li);
+    hiddenRequired('input_name', '').appendTo(li);
+    hiddenRequired('class', '').appendTo(li);
+    hiddenRequired('id', '').appendTo(li);
 
 	formButton("Delete", "delete_li").appendTo(li);
 	formButton("Edit", "edit_li").appendTo(li);
@@ -260,9 +280,9 @@ var line_radio = function (liId, theForm, fieldProp, uniqueId, liClass)
         }).insertBefore(radioo);
     }
 
-    hiddenInputName().appendTo(li);
-    hiddenCLass().appendTo(li);
-    hiddenId().appendTo(li);
+    hiddenRequired('input_name', '').appendTo(li);
+    hiddenRequired('class', '').appendTo(li);
+    hiddenRequired('id', '').appendTo(li);
 
 	formButton("Delete", "delete_li").appendTo(li);
 	formButton("Edit", "edit_li").appendTo(li);
@@ -293,9 +313,9 @@ var line_dropdown = function (liId, theForm, fieldProp, uniqueId, liClass)
 		}).appendTo(radio);
 	}
 
-    hiddenInputName().appendTo(li);
-    hiddenCLass().appendTo(li);
-    hiddenId().appendTo(li);
+    hiddenRequired('input_name', '').appendTo(li);
+    hiddenRequired('class', '').appendTo(li);
+    hiddenRequired('id', '').appendTo(li);
 
 	formButton("Delete", "delete_li").appendTo(li);
 	formButton("Edit", "edit_li").appendTo(li);
@@ -321,57 +341,12 @@ var formButton = function(textForm, deleteLi){
 	);
 };
 
-var hiddenInputName = function(){
+var hiddenRequired = function(htype, hvalue){
     return(
         $("<input/>", {
             type: "hidden",
-            name: "input_name"
-        })
-    );
-};
-
-var hiddenCLass = function(){
-    return(
-        $("<input/>", {
-            type: "hidden",
-            name: "class"
-        })
-    );
-};
-
-var hiddenId = function(){
-    return(
-        $("<input/>", {
-            type: "hidden",
-            name: "id"
-        })
-    );
-};
-
-var hiddenMin = function(){
-    return(
-        $("<input/>", {
-            type: "hidden",
-            name: "min"
-        })
-    );
-};
-
-var hiddenMax = function(){
-    return(
-        $("<input/>", {
-            type: "hidden",
-            name: "max"
-        })
-    );
-};
-
-var hiddenRequired = function(){
-    return(
-        $("<input/>", {
-            type: "hidden",
-            name: "required",
-            value: "0"
+            name: htype,
+            value: hvalue
         })
     );
 };

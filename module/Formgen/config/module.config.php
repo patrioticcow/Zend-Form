@@ -119,6 +119,16 @@ return array(
                             ),
                         ),
                     ),
+                    'date' => array(
+                        'type' => 'Literal',
+                        'options' => array(
+                            'route' => '/date',
+                            'defaults' => array(
+                                'controller' => 'Index',
+                                'action'     => 'date',
+                            ),
+                        ),
+                    ),
                     'test' => array(
                 		'type' => 'Literal',
                 		'options' => array(

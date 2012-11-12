@@ -33,6 +33,24 @@ $(document).ready(function() {
 	});
 
 	/**
+	 * line_date
+	 */
+	$('#line_date').click(function () {
+		var liId = "edit_form_date" + uniqueId;
+
+        line_date(liId, theForm, fieldProp, uniqueId, "edit_form_date");
+
+		$('#'+ liId +' .edit_li').click(function () {
+			secondTab.tab('show');
+			$.get('/formgen/date', { name: "Edit Date Field", id: liId}).done(function(data) {
+				fieldProp.html(data);
+		    });
+		});
+
+		uniqueId++;
+	});
+
+	/**
 	 * line_number
 	 */
 	$('#line_number').click(function () {
@@ -131,10 +149,10 @@ $(document).ready(function() {
 		line_checkbox(liId, theForm, fieldProp, uniqueId, "edit_form_checkbox");
 
 		$('#'+ liId +' .edit_li').click(function () {
-            var lenghtNr = $(this).parent('li').find('.checkbox').length;
+            var lengthNr = $(this).parent('li').find('.checkbox').length;
 
 			secondTab.tab('show');
-			$.get('/formgen/checkbox', { name: "Edit Checkbox Field", id: liId, 'lenght': lenghtNr}).done(function(data) {
+			$.get('/formgen/checkbox', { name: "Edit Checkbox Field", id: liId, 'length': lengthNr}).done(function(data) {
 				fieldProp.html(data);
 		    });
 		});
@@ -151,10 +169,10 @@ $(document).ready(function() {
 		line_radio(liId, theForm, fieldProp, uniqueId, "edit_form_radio");
 
 		$('#'+ liId +' .edit_li').click(function () {
-            var lenghtNr = $(this).parent('li').find('.radio').length;
+            var lengthNr = $(this).parent('li').find('.radio').length;
 
 			secondTab.tab('show');
-			$.get('/formgen/radio', { name: "Edit Radio Field", id: liId, 'lenght': lenghtNr}).done(function(data) {
+			$.get('/formgen/radio', { name: "Edit Radio Field", id: liId, 'length': lengthNr}).done(function(data) {
 				fieldProp.html(data);
 		    });
 		});
@@ -171,10 +189,10 @@ $(document).ready(function() {
 		line_dropdown(liId, theForm, fieldProp, uniqueId, "edit_form_dropdown");
 
 		$('#'+ liId +' .edit_li').click(function () {
-            var lenghtNr = $(this).parent('li').find('.dropdown').find('option').length;
+            var lengthNr = $(this).parent('li').find('.dropdown').find('option').length;
 
 			secondTab.tab('show');
-			$.get('/formgen/dropdown', { name: "Edit Drop Down Field", id: liId, 'lenght': lenghtNr}).done(function(data) {
+			$.get('/formgen/dropdown', { name: "Edit Drop Down Field", id: liId, 'length': lengthNr}).done(function(data) {
 				fieldProp.html(data);
 			});
 		});
@@ -195,6 +213,10 @@ $(document).ready(function() {
 		    if($(this).hasClass('edit_form_text') === true) {
 		        var addLineText = lineTextJson($(this));
 		        console.log(addLineText);
+		    }
+            if($(this).hasClass('edit_form_date') === true) {
+		        var addLineDate = lineDateJson($(this));
+		        console.log(addLineDate);
 		    }
             if($(this).hasClass('edit_form_paragraph') === true) {
 		        var addParagraphText = lineParagraphJson($(this));

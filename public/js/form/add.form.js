@@ -9,6 +9,14 @@ $(document).ready(function()
 	});
 
     /**
+     * add_form_datye
+     */
+	$('#add_form_date').live("click", function(e){
+		e.preventDefault();
+		addForm($('#add_form_data'), 'input', 'form_input', 'date');
+	});
+
+    /**
      * add_form_password
      */
     $('#add_form_password').live("click", function(e){
@@ -248,6 +256,14 @@ $(document).ready(function()
         if(specificType === 'email'){
             $('#' + formField + ' input[name="invalid_type"]').attr("value", formJson.invalid_type);
             $('#' + formField + ' input[name="is_empty_type"]').attr("value", formJson.is_empty_type);
+        }
+
+        // set date
+        if(specificType === 'date'){
+            $('#' + formField + ' input[name="date_min"]').attr("value", formJson.date_min);
+            $('#' + formField + ' input[name="date_max"]').attr("value", formJson.date_max);
+            $('#' + formField + ' input[name="locale"]').attr("value", formJson.locale);
+            $('#' + formField + ' input[name="date_format"]').attr("value", formJson.date_format);
         }
 
         // transfer text content form the edit side to the main form side

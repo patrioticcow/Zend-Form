@@ -3,6 +3,11 @@ var lineTextJson = function(formElements) {
     return (data);
 };
 
+var lineDateJson = function(formElements) {
+    var data = commonsJson(formElements, 'form_input', 'form_date', "Zend\Form\Element\Date");
+    return (data);
+};
+
 var linePasswordJson = function(formElements) {
     var data = commonsJson(formElements, 'form_input', 'form_input_password', "Zend\Form\Element\Password");
     return (data);
@@ -127,9 +132,28 @@ var commonsJson = function(formElements, typeName, classType, typeType){
                     'required': li.find('[name="required"]').attr("value"),
                     'class': li.find('[name="class"]').attr("value"),
                     'id': li.find('[name="id"]').attr("value"),
-                    'lenght' : {
+                    'length' : {
                         'min' : li.find('[name="min"]').attr("value"),
                         'max' : li.find('[name="max"]').attr("value")
+                    }
+                }
+            });
+        } else if (classType === 'form_date'){
+            myData.push({
+                'name' : li.find('[name="input_name"]').attr("value"),
+                'type' : typeType,
+                'order' : order,
+                'data' : {
+                    'placeholder': li.find('.' + typeName).attr("placeholder"),
+                    'label': li.find('[for="' + typeName + '"]').text(),
+                    'required': li.find('[name="required"]').attr("value"),
+                    'class': li.find('[name="class"]').attr("value"),
+                    'id': li.find('[name="id"]').attr("value"),
+                    'locale': li.find('[name="locale"]').attr("value"),
+                    'date_format': li.find('[name="date_format"]').attr("value"),
+                    'date' : {
+                        'min' : li.find('[name="date_min"]').attr("value"),
+                        'max' : li.find('[name="date_max"]').attr("value")
                     }
                 }
             });
@@ -143,7 +167,7 @@ var commonsJson = function(formElements, typeName, classType, typeType){
                     'label': li.find('[for="' + typeName + '"]').text(),
                     'class': li.find('[name="class"]').attr("value"),
                     'id': li.find('[name="id"]').attr("value"),
-                    'lenght' : {
+                    'length' : {
                         'min' : li.find('[name="min"]').attr("value"),
                         'max' : li.find('[name="max"]').attr("value")
                     }
@@ -172,7 +196,7 @@ var commonsJson = function(formElements, typeName, classType, typeType){
                     'label': li.find('[for="' + typeName + '"]').text(),
                     'class': li.find('[name="class"]').attr("value"),
                     'id': li.find('[name="id"]').attr("value"),
-                    'lenght' : {
+                    'length' : {
                         'min' : li.find('[name="min"]').attr("value"),
                         'max' : li.find('[name="max"]').attr("value")
                     },

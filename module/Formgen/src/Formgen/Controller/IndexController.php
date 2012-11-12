@@ -101,6 +101,12 @@ class IndexController extends AbstractActionController
 	    return $result;
 	}
 
+    public function dateAction()
+	{
+	    $result = $this->getAjax();
+	    return $result;
+	}
+
 	public function getAjax() {
 		$request = $this->getRequest ();
 	    $results = $request->getQuery ();

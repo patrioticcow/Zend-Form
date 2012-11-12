@@ -1,0 +1,59 @@
+<?= '<h3>'.$this->result->name.'</h3>'; ?>
+
+<form action="/form" method="post" name="add_form_data" id="add_form_data" class="<?= $this->result->id; ?>">
+	<ul class="nav nav-list">
+		<li>
+			<label>Date Name</label>
+			<input type="text" name="input_name" maxlength="255" value="text">
+		</li>
+        <li>
+			<label>Replace Label Text</label>
+			<input type="text" name="text_label" maxlength="255" value="Text">
+		</li>
+		<li>
+			<label>Placeholder Text</label>
+			<input type="text" name="placeholder_text" maxlength="255" value="Type something...">
+		</li>
+		<li>
+			<label>Required</label>
+			<select name="required">
+				<option value="no">No</option>
+				<option value="yes">Yes</option>
+			</select>
+		</li>
+        <li>
+            <label>Min - Max Date Values</label>
+            <input type="date" name="date_min" class="input-small" value="">
+            <input type="date" name="date_max" class="input-small" value="">
+        </li>
+        <li>
+            <label>Locale (language format <code>
+                <a href="http://packages.zendframework.com/docs/latest/manual/en/modules/zend.validator.set.html#supported-options-for-zend-validator-date" target="_blank">more</a>
+            </code>)</label>
+            <select name="locale">
+                <option value="en">en_US</option>
+                <option value="de">de_DE</option>
+                <option value="fr">fr_FR</option>
+                <option value="ru">ru_RU</option>
+            </select>
+        </li>
+        <li>
+            <label>Format (default yyyy-MM-dd)</label>
+            <input type="text" name="date_format" placeholder="yyyy-MM-dd">
+            <code><a href="http://php.net/manual/en/function.date.php" target="_blank">Different date format here</a></code>
+        </li>
+        <li>
+            <label>Class</label>
+            <input type="text" name="number_class" maxlength="255" placeholder="class1 class2..">
+        </li>
+        <li>
+            <label>Id</label>
+            <input type="text" name="number_id" maxlength="255" placeholder="custom id">
+        </li>
+		<li>
+			<button class="btn btn-primary" id="add_form_date">Save</button>
+		</li>
+	</ul>
+</form>
+
+<?= '<code>'.$this->result->id.'</code>'; ?>
