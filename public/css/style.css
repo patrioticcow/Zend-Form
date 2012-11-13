@@ -22,6 +22,10 @@ div.container a.brand {
 }
 
 /**/
+.tab-content{
+	overflow: hidden !important;
+}
+
 #the_form {
 	margin: 0;
 	padding: 0;

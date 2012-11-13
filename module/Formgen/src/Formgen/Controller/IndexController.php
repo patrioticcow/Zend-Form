@@ -13,6 +13,14 @@ class IndexController extends AbstractActionController
 		return array ();
 	}
 
+    public function viewAction() {
+
+        $formId = $this->params('form');
+
+        echo $formId;
+		return array ();
+	}
+
     public function testAction()
     {
         $form = new AddUser();

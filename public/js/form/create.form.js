@@ -38,6 +38,9 @@ $(document).ready(function() {
         formTitle.find('[name="form_id_placeholder"]').attr('value',
             $('[name="form_id"]').attr('value')
         );
+        formTitle.find('[name="form_namespace_placeholder"]').attr('value',
+            $('[name="form_namespace"]').attr('value')
+        );
     });
 
 	/**
@@ -305,7 +308,10 @@ $(document).ready(function() {
 		    }
 		});
 
-        console.log(allData);
+        var formTitle = addFormProperties[0].title.trim().replace(/ /g,'');
+        localStorage.setItem(formTitle, JSON.stringify(allData));
+
+        window.location.href="/formgen/view/" + formTitle;
 	});
 
 	// maybe i'll do a plugin

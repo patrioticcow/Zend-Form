@@ -1,12 +1,15 @@
 var formPropertiesJson = function(formData) {
     var data = [];
+
     data.push({
         'name' : 'form_properties',
+        'namespace' : formData.find('[name="form_namespace_placeholder"]').attr('value'),
         'title' : formData.find('.form_title_placeholder').html(),
         'description' : formData.find('.form_description_placeholder').html(),
         'class' : formData.find('[name="form_class_placeholder"]').attr('value'),
         'id' : formData.find('[name="form_id_placeholder"]').attr('value')
     });
+
     return (data);
 };
 

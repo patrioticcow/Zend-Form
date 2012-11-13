@@ -29,7 +29,20 @@ return array(
                 			),
                 		),
                 	),
-                	'input' => array(
+                	'view' => array(
+                		'type' => 'segment',
+                		'options' => array(
+                			'route' => '/view[/:form]',
+                            'constraints' => array(
+                                'form' => '[a-zA-Z0-9_-]+'
+                            ),
+                			'defaults' => array(
+                				'controller' => 'Index',
+                				'action'     => 'view',
+                			),
+                		),
+                	),
+                    'input' => array(
                 		'type' => 'Literal',
                 		'options' => array(
                 			'route' => '/input',
