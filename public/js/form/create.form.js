@@ -41,6 +41,9 @@ $(document).ready(function() {
         formTitle.find('[name="form_namespace_placeholder"]').attr('value',
             $('[name="form_namespace"]').attr('value')
         );
+        formTitle.find('[name="form_class_name_placeholder"]').attr('value',
+            $('[name="form_class_name"]').attr('value')
+        );
     });
 
 	/**
@@ -309,10 +312,23 @@ $(document).ready(function() {
 		});
 
         var formTitle = addFormProperties[0].title.trim().replace(/ /g,'');
-        localStorage.setItem(formTitle, JSON.stringify(allData));
 
-        window.location.href="/formgen/view/" + formTitle;
+        setLocalStorage(formTitle, allData);
+        //window.location.href="/formgen/view/" + formTitle;
 	});
+
+    var setLocalStorage = function (key, value){
+        if(typeof(Storage)!=="undefined"){
+            localStorage.setItem(key, JSON.stringify(value));
+            if (localStorage.key){
+                window.location.href="/formgen/view/" + key;
+            }
+        }
+        else
+        {
+            alert("Sorry, your browser does not support web storage...");
+        }
+    }
 
 	// maybe i'll do a plugin
 	/*

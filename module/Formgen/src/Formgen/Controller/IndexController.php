@@ -13,12 +13,14 @@ class IndexController extends AbstractActionController
 		return array ();
 	}
 
-    public function viewAction() {
+    public function viewAction()
+    {
+        $headScript = new PhpRenderer ();
+        $headScript->headScript ()->appendFile ( '/js/form/parse.form.js' );
 
         $formId = $this->params('form');
 
-        echo $formId;
-		return array ();
+		return ['form_id' => $formId];
 	}
 
     public function testAction()

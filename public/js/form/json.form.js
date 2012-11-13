@@ -7,39 +7,40 @@ var formPropertiesJson = function(formData) {
         'title' : formData.find('.form_title_placeholder').html(),
         'description' : formData.find('.form_description_placeholder').html(),
         'class' : formData.find('[name="form_class_placeholder"]').attr('value'),
-        'id' : formData.find('[name="form_id_placeholder"]').attr('value')
+        'id' : formData.find('[name="form_id_placeholder"]').attr('value'),
+        'class_name' : formData.find('[name="form_class_name_placeholder"]').attr('value')
     });
 
     return (data);
 };
 
 var lineTextJson = function(formElements) {
-    var data = commonsJson(formElements, 'form_input', 'form_input', "Zend\Form\Element\Text");
+    var data = commonsJson(formElements, 'form_input', 'form_input', "Zend\\Form\\Element\\Text");
     return (data);
 };
 
 var lineDateJson = function(formElements) {
-    var data = commonsJson(formElements, 'form_input', 'form_date', "Zend\Form\Element\Date");
+    var data = commonsJson(formElements, 'form_input', 'form_date', "Zend\\Form\\Element\\Date");
     return (data);
 };
 
 var linePasswordJson = function(formElements) {
-    var data = commonsJson(formElements, 'form_input', 'form_input_password', "Zend\Form\Element\Password");
+    var data = commonsJson(formElements, 'form_input', 'form_input_password', "Zend\\Form\\Element\\Password");
     return (data);
 };
 
 var linePasswordVerifyJson = function(formElements) {
-    var data = commonsJson(formElements, 'form_input', 'form_input_password_verify', "Zend\Form\Element\Password");
+    var data = commonsJson(formElements, 'form_input', 'form_input_password_verify', "Zend\\Form\\Element\\Password");
     return (data);
 };
 
 var lineEmailJson = function(formElements) {
-    var data = commonsJson(formElements, 'form_input', 'form_input_email', "Zend\Form\Element\Email");
+    var data = commonsJson(formElements, 'form_input', 'form_input_email', "Zend\\Form\\Element\\Email");
     return (data);
 };
 
 var lineNumberJson = function(formElements) {
-    var data = commonsJson(formElements, 'form_input', 'form_number', "Zend\Form\Element\Text");
+    var data = commonsJson(formElements, 'form_input', 'form_number', "Zend\\Form\\Element\\Text");
     return (data);
 };
 
