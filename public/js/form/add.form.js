@@ -292,6 +292,8 @@ $(document).ready(function()
                 $('#' + formField).find(' #dropdown_' + index).html(value);
             });
         }
+
+        $('#' + formField).css({'background-color' : '#87ffc1'}).animate({backgroundColor: '#ffffff'},{duration:1000});
 	};
 
 });

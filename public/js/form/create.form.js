@@ -44,6 +44,9 @@ $(document).ready(function() {
         formTitle.find('[name="form_class_name_placeholder"]').attr('value',
             $('[name="form_class_name"]').attr('value')
         );
+
+
+        formTitle.css({'background-color' : '#87ffc1'}).animate({backgroundColor: '#ffffff'},{duration:1000});
     });
 
 	/**
