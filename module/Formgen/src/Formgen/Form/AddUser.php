@@ -65,30 +65,58 @@ class AddUser extends Form
             'options' => array('label' => 'Email', 'appendText' => '@'),
         ));
 
-        $this->add(array(
-            'name' => 'checkbox',
-            'type' => 'Zend\Form\Element\Checkbox',
-            'options' => array(
-                'label' => 'A checkbox ',
-                'checked_value' => 'good',
-                'unchecked_value' => 'bad',
-                'options' => array( '1' => 'one', '2', 'two' )
-            )
-        ));
 
         $this->add(array(
-            'name' => 'password',
-            'type' => 'Zend\Form\Element\Password',
-            'attributes' => array('maxlength' => '128', 'size' => '32'),
-            'options' => array('label' => 'Password'),
-        ));
+                        'name' => 'password1',
+                        'type' => 'Zend\Form\Element\Password',
+                        'attributes' => array(
+                            'class' => '12',
+                            'id' => '12',
+                            'placeholder' => 'Password Here...',
+                            'required' => 'required',
+                            'value' => 'undefined',
+                        ),
+                        'options' => array(
+                            'label' => 'Password',
+                        ),
+                   ));
 
         $this->add(array(
-            'name' => 'password_verify',
-            'type' => 'Zend\Form\Element\Password',
-            'attributes' => array('maxlength' => '128', 'size' => '32'),
-            'options' => array('label' => 'Password Verify'),
-        ));
+                        'name' => 'password_verify',
+                        'type' => 'Zend\Form\Element\Password',
+                        'attributes' => array(
+                            'class' => '3',
+                            'id' => '33',
+                            'placeholder' => 'Verify Password Here...',
+                            'required' => 'required',
+                            'value' => 'undefined',
+                        ),
+                        'options' => array(
+                            'label' => 'Password verify',
+                        ),
+                   ));
+
+        $this->add(array(
+                        'name' => 'radio',
+                        'type' => 'Zend\Form\Element\Radio',
+                        'attributes' => array(
+                            'class' => '1',
+                            'id' => '2',
+                            'required' => 'required',
+                            'value' => '0',
+                        ),
+                        'options' => array(
+                            'label' => 'Radio Label',
+                            'label_attributes' => array(
+                                'class' => '3',
+                                'id' => '4',
+                            ),
+                            'value_options' => array(
+                                '0' => 'Radio11',
+                                '1' => 'Radio22',
+                            ),
+                        ),
+                   ));
 
         $this->add(array(
             'name' => 'submit',

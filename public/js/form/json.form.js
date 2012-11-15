@@ -1,3 +1,19 @@
+/**
+ * copyright Cristi Citea
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated
+ * documentation files (the "Software"), to deal in the Software without restriction, including without limitation the
+ * rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software,
+ * and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+ The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE
+ WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+ COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+ TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ */
+
 var formPropertiesJson = function(formData) {
     var data = [];
 
@@ -51,7 +67,7 @@ var lineParagraphJson = function(formElements) {
 };
 
 var lineCheckboxJson = function(formElements) {
-    var data = commonsJson(formElements, 'form_input', 'form_checkbox', "Zend\\Form\\Element\\Checkbox");
+    var data = commonsJson(formElements, 'form_input', 'form_checkbox', "Zend\\Form\\Element\\MultiCheckbox");
     return (data);
 };
 
@@ -82,9 +98,7 @@ var commonsJson = function(formElements, typeName, classType, typeType){
 
             $('span.span_checkbox').each(function(){
                 innerData.push({
-                    'label': $(this).find('label.checkbox').text(),
-                    'checkbox_label': $(this).find('label.checkbox').text(),
-                    'default': $(this).find('[checked="checked"]').attr("checked")
+                    'label': $(this).find('label.checkbox').text()
                 });
             });
 
@@ -96,7 +110,10 @@ var commonsJson = function(formElements, typeName, classType, typeType){
                     'label': $(this).find('label.main_label').html(),
                     'innerData': innerData,
                     'class': li.find('[name="class"]').attr("value"),
-                    'id': li.find('[name="id"]').attr("value")
+                    'id': li.find('[name="id"]').attr("value"),
+                    'default': $(this).find('[checked="checked"]').attr('id').replace(/[^\d.]/g, ""),
+                    'label_class': li.find('[name="label_class"]').attr("value"),
+                    'label_id': li.find('[name="label_id"]').attr("value")
                 }
             });
 
@@ -105,9 +122,7 @@ var commonsJson = function(formElements, typeName, classType, typeType){
 
             $('span.span_radio').each(function(){
                 innerData.push({
-                    'label': $(this).find('label.radio').text(),
-                    'checkbox_label': $(this).find('label.radio').text(),
-                    'default': $(this).find('[checked="checked"]').attr("checked")
+                    'label': $(this).find('label.radio').text()
                 });
             });
 
@@ -119,7 +134,10 @@ var commonsJson = function(formElements, typeName, classType, typeType){
                     'label': $(this).find('label.main_label').html(),
                     'innerData': innerData,
                     'class': li.find('[name="class"]').attr("value"),
-                    'id': li.find('[name="id"]').attr("value")
+                    'id': li.find('[name="id"]').attr("value"),
+                    'default': $(this).find('[checked="checked"]').attr('id').replace(/[^\d.]/g, ""),
+                    'label_class': li.find('[name="label_class"]').attr("value"),
+                    'label_id': li.find('[name="label_id"]').attr("value")
                 }
             });
         } else if (classType === 'form_dropdown'){

@@ -1,3 +1,19 @@
+/**
+ * copyright Cristi Citea
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated
+ * documentation files (the "Software"), to deal in the Software without restriction, including without limitation the
+ * rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software,
+ * and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+ The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE
+ WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+ COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+ TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ */
+
 $(document).ready(function()
 {
     /**
@@ -87,7 +103,9 @@ $(document).ready(function()
         var mainCheckbox = $('code').text();
 
         $('#' + mainCheckbox).find('input').removeAttr('checked');
-        $('#form_checkbox_' + defId).attr({'checked':'checked'});
+
+        $('#' + mainCheckbox).find('#form_checkbox_' + defId).attr({'checked':'checked'})
+        .attr({'type':'checkbox'}); // don't know why it doesn't work without this yet
     });
 
     $("#add_new_checkbox_field").live("click", function(e){
@@ -139,7 +157,7 @@ $(document).ready(function()
         var mainRadio = $('code').text();
 
         $('#' + mainRadio).find('input').removeAttr('checked');
-        $('#form_radio_' + defId).attr({'checked':'checked'});
+        $('#' + mainRadio).find('#form_radio_' + defId).attr({'checked':'checked'});
     });
 
     $("#add_new_radio_field").live("click", function(e){
@@ -260,6 +278,12 @@ $(document).ready(function()
 
         // set hidden id
         $('#' + formField + ' input[name="id"]').attr("value", formJson.number_id);
+
+        // set hidden label class
+        $('#' + formField + ' input[name="label_class"]').attr("value", formJson.number_label_class);
+
+        // set hidden label id
+        $('#' + formField + ' input[name="label_id"]').attr("value", formJson.number_label_id);
 
         // set email
         if(specificType === 'email'){

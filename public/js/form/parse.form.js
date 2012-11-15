@@ -1,3 +1,19 @@
+/**
+ * copyright Cristi Citea
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated
+ * documentation files (the "Software"), to deal in the Software without restriction, including without limitation the
+ * rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software,
+ * and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+ The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE
+ WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+ COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+ TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ */
+
 $(document).ready(function() {
 
     $('#myTab a').click(function (e) {
@@ -12,7 +28,7 @@ $(document).ready(function() {
     ttt    = '            ';
     tttt   = '                ';
     ttttt  = '                    ';
-    tttttt = '                        ';
+    tttttt  = '                        ';
 
     var form = JSON.parse(
         localStorage.getItem(formId)
@@ -205,6 +221,7 @@ var hidden = function hidden (){
  * @return {String}
  */
 var text = function text (lineText){
+
     var textForm =
     tt + "$this->add(array( <br>" +
         ttt + "'name' => '" + lineText.name + "', <br>" +
@@ -265,10 +282,9 @@ var formValidatorLength = function formValidatorLength (l){
                 ttttt + "'name' => 'StringLength', <br>" +
                 ttttt + "'options' => array( <br>" +
                     tttttt + "'encoding' => 'UTF-8', <br>" +
-                    lMin + lMax
+                    lMin + lMax +
                 ttttt + "), <br>" +
-            tttt + "), <br>" +
-            "<br>";
+            tttt + "), <br>";
     }
     return (lengthForm);
 };
@@ -278,9 +294,9 @@ var formValidatorLength = function formValidatorLength (l){
  * @return {String}
  */
 var formValidatorToken = function formValidatorToken (p){
-    var token = '', tokenForm = '';
+    var tokenForm = '';
 
-    if(p && p.token != ''){
+    if(p && p.token){
         tokenForm =
             tttt + "array ( <br>" +
                 ttttt + "'name' => 'identical', <br>" +
@@ -311,11 +327,21 @@ var formValidatorNumber = function formValidatorNumber (digits){
  * @param attr
  * @return {String}
  */
+
+/*
+ 'attributes' => array(
+ 'class' => '123',
+ 'id' => '234',
+ 'required' => 'required',
+ 'value' => '1'
+
+ */
 var formAttr = function formAttr (attr){
     var attrClass = '',
         attrId = '',
         attrPlaceholder = '',
-        attrRequired = '';
+        attrRequired = '',
+        attrDefault = '';
 
     if(attr.class != ''){
         attrClass = tttt + "'class' => '" + attr.class  + "', <br>";
@@ -323,13 +349,17 @@ var formAttr = function formAttr (attr){
     if(attr.id != ''){
         attrId = tttt + "'id' => '" + attr.id + "', <br>";
     }
-    if(attr.placeholder != ''){
+    if(attr.placeholder && attr.placeholder != ''){
         attrPlaceholder = tttt + "'placeholder' => '" + attr.placeholder + "', <br>";
     }
     if(attr.required != 'false'){
         attrRequired = tttt + "'required' => 'required', <br>";
     }
-    var attrForm = attrClass + attrId + attrPlaceholder + attrRequired;
+    if(attr.default != 'false'){
+        attrDefault = tttt + "'value' => '" + attr.default  + "', <br>";
+    }
+
+    var attrForm = attrClass + attrId + attrPlaceholder + attrRequired + attrDefault;
 
     return (attrForm);
 };
@@ -338,13 +368,38 @@ var formAttr = function formAttr (attr){
  * @param opt
  * @return {String}
  */
+
 var formOptions = function formOptions (opt){
-    var optLabel = '';
+    var optLabel = '',
+        optLabelAttr = '',
+        optLabelOptions = '';
 
     if(opt.label != ''){
         optLabel = tttt + "'label' => '" + opt.label  + "', <br>";
     }
-    var optForm = optLabel;
+
+    if(opt.label_id || opt.label_class){
+        optLabelAttr = tttt + "'label_attributes' => array(" + "<br>";
+            if(opt.label_class){
+                optLabelAttr += ttttt + "'class' => '" + opt.label_class  + "', <br>";
+            }
+            if(opt.label_id){
+                optLabelAttr += ttttt + "'id' => '" + opt.label_id  + "', <br>";
+            }
+        optLabelAttr += tttt + ")," + "<br>";
+    }
+
+    if(opt.innerData){
+        optLabelOptions = tttt + "'value_options' => array(" + "<br>";
+            for(var i = 0; i < opt.innerData.length; i++){
+                if(opt.innerData[i].label){
+                    optLabelOptions += ttttt + "'" + i + "' => '" + opt.innerData[i].label  + "', <br>";
+                }
+            }
+        optLabelOptions += tttt + ")," + "<br>";
+    }
+
+    var optForm = optLabel + optLabelAttr + optLabelOptions;
 
     return (optForm);
 };
