@@ -31,14 +31,7 @@ class AddUser extends Form
             'attributes' => array('maxlength' => '100', 'size' => '100'),
             'options'    => array('label' => 'Single Line Text'),
         ));
-/*
-        $this->add(array(
-            'name'       => 'number',
-            'type'       => 'Zend\Form\Element\Text',
-            'attributes' => array('maxlength' => '100', 'size' => '100'),
-            'options'    => array('label' => 'Number Label'),
-        ));
-*/
+
         $this->add(array(
                         'name' => 'number',
                         'type' => 'Zend\Form\Element\Text',
@@ -70,6 +63,17 @@ class AddUser extends Form
             'type' => 'Zend\Form\Element\Email',
             'attributes' => array('maxlength' => '128', 'size' => '32', 'type' => 'email'),
             'options' => array('label' => 'Email', 'appendText' => '@'),
+        ));
+
+        $this->add(array(
+            'name' => 'checkbox',
+            'type' => 'Zend\Form\Element\Checkbox',
+            'options' => array(
+                'label' => 'A checkbox ',
+                'checked_value' => 'good',
+                'unchecked_value' => 'bad',
+                'options' => array( '1' => 'one', '2', 'two' )
+            )
         ));
 
         $this->add(array(

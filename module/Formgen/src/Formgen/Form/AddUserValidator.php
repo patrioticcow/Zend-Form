@@ -141,10 +141,6 @@ class AddUserValidator implements InputFilterAwareInterface
                 'filters' => [ ['name' => 'StringTrim'], ],
                 'validators' => [
                     array(
-                        'name'    => 'StringLength',
-                        'options' => array( 'min' => 6 ),
-                    ),
-                    array(
                         'name' => 'identical',
                         'options' => array('token' => 'password' )
                     ),

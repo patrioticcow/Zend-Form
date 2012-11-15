@@ -341,7 +341,7 @@ var line_upload = function (liId, theForm, fieldProp, uniqueId, liClass)
 
     $("<input/>", {
         type: "file",
-        "class": "form_input",
+        "class": "form_input"
     }).appendTo(li);
 
     hiddenRequired('input_name', '').appendTo(li);
