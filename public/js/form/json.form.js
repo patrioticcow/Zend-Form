@@ -7,6 +7,7 @@ var formPropertiesJson = function(formData) {
         'title' : formData.find('.form_title_placeholder').html(),
         'description' : formData.find('.form_description_placeholder').html(),
         'class' : formData.find('[name="form_class_placeholder"]').attr('value'),
+        'model_name' : formData.find('[name="form_model_placeholder"]').attr('value'),
         'id' : formData.find('[name="form_id_placeholder"]').attr('value'),
         'class_name' : formData.find('[name="form_class_name_placeholder"]').attr('value')
     });
@@ -45,22 +46,22 @@ var lineNumberJson = function(formElements) {
 };
 
 var lineParagraphJson = function(formElements) {
-    var data = commonsJson(formElements, 'form_input', 'form_paragraph');
+    var data = commonsJson(formElements, 'form_input', 'form_paragraph', "Zend\\Form\\Element\\Textarea");
     return (data);
 };
 
 var lineCheckboxJson = function(formElements) {
-    var data = commonsJson(formElements, 'form_input', 'form_checkbox');
+    var data = commonsJson(formElements, 'form_input', 'form_checkbox', "Zend\\Form\\Element\\Checkbox");
     return (data);
 };
 
 var lineRadioJson = function(formElements) {
-    var data = commonsJson(formElements, 'form_input', 'form_radio');
+    var data = commonsJson(formElements, 'form_input', 'form_radio', "Zend\\Form\\Element\\Radio");
     return (data);
 };
 
 var lineDropdownJson = function(formElements) {
-    var data = commonsJson(formElements, 'form_input', 'form_dropdown');
+    var data = commonsJson(formElements, 'form_input', 'form_dropdown', "Zend\\Form\\Element\\Dropdown");
     return (data);
 };
 
@@ -148,8 +149,8 @@ var commonsJson = function(formElements, typeName, classType, typeType){
                 'type' : typeType,
                 'order' : order,
                 'data' : {
-                    'placeholder': li.find('.' + typeName).attr("placeholder"),
-                    'label': li.find('[for="' + typeName + '"]').text(),
+                    'placeholder': li.find('.' + classType).attr("placeholder"),
+                    'label': li.find('[for="' + classType + '"]').text(),
                     'required': li.find('[name="required"]').attr("value"),
                     'class': li.find('[name="class"]').attr("value"),
                     'id': li.find('[name="id"]').attr("value"),
@@ -165,8 +166,8 @@ var commonsJson = function(formElements, typeName, classType, typeType){
                 'type' : typeType,
                 'order' : order,
                 'data' : {
-                    'placeholder': li.find('.' + typeName).attr("placeholder"),
-                    'label': li.find('[for="' + typeName + '"]').text(),
+                    'placeholder': li.find('.' + classType).attr("placeholder"),
+                    'label': li.find('[for="' + classType + '"]').text(),
                     'required': li.find('[name="required"]').attr("value"),
                     'class': li.find('[name="class"]').attr("value"),
                     'id': li.find('[name="id"]').attr("value"),
@@ -184,8 +185,8 @@ var commonsJson = function(formElements, typeName, classType, typeType){
                 'type' : typeType,
                 'order' : order,
                 'data' : {
-                    'placeholder': li.find('.' + typeName).attr("placeholder"),
-                    'label': li.find('[for="' + typeName + '"]').text(),
+                    'placeholder': li.find('.' + classType).attr("placeholder"),
+                    'label': li.find('[for="' + classType + '"]').text(),
                     'class': li.find('[name="class"]').attr("value"),
                     'id': li.find('[name="id"]').attr("value"),
                     'length' : {
@@ -200,8 +201,8 @@ var commonsJson = function(formElements, typeName, classType, typeType){
                 'type' : typeType,
                 'order' : order,
                 'data' : {
-                    'placeholder': li.find('.' + typeName).attr("placeholder"),
-                    'label': li.find('[for="' + typeName + '"]').text(),
+                    'placeholder': li.find('.' + classType).attr("placeholder"),
+                    'label': li.find('[for="' + classType + '"]').text(),
                     'class': li.find('[name="class"]').attr("value"),
                     'id': li.find('[name="id"]').attr("value"),
                     'token' : li.find('[name="token"]').attr("value")
@@ -213,15 +214,15 @@ var commonsJson = function(formElements, typeName, classType, typeType){
                 'type' : typeType,
                 'order' : order,
                 'data' : {
-                    'placeholder': li.find('.' + typeName).attr("placeholder"),
-                    'label': li.find('[for="' + typeName + '"]').text(),
+                    'placeholder': li.find('.' + classType).attr("placeholder"),
+                    'label': li.find('[for="' + classType + '"]').text(),
                     'class': li.find('[name="class"]').attr("value"),
                     'id': li.find('[name="id"]').attr("value"),
                     'length' : {
                         'min' : li.find('[name="min"]').attr("value"),
                         'max' : li.find('[name="max"]').attr("value")
                     },
-                    'maessages' : {
+                    'messages' : {
                         'emailAddressInvalidFormat' : li.find('[name="invalid_type"]').attr("value"),
                         'isEmpty' : li.find('[name="is_empty_type"]').attr("value")
                     }
@@ -233,11 +234,18 @@ var commonsJson = function(formElements, typeName, classType, typeType){
                 'type' : typeType,
                 'order' : order,
                 'data' : {
-                    'placeholder': li.find('.' + typeName).attr("placeholder"),
-                    'label': li.find('[for="' + typeName + '"]').text(),
+                    'placeholder': li.find('.' + classType).attr("placeholder"),
+                    'label': li.find('[for="' + classType + '"]').text(),
                     'required': li.find('[name="required"]').attr("value"),
                     'class': li.find('[name="class"]').attr("value"),
-                    'id': li.find('[name="id"]').attr("value")
+                    'id': li.find('[name="id"]').attr("value"),
+                    'length' : {
+                        'min' : li.find('[name="min"]').attr("value"),
+                        'max' : li.find('[name="max"]').attr("value")
+                    },
+                    'validators' : {
+                        'name' : 'Digits'
+                    }
                 }
             });
         } else {
@@ -246,11 +254,15 @@ var commonsJson = function(formElements, typeName, classType, typeType){
                 'type' : typeType,
                 'order' : order,
                 'data' : {
-                    'placeholder': li.find('.' + typeName).attr("placeholder"),
-                    'label': li.find('[for="' + typeName + '"]').text(),
+                    'placeholder': li.find('.' + classType).attr("placeholder"),
+                    'label': li.find('[for="' + classType + '"]').text(),
                     'required': li.find('[name="required"]').attr("value"),
                     'class': li.find('[name="class"]').attr("value"),
-                    'id': li.find('[name="id"]').attr("value")
+                    'id': li.find('[name="id"]').attr("value"),
+                    'length' : {
+                        'min' : li.find('[name="min"]').attr("value"),
+                        'max' : li.find('[name="max"]').attr("value")
+                    }
                 }
             });
         }

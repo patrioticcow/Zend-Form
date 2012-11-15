@@ -1,10 +1,18 @@
 $(document).ready(function() {
+
+    $('#myTab a').click(function (e) {
+        e.preventDefault();
+        $(this).tab('show');
+    });
+
     var formId = $('#form_id').html();
 
-    t    = '&nbsp; ';
-    tt   = '&nbsp; &nbsp; ';
-    ttt  = '&nbsp; &nbsp; &nbsp; ';
-    tttt = '&nbsp; &nbsp; &nbsp; &nbsp; ';
+    t      = '    ';
+    tt     = '        ';
+    ttt    = '            ';
+    tttt   = '                ';
+    ttttt  = '                    ';
+    tttttt = '                        ';
 
     var form = JSON.parse(
         localStorage.getItem(formId)
@@ -25,10 +33,33 @@ $(document).ready(function() {
         // form line text
         if(form[i].line_text){
             var lineText = form[i].line_text[0];
-            var zfText = text(lineText);
 
-            formElements.push(zfText);
-            //formValidatorElements.push(zfText);
+            formElements.push(text(lineText));
+            formValidatorElements.push(textValidator(lineText));
+        }
+
+        // form number
+        if(form[i].line_number){
+            var lineNumber = form[i].line_number[0];
+
+            formElements.push(text(lineNumber));
+            formValidatorElements.push(textValidator(lineNumber));
+        }
+
+        // form paragraph
+        if(form[i].line_paragraph){
+            var lineParagraph = form[i].line_paragraph[0];
+
+            formElements.push(text(lineParagraph));
+            formValidatorElements.push(textValidator(lineParagraph));
+        }
+
+        // form password
+        if(form[i].line_password){
+            var linePassword = form[i].line_password[0];
+
+            formElements.push(text(linePassword));
+            formValidatorElements.push(textValidator(linePassword));
         }
 
         console.log(form[i]);
@@ -42,6 +73,7 @@ $(document).ready(function() {
     $('#form_file').html( formElements );
     $('#form_file_validator').html( formValidatorElements );
 
+    $('#form_controller').html(zfController(form[0]));
     $('#form_view').html(zfView());
     $('#form_view_helper').html(zfViewHelper());
 });
@@ -90,6 +122,9 @@ var zfValidatorHead = function zfValidatorHead (prop){
             t + "{ <br>" +
                 tt + "if (!$this->inputFilter) <br>" +
                 tt + "{ <br>" +
+                    ttt + "$inputFilter = new InputFilter(); <br>" +
+                    ttt + "$factory = new InputFactory(); <br>" +
+                    ttt + "<br>" +
                 tt + "<br>";
 
     return (file);
@@ -132,6 +167,11 @@ var hidden = function hidden (){
     return (hiddenForm);
 }
 
+/**
+ * text field
+ * @param lineText
+ * @return {String}
+ */
 var text = function text (lineText){
     var textForm =
     tt + "$this->add(array( <br>" +
@@ -139,29 +179,69 @@ var text = function text (lineText){
         ttt + "'type' => '" + lineText.type + "', <br>" +
         ttt + "'attributes' => array( <br>" +
             formAttr(lineText.data) +
-        ttt + "'), <br>" +
-        ttt + "'options' => array(, <br>" +
+        ttt + "), <br>" +
+        ttt + "'options' => array( <br>" +
             formOptions(lineText.data) +
-        ttt + "'), <br>" +
+        ttt + "), <br>" +
     tt + ")); <br> <br>";
     return (textForm);
 }
 
 /**
- * form length validator (min dn max)
+ * text field validator
+ * @param lineText
+ * @return {String}
+ */
+var textValidator = function textValidator (lineText){
+    var textForm =
+    tt + "$inputFilter->add($factory->createInput([ <br>" +
+        ttt + "'name' => '" + lineText.name + "', <br>" +
+        ttt + "'required' => " + lineText.data.required + ", <br>" +
+        ttt + "'filters' => array( <br>" +
+            tttt + "array('name' => 'StripTags'), <br>" +
+            tttt + "array('name' => 'StringTrim'), <br>" +
+        ttt + "), <br>" +
+        ttt + "'validators' => array( <br>" +
+            tttt + "array ( <br>" +
+                ttttt + "'name' => 'StringLength', <br>" +
+                ttttt + "'options' => array( <br>" +
+                    tttttt + "'encoding' => 'UTF-8', <br>" +
+                    formValidatorLength(lineText.data.length) + "<br>" +
+                ttttt + "), <br>" +
+            tttt + "), <br>" +
+            formValidatorNumber(lineText.data) + "<br>" +
+        ttt + "), <br>" +
+    tt + "])); <br> <br>";
+    return (textForm);
+}
+
+/**
  * @param l
  * @return {String}
  */
-var formLength = function formLength (l){
-    if(l.min != ''){
-        var lMin = tttt + "'min' => '" + l.min  + "', <br>";
+var formValidatorLength = function formValidatorLength (l){
+    var lMin = '', lMax = '';
+    if(l && l.min != ''){
+        lMin = tttttt + "'min' => '" + l.min  + "', <br>";
     }
-    if(l.max != ''){
-        var lMax = tttt + "'max' => '" + l.max  + "', <br>";
+    if(l && l.max != ''){
+        lMax = tttttt + "'max' => '" + l.max  + "', <br>";
     }
     var lengthForm = lMin + lMax;
 
     return (lengthForm);
+}
+
+var formValidatorNumber = function formValidatorNumber (digits){
+    var digitsName = '';
+    if(digits.validators && digits.validators.name){
+        digitsName = tttt + "array ( <br>" +
+            ttttt + "'name' => '" + digits.validators.name + "', <br>" +
+        tttt + "), <br>";
+    }
+
+    var digitsForm = digitsName;
+    return (digitsForm);
 }
 
 /**
@@ -200,13 +280,66 @@ var formOptions = function formOptions (opt){
     var optLabel = '';
 
     if(opt.label != ''){
-        optLabel = tttt + "'class' => '" + opt.label  + "', <br>";
+        optLabel = tttt + "'label' => '" + opt.label  + "', <br>";
     }
     var optForm = optLabel;
 
     return (optForm);
 }
 
+/**
+ * @param prop
+ * @return {String}
+ */
+function zfController(prop){
+    var prop = prop.form_properties[0];
+    var file =
+        "namespace " + prop.namespace + "\\Controller; <br>" +
+        "<br>" +
+        "use Zend\\Mvc\\Controller\\AbstractActionController; <br>" +
+        "use Zend\\View\\Model\\ViewModel; <br>" +
+        "use " + prop.namespace + "\\Form\\" + prop.class_name + "; <br>" +
+        "use " + prop.namespace + "\\Form\\" + prop.class_name + "Validator; <br>" +
+        "use " + prop.namespace + "\\Model\\" + prop.model_name + "; <br>" +
+        "<br>" +
+        "public function indexAction() <br>" +
+        "{ <br>" +
+            t + "$form = new " + prop.class_name + "(); <br>" +
+            t + "$request = $this->getRequest(); <br>" +
+            '<br>' +
+            t + "if($request->isPost()) <br>" +
+            t + "{ <br>" +
+                tt + "$user = new " + prop.model_name + "(); <br>" +
+                tt + "<br>" +
+                tt + "$formValidator = new " + prop.class_name + "Validator(); <br>" +
+                tt + "{ <br>" +
+                    ttt + "$form->setInputFilter($formValidator->getInputFilter()); <br>" +
+                    ttt + "$form->setData($request->getPost()); <br>" +
+                tt + "} <br>" +
+                tt + " <br>" +
+                tt + "if($form->isValid()){ <br>" +
+                tt + "{ <br>" +
+                    ttt + "$user->exchangeArray($form->getData()); <br>" +
+                tt + "} <br>" +
+            t + "} <br>" +
+            t + "<br>" +
+            t + "return ['form' => $form]; <br>" +
+        "} <br>" +
+        '<br>';
+
+    return (file);
+};
+/*
+    if($request->isPost())
+    {
+        if($form->isValid()){
+            $user->exchangeArray($form->getData());
+        }
+    }
+
+    return ['form' => $form];
+
+*/
 function zfView(){
     var file =
         "echo $this->formLabel($form->get('email')) . PHP_EOL; <br>" +

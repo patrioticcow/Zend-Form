@@ -175,6 +175,8 @@ var line_number = function (liId, theForm, fieldProp, uniqueId, liClass)
     hiddenRequired('input_name', '').appendTo(li);
     hiddenRequired('class', '').appendTo(li);
     hiddenRequired('id', '').appendTo(li);
+    hiddenRequired('min', '').appendTo(li);
+    hiddenRequired('max', '').appendTo(li);
 
 	formButton("Delete", "delete_li").appendTo(li);
 	formButton("Edit", "edit_li").appendTo(li);
@@ -203,6 +205,8 @@ var line_paragraph = function (liId, theForm, fieldProp, uniqueId, liClass)
     hiddenRequired('input_name', '').appendTo(li);
     hiddenRequired('class', '').appendTo(li);
     hiddenRequired('id', '').appendTo(li);
+    hiddenRequired('min', '').appendTo(li);
+    hiddenRequired('max', '').appendTo(li);
 
 	formButton("Delete", "delete_li").appendTo(li);
 	formButton("Edit", "edit_li").appendTo(li);

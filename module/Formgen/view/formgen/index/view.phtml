@@ -2,12 +2,28 @@
     <code id="form_id"><?= $this->form_id; ?></code>
 </div>
 <br>
-<table>
-    <tr>
-        <td valign="top"><pre id="form_file"></pre></td>
-        <td valign="top"><pre id="form_file_validator"></pre></td>
-    </tr><tr>
-        <td valign="top"><pre id="form_view"></pre></td>
-        <td valign="top"><pre id="form_view_helper"></pre></td>
-    </tr>
-</table>
+<ul class="nav nav-tabs" id="myTab">
+    <li class="active"><a href="#zf_form">Form</a></li>
+    <li><a href="#zf_form_validator">Form Validator</a></li>
+    <li><a href="#zf_form_controller">Controller</a></li>
+    <li><a href="#zf_form_view">View</a></li>
+    <li><a href="#zf_form_view_helper">View Helper</a></li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane active" id="zf_form">
+        <pre id="form_file"></pre>
+    </div>
+    <div class="tab-pane" id="zf_form_validator">
+        <pre id="form_file_validator"></pre>
+    </div>
+    <div class="tab-pane" id="zf_form_controller">
+        <pre id="form_controller"></pre>
+    </div>
+    <div class="tab-pane" id="zf_form_view">
+        <pre id="form_view"></pre>
+    </div>
+    <div class="tab-pane" id="zf_form_view_helper">
+        <pre id="form_view_helper"></pre>
+    </div>
+</div>

@@ -31,13 +31,39 @@ class AddUser extends Form
             'attributes' => array('maxlength' => '100', 'size' => '100'),
             'options'    => array('label' => 'Single Line Text'),
         ));
-
+/*
         $this->add(array(
             'name'       => 'number',
             'type'       => 'Zend\Form\Element\Text',
             'attributes' => array('maxlength' => '100', 'size' => '100'),
             'options'    => array('label' => 'Number Label'),
         ));
+*/
+        $this->add(array(
+                        'name' => 'number',
+                        'type' => 'Zend\Form\Element\Text',
+                        'attributes' => array(
+                            'class' => '3',
+                            'id' => '4',
+                            'placeholder' => '1234567890',
+                        ),
+                        'options' => array(
+                            'label' => 'Number Label',
+                        ),
+                   ));
+
+        $this->add(array(
+                        'name' => 'testtt',
+                        'type' => 'Zend\Form\Element\Textarea',
+                        'attributes' => array(
+                            'class' => '1',
+                            'id' => '2',
+                            'placeholder' => 'Type something...',
+                        ),
+                        'options' => array(
+                            'label' => 'Paragraph',
+                        ),
+                   ));
 
         $this->add(array(
             'name' => 'email',

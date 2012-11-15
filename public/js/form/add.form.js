@@ -245,11 +245,12 @@ $(document).ready(function()
         if(specificType === 'password_verify'){
             $('#' + formField + ' input[name="token"]').attr("value", formJson.token);
         }
-        // set hidden min
-        $('#' + formField + ' input[name="min"]').attr("value", formJson.number_min);
 
         // set input name
         $('#' + formField + ' input[name="input_name"]').attr("value", formJson.input_name);
+
+        // set hidden min
+        $('#' + formField + ' input[name="min"]').attr("value", formJson.number_min);
 
         // set hidden max
         $('#' + formField + ' input[name="max"]').attr("value", formJson.number_max);

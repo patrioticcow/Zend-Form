@@ -30,41 +30,65 @@ class AddUserValidator implements InputFilterAwareInterface
             $inputFilter->add($factory->createInput([
                 'name' => 'text',
                 'required' => true,
-                'filters' => [
-                    ['name' => 'StripTags'],
-                    ['name' => 'StringTrim'],
-                ],
-                'validators' => [
-                    [
+                'filters' => array(
+                    array('name' => 'StripTags'),
+                    array('name' => 'StringTrim'),
+                ),
+                'validators' => array(
+                    array(
                         'name' => 'StringLength',
-                        'options' => [
+                        'options' => array(
                             'encoding' => 'UTF-8',
-                            'min'      => 3,
-                            'max'      => 100,
-                        ],
-                    ],
-                ],
+                            'min' => '3',
+                            'max' => '10',
+
+                        ),
+                    ),
+                ),
+            ]));
+
+            $inputFilter->add($factory->createInput([
+                'name' => 'testtt',
+                'required' => true,
+                'filters' => array(
+                    array('name' => 'StripTags'),
+                    array('name' => 'StringTrim'),
+                ),
+                'validators' => array(
+                    array (
+                        'name' => 'StringLength',
+                        'options' => array(
+                            'encoding' => 'UTF-8',
+                            'min' => '3',
+                            'max' => '10',
+                        ),
+                    ),
+
+                ),
             ]));
 
             $inputFilter->add($factory->createInput([
                 'name' => 'number',
-                'required' => true,
-                'filters' => [
-                    ['name' => 'StripTags'],
-                    ['name' => 'StringTrim'],
-                ],
-                'validators' => [
-                    [
+                'required' => 'false',
+                'filters' => array(
+                    array('name' => 'StripTags'),
+                    array('name' => 'StringTrim'),
+                ),
+                'validators' => array(
+                    array (
                         'name' => 'StringLength',
-                        'options' => [
+                        'options' => array(
                             'encoding' => 'UTF-8',
-                            'min'      => 3,
-                            'max'      => 100,
-                        ],
-                    ],[
+                            'min' => '1',
+                            'max' => '100',
+
+                        ),
+                    ),
+                    array (
                         'name' => 'Digits',
-                    ],
-                ],
+                    ),
+
+                ),
             ]));
 
             $inputFilter->add($factory->createInput([

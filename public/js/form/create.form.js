@@ -32,6 +32,9 @@ $(document).ready(function() {
         formTitle.find('.form_description_placeholder').html(
             $('[name="form_description"]').attr('value')
         );
+        formTitle.find('[name="form_model_placeholder"]').attr('value',
+            $('[name="form_model"]').attr('value')
+        );
         formTitle.find('[name="form_class_placeholder"]').attr('value',
             $('[name="form_class"]').attr('value')
         );
@@ -44,7 +47,6 @@ $(document).ready(function() {
         formTitle.find('[name="form_class_name_placeholder"]').attr('value',
             $('[name="form_class_name"]').attr('value')
         );
-
 
         formTitle.css({'background-color' : '#87ffc1'}).animate({backgroundColor: '#ffffff'},{duration:1000});
     });
@@ -317,7 +319,7 @@ $(document).ready(function() {
         var formTitle = addFormProperties[0].title.trim().replace(/ /g,'');
 
         setLocalStorage(formTitle, allData);
-        //window.location.href="/formgen/view/" + formTitle;
+        //console.log(allData);
 	});
 
     var setLocalStorage = function (key, value){
