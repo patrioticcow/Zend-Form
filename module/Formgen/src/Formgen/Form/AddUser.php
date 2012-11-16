@@ -119,6 +119,18 @@ class AddUser extends Form
                    ));
 
         $this->add(array(
+            'type' => 'Zend\Form\Element\Date',
+            'name' => 'appointment_date',
+            'options' => array(
+                'label' => 'Appointment Date'
+            ),
+             'attributes' => array(
+                     'min' => '2012-01-01',
+                     'step' => '1',
+             )
+        ));
+
+        $this->add(array(
             'name' => 'submit',
             'type' => 'Zend\Form\Element\Submit',
             'attributes' => array('value' => 'Create', 'class'=>'btn btn-primary'),

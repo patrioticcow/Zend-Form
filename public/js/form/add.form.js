@@ -293,6 +293,8 @@ $(document).ready(function()
 
         // set date
         if(specificType === 'date'){
+            $('#' + formField + ' input[name="date_min_validate"]').attr("value", formJson.date_min_validate);
+            $('#' + formField + ' input[name="date_max_validate"]').attr("value", formJson.date_max_validate);
             $('#' + formField + ' input[name="date_min"]').attr("value", formJson.date_min);
             $('#' + formField + ' input[name="date_max"]').attr("value", formJson.date_max);
             $('#' + formField + ' input[name="locale"]').attr("value", formJson.locale);

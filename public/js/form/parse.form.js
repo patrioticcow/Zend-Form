@@ -23,12 +23,12 @@ $(document).ready(function() {
 
     var formId = $('#form_id').html();
 
-    t      = '    ';
-    tt     = '        ';
-    ttt    = '            ';
-    tttt   = '                ';
-    ttttt  = '                    ';
-    tttttt  = '                        ';
+    t        = '    ';
+    tt       = '        ';
+    ttt      = '            ';
+    tttt     = '                ';
+    ttttt    = '                    ';
+    tttttt   = '                        ';
     ttttttt  = '                            ';
 
     var form = JSON.parse(
@@ -248,16 +248,16 @@ var hidden = function hidden (){
 var text = function text (lineText){
 
     var textForm =
-    tt + "$this->add(array( <br>" +
-        ttt + "'name' => '" + lineText.name + "', <br>" +
-        ttt + "'type' => '" + lineText.type + "', <br>" +
-        ttt + "'attributes' => array( <br>" +
-            formAttr(lineText.data) +
-        ttt + "), <br>" +
-        ttt + "'options' => array( <br>" +
-            formOptions(lineText.data) +
-        ttt + "), <br>" +
-    tt + ")); <br> <br>";
+        tt + "$this->add(array( <br>" +
+            ttt + "'name' => '" + lineText.name + "', <br>" +
+            ttt + "'type' => '" + lineText.type + "', <br>" +
+            ttt + "'attributes' => array( <br>" +
+                formAttr(lineText.data) +
+            ttt + "), <br>" +
+            ttt + "'options' => array( <br>" +
+                formOptions(lineText.data) +
+            ttt + "), <br>" +
+        tt + ")); <br> <br>";
     return (textForm);
 };
 
@@ -290,6 +290,7 @@ var textValidator = function textValidator (lineText, val){
             params +
             formValidatorNumber(lineText.data) +
             formValidatorToken(lineText.data) +
+            formValidatorDate(lineText.data) +
         ttt + "), <br>" +
     tt + "])); <br> <br>";
     return (textForm);
@@ -325,6 +326,32 @@ var formValidatorOther = function formValidatorOther (l, v){
             tttt + "), <br>";
     }
     return (lengthForm);
+};
+
+/**
+ *
+ * @param l
+ * @param v
+ * @return {String}
+ */
+var formValidatorDate = function formValidatorOther (l, v){
+
+    var validation = '';
+
+    if(l.date_validation){
+        validation += tttt + "array(" + "<br>";
+            validation += ttttt + "'name' => 'Between'" + "<br>";
+            validation += ttttt + "'options' => array(" + "<br>";
+                if(l.date_validation.min != ''){
+                    validation += tttttt + "'min' => '" + l.date_validation.min  + "', <br>";
+                }
+                if(l.date_validation.max != ''){
+                    validation += tttttt + "'max' => '" + l.date_validation.min  + "', <br>";
+                }
+            validation += ttttt + ")," + "<br>";
+        validation += tttt + ")," + "<br>";
+    }
+    return (validation);
 };
 /**
  *
@@ -408,71 +435,73 @@ var formValidatorNumber = function formValidatorNumber (digits){
 
  */
 var formAttr = function formAttr (attr){
-    var attrClass = '',
-        attrId = '',
-        attrPlaceholder = '',
-        attrRequired = '',
-        attrDefault = '';
+    var attrs = '';
 
     if(attr.class != ''){
-        attrClass = tttt + "'class' => '" + attr.class  + "', <br>";
+        attrs += tttt + "'class' => '" + attr.class  + "', <br>";
     }
     if(attr.id != ''){
-        attrId = tttt + "'id' => '" + attr.id + "', <br>";
+        attrs += tttt + "'id' => '" + attr.id + "', <br>";
     }
     if(attr.placeholder && attr.placeholder != ''){
-        attrPlaceholder = tttt + "'placeholder' => '" + attr.placeholder + "', <br>";
+        attrs += tttt + "'placeholder' => '" + attr.placeholder + "', <br>";
     }
     if(attr.required != 'false'){
-        attrRequired = tttt + "'required' => 'required', <br>";
+        attrs += tttt + "'required' => 'required', <br>";
     }
     if(attr.default != 'false'){
-        attrDefault = tttt + "'value' => '" + attr.default  + "', <br>";
+        attrs += tttt + "'value' => '" + attr.default  + "', <br>";
+    }
+    if(attr.date){
+        if(attr.date.min != ''){
+            attrs += tttt + "'min' => '" + attr.date.min  + "', <br>";
+        } else {
+            attrs += tttt + "'min' => '1970-01-01', <br>";
+        }
+        if(attr.date.max != ''){
+            attrs += tttt + "'max' => '" + attr.date.max  + "', <br>";
+        } else {
+            attrs += tttt + "'max' => date('Y-m-d'), <br>";
+        }
+        attrs += tttt + "'step' => '1', <br>";
     }
 
-    var attrForm = attrClass + attrId + attrPlaceholder + attrRequired + attrDefault;
-
-    return (attrForm);
+    return (attrs);
 };
 
 /**
  * @param opt
  * @return {String}
  */
-
 var formOptions = function formOptions (opt){
-    var optLabel = '',
-        optLabelAttr = '',
-        optLabelOptions = '';
+    var options = '';
 
     if(opt.label != ''){
-        optLabel = tttt + "'label' => '" + opt.label  + "', <br>";
+        options += tttt + "'label' => '" + opt.label  + "', <br>";
     }
 
     if(opt.label_id || opt.label_class){
-        optLabelAttr = tttt + "'label_attributes' => array(" + "<br>";
+        options += tttt + "'label_attributes' => array(" + "<br>";
             if(opt.label_class){
-                optLabelAttr += ttttt + "'class' => '" + opt.label_class  + "', <br>";
+                options += ttttt + "'class' => '" + opt.label_class  + "', <br>";
             }
             if(opt.label_id){
-                optLabelAttr += ttttt + "'id' => '" + opt.label_id  + "', <br>";
+                options += ttttt + "'id' => '" + opt.label_id  + "', <br>";
             }
-        optLabelAttr += tttt + ")," + "<br>";
+        options += tttt + ")," + "<br>";
     }
 
     if(opt.innerData){
-        optLabelOptions = tttt + "'value_options' => array(" + "<br>";
+        options += tttt + "'value_options' => array(" + "<br>";
             for(var i = 0; i < opt.innerData.length; i++){
                 if(opt.innerData[i].label){
-                    optLabelOptions += ttttt + "'" + i + "' => '" + opt.innerData[i].label  + "', <br>";
+                    options += ttttt + "'" + i + "' => '" + opt.innerData[i].label  + "', <br>";
                 }
             }
-        optLabelOptions += tttt + ")," + "<br>";
+        options += tttt + ")," + "<br>";
     }
 
-    var optForm = optLabel + optLabelAttr + optLabelOptions;
-
-    return (optForm);
+    return (options);
 };
 
 /**

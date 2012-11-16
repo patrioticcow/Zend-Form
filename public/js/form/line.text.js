@@ -49,6 +49,8 @@ var line_date = function (liId, theForm, fieldProp, uniqueId, liClass)
     var li = addLi(liId, liClass).appendTo(theForm);
 
     hiddenRequired('required', '0').appendTo(li);
+    hiddenRequired('date_min_validate', '').appendTo(li);
+    hiddenRequired('date_max_validate', '').appendTo(li);
     hiddenRequired('date_min', '').appendTo(li);
     hiddenRequired('date_max', '').appendTo(li);
     hiddenRequired('locale', 'en').appendTo(li);
