@@ -98,16 +98,22 @@ class AddUserValidator implements InputFilterAwareInterface
                     ['name' => 'StripTags'],
                     ['name' => 'StringTrim'],
                 ],
-                'validators' => [
-                    [
-                        'name' => 'EmailAddress',
+                'validators' => array(
+                    array(
+                        'name' => 'StringLength',
                         'options' => [
                             'encoding' => 'UTF-8', 'min'=>5, 'max'=>255,
+                        ],
+                    ),
+                    array(
+                        'name' => 'EmailAddress',
+                        'options' => [
                             'messages' => array(
                                 'emailAddressInvalidFormat' => 'Email address format is not invalid'
                             )
                         ],
-                    ],[
+                    ),
+                    array(
                         'name' => 'NotEmpty',
                         'break_chain_on_failure' => true,
                         'options' => [
@@ -115,53 +121,53 @@ class AddUserValidator implements InputFilterAwareInterface
                                 'isEmpty' => 'Email address is required'
                             )
                         ],
-                    ],
-                ],
+                    ),
+                ),
             ]));
 
-            $inputFilter->add($factory->createInput([
-                                                    'name' => 'password1',
-                                                    'filters' => array(
-                                                        array('name' => 'StripTags'),
-                                                        array('name' => 'StringTrim'),
-                                                    ),
-            'validators' => array(
-                array (
-                    'name' => 'StringLength',
-                    'options' => array(
-                        'encoding' => 'UTF-8',
-                        'min' => '1',
-                        'max' => '122',
-                    ),
+        $inputFilter->add($factory->createInput([
+            'name' => 'password1',
+            'filters' => array(
+                array('name' => 'StripTags'),
+                array('name' => 'StringTrim'),
+            ),
+        'validators' => array(
+            array (
+                'name' => 'StringLength',
+                'options' => array(
+                    'encoding' => 'UTF-8',
+                    'min' => '1',
+                    'max' => '122',
+                ),
         ))
         ]));
 
             $inputFilter->add($factory->createInput([
-                                                    'name' => 'password_verify',
-                                                    'filters' => array(
-                                                        array('name' => 'StripTags'),
-                                                        array('name' => 'StringTrim'),
-                                                    ),
-                                                    'validators' => array(
-                                                        array (
-                                                            'name' => 'identical',
-                                                            'options' => array(
-                                                                'token' => 'password1',
-                                                            ),
-                                                        ),
+                'name' => 'password_verify',
+                'filters' => array(
+                    array('name' => 'StripTags'),
+                    array('name' => 'StringTrim'),
+                ),
+                'validators' => array(
+                    array (
+                        'name' => 'identical',
+                        'options' => array(
+                            'token' => 'password1',
+                        ),
+                    ),
 
-                                                    ),
-                                                    ]));
+                ),
+            ]));
 
             $inputFilter->add($factory->createInput([
-                                                    'name' => 'radio',
-                                                    'filters' => array(
-                                                        array('name' => 'StripTags'),
-                                                        array('name' => 'StringTrim'),
-                                                    ),
-                                                    'validators' => array(
-                                                    ),
-                                                    ]));
+                'name' => 'radio',
+                'filters' => array(
+                    array('name' => 'StripTags'),
+                    array('name' => 'StringTrim'),
+                ),
+                'validators' => array(
+                ),
+            ]));
 
             $this->inputFilter = $inputFilter;
         }

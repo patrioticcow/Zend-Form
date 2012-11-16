@@ -232,8 +232,8 @@ var commonsJson = function(formElements, typeName, classType, typeType){
                 'type' : typeType,
                 'order' : order,
                 'data' : {
-                    'placeholder': li.find('.' + classType).attr("placeholder"),
-                    'label': li.find('[for="' + classType + '"]').text(),
+                    'placeholder': li.find('.' + typeName).attr("placeholder"),
+                    'label': li.find('[for="' + typeName + '"]').text(),
                     'class': li.find('[name="class"]').attr("value"),
                     'id': li.find('[name="id"]').attr("value"),
                     'length' : {

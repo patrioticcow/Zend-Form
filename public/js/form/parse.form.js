@@ -29,6 +29,7 @@ $(document).ready(function() {
     tttt   = '                ';
     ttttt  = '                    ';
     tttttt  = '                        ';
+    ttttttt  = '                            ';
 
     var form = JSON.parse(
         localStorage.getItem(formId)
@@ -51,7 +52,7 @@ $(document).ready(function() {
             var lineText = form[i].line_text[0];
 
             formElements.push(text(lineText));
-            formValidatorElements.push(textValidator(lineText));
+            formValidatorElements.push(textValidator(lineText, 'text'));
         }
 
         // form number
@@ -59,7 +60,7 @@ $(document).ready(function() {
             var lineNumber = form[i].line_number[0];
 
             formElements.push(text(lineNumber));
-            formValidatorElements.push(textValidator(lineNumber));
+            formValidatorElements.push(textValidator(lineNumber, 'number'));
         }
 
         // form paragraph
@@ -67,7 +68,7 @@ $(document).ready(function() {
             var lineParagraph = form[i].line_paragraph[0];
 
             formElements.push(text(lineParagraph));
-            formValidatorElements.push(textValidator(lineParagraph));
+            formValidatorElements.push(textValidator(lineParagraph, 'paragraph'));
         }
 
         // form password
@@ -75,15 +76,15 @@ $(document).ready(function() {
             var linePassword = form[i].line_password[0];
 
             formElements.push(text(linePassword));
-            formValidatorElements.push(textValidator(linePassword));
+            formValidatorElements.push(textValidator(linePassword, 'password'));
         }
 
-        // form password
+        // form password_verify
         if(form[i].line_password_verify){
             var linePasswordVerify = form[i].line_password_verify[0];
 
             formElements.push(text(linePasswordVerify));
-            formValidatorElements.push(textValidator(linePasswordVerify));
+            formValidatorElements.push(textValidator(linePasswordVerify, 'password_verify'));
         }
 
         // form checkboxes
@@ -91,7 +92,7 @@ $(document).ready(function() {
             var lineCheckboxes = form[i].line_checkbox[0];
 
             formElements.push(text(lineCheckboxes));
-            formValidatorElements.push(textValidator(lineCheckboxes));
+            formValidatorElements.push(textValidator(lineCheckboxes, 'checkboxes'));
         }
 
         // form dropdown
@@ -99,7 +100,7 @@ $(document).ready(function() {
             var lineDropdown = form[i].line_dropdown[0];
 
             formElements.push(text(lineDropdown));
-            formValidatorElements.push(textValidator(lineDropdown));
+            formValidatorElements.push(textValidator(lineDropdown, 'dropdown'));
         }
 
         // form radio
@@ -107,7 +108,31 @@ $(document).ready(function() {
             var lineRadio = form[i].line_radio[0];
 
             formElements.push(text(lineRadio));
-            formValidatorElements.push(textValidator(lineRadio));
+            formValidatorElements.push(textValidator(lineRadio, 'radio'));
+        }
+
+        // form email
+        if(form[i].line_email ){
+            var lineEmail = form[i].line_email[0];
+
+            formElements.push(text(lineEmail));
+            formValidatorElements.push(textValidator(lineEmail, 'email'));
+        }
+
+        // form date
+        if(form[i].line_date ){
+            var lineDate = form[i].line_date[0];
+
+            formElements.push(text(lineDate));
+            formValidatorElements.push(textValidator(lineDate, 'date'));
+        }
+
+        // form upload
+        if(form[i].line_upload ){
+            var lineUpload = form[i].line_upload[0];
+
+            formElements.push(text(lineUpload));
+            formValidatorElements.push(textValidator(lineUpload, 'upload'));
         }
 
         console.log(form[i]);
@@ -237,13 +262,20 @@ var text = function text (lineText){
 };
 
 /**
- * text field validator
+ *
  * @param lineText
+ * @param val
  * @return {String}
  */
-var textValidator = function textValidator (lineText){
+var textValidator = function textValidator (lineText, val){
 
+    var params = '';
     var hasRequired = lineText.data.required ? ttt + "'required' => " + lineText.data.required + ", <br>" : '';
+
+    if(val === 'email'){
+        params = formValidatorEmail(lineText.data, 'EmailAddress') +
+            formValidatorEmail(lineText.data, 'NotEmpty');
+    }
 
     var textForm =
     tt + "$inputFilter->add($factory->createInput([ <br>" +
@@ -254,7 +286,8 @@ var textValidator = function textValidator (lineText){
             tttt + "array('name' => 'StringTrim'), <br>" +
         ttt + "), <br>" +
         ttt + "'validators' => array( <br>" +
-            formValidatorLength(lineText.data.length) +
+            formValidatorOther(lineText.data, 'StringLength') +
+            params +
             formValidatorNumber(lineText.data) +
             formValidatorToken(lineText.data) +
         ttt + "), <br>" +
@@ -263,26 +296,64 @@ var textValidator = function textValidator (lineText){
 };
 
 /**
+ *
  * @param l
+ * @param v
  * @return {String}
  */
-var formValidatorLength = function formValidatorLength (l){
-    var lMin = '', lMax = '', lengthForm = '';
+var formValidatorOther = function formValidatorOther (l, v){
 
-    if(l && l.min != ''){
-        lMin = tttttt + "'min' => '" + l.min  + "', <br>";
+    var lMin = '',
+        lMax = '',
+        lengthForm = '';
+
+    if(l.length && l.length.min != ''){
+        lMin = tttttt + "'min' => '" + l.length.min  + "', <br>";
     }
-    if(l && l.max != ''){
-        lMax = tttttt + "'max' => '" + l.max  + "', <br>";
+    if(l.length && l.length.max != ''){
+        lMax = tttttt + "'max' => '" + l.length.max  + "', <br>";
     }
 
     if(lMin != '' || lMax != ''){
         lengthForm =
             tttt + "array ( <br>" +
-                ttttt + "'name' => 'StringLength', <br>" +
+                ttttt + "'name' => '" + v + "', <br>" +
                 ttttt + "'options' => array( <br>" +
                     tttttt + "'encoding' => 'UTF-8', <br>" +
                     lMin + lMax +
+                ttttt + "), <br>" +
+            tttt + "), <br>";
+    }
+    return (lengthForm);
+};
+/**
+ *
+ * @param l
+ * @param v
+ * @return {String}
+ */
+var formValidatorEmail = function formValidatorEmail (l, v){
+
+    var lMessages = '';
+    var lengthForm = '';
+
+    if(l && v === 'EmailAddress'){
+        lMessages = tttttt + "'messages' => array( <br>";
+            lMessages += ttttttt + "'emailAddressInvalidFormat' => '" + l.messages.emailAddressInvalidFormat  + "', <br>";
+        lMessages += tttttt + ") <br>";
+    }
+    if(l && v === 'NotEmpty'){
+        lMessages = tttttt + "'messages' => array( <br>";
+            lMessages += ttttttt + "'isEmpty' => '" + l.messages.isEmpty  + "', <br>";
+        lMessages += tttttt + ") <br>";
+    }
+
+    if(lMessages != ''){
+        lengthForm =
+            tttt + "array ( <br>" +
+                ttttt + "'name' => '" + v + "', <br>" +
+                ttttt + "'options' => array( <br>" +
+                    lMessages +
                 ttttt + "), <br>" +
             tttt + "), <br>";
     }
