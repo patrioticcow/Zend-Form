@@ -279,17 +279,20 @@ var commonsJson = function(formElements, typeName, classType, typeType){
                 'type' : typeType,
                 'order' : order,
                 'data' : {
-                    'placeholder': li.find('.' + classType).attr("placeholder"),
-                    'label': li.find('[for="' + classType + '"]').text(),
+                    'placeholder': li.find('.' + typeName).attr("placeholder"),
+                    'label': li.find('[for="' + typeName + '"]').text(),
                     'required': li.find('[name="required"]').attr("value"),
                     'class': li.find('[name="class"]').attr("value"),
                     'id': li.find('[name="id"]').attr("value"),
                     'length' : {
                         'min' : li.find('[name="min"]').attr("value"),
-                        'max' : li.find('[name="max"]').attr("value")
+                        'max' : li.find('[name="max"]').attr("value"),
+                        'min_str' : li.find('[name="min_str"]').attr("value"),
+                        'max_str' : li.find('[name="max_str"]').attr("value")
                     },
                     'validators' : {
-                        'name' : 'Digits'
+                        'name' : li.find('[name="validation"]').attr("value"),
+                        'html5' : li.find('[name="html5"]').attr("value")
                     }
                 }
             });

@@ -195,6 +195,10 @@ var line_number = function (liId, theForm, fieldProp, uniqueId, liClass)
     hiddenRequired('id', '').appendTo(li);
     hiddenRequired('min', '').appendTo(li);
     hiddenRequired('max', '').appendTo(li);
+    hiddenRequired('validation', '').appendTo(li);
+    hiddenRequired('html5', '').appendTo(li);
+    hiddenRequired('min_str', '').appendTo(li);
+    hiddenRequired('max_str', '').appendTo(li);
 
 	formButton("Delete", "delete_li").appendTo(li);
 	formButton("Edit", "edit_li").appendTo(li);

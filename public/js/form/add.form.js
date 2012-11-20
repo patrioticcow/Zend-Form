@@ -322,6 +322,15 @@ $(document).ready(function()
             });
         }
 
+        if(specificType === 'number'){
+            var html5 = formJson.number_html5 ? 1 : 0;
+
+            $('#' + formField + ' input[name="validation"]').attr("value", formJson.valid_type);
+            $('#' + formField + ' input[name="html5"]').attr("value", html5);
+            $('#' + formField + ' input[name="min_str"]').attr("value", formJson.number_min_str);
+            $('#' + formField + ' input[name="max_str"]').attr("value", formJson.number_max_str);
+        }
+
         if(specificType === 'dropdown'){
             $.each(formJson, function(index, value) {
                 $('#' + formField).find(' #dropdown_' + index).html(value);

@@ -22,9 +22,28 @@
 			</select>
 		</li>
         <li>
-            <label>String Length</label>
+			<label>Number Validation</label>
+			<select name="valid_type">
+				<option value="digits">Digits (1, 14)</option>
+				<option value="float">Float (5.3, 6,8)</option>
+				<option value="int">Int (-25, 23)</option>
+			</select>
+		</li>
+        <li>
+            <label>Use html5</label>
+            <input type="checkbox" name="number_html5" value="0">
+            <i>(if used, this will add type="number" and validate only digits)</i>
+        </li><br>
+        <li>
+            <label>Validate between</label>
             <input type="number" name="number_min" class="input-small" placeholder="min">
             <input type="number" name="number_max" class="input-small" placeholder="max">
+            <p>number of characters.</p>
+        </li>
+        <li>
+            <label>String Length</label>
+            <input type="number" name="number_min_str" class="input-small" placeholder="min">
+            <input type="number" name="number_max_str" class="input-small" placeholder="max">
         </li>
         <li>
             <label>Class</label>

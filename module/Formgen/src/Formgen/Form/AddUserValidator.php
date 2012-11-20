@@ -69,7 +69,7 @@ class AddUserValidator implements InputFilterAwareInterface
 
             $inputFilter->add($factory->createInput([
                 'name' => 'number',
-                'required' => 'false',
+                'required' => 'true',
                 'filters' => array(
                     array('name' => 'StripTags'),
                     array('name' => 'StringTrim'),
@@ -80,12 +80,11 @@ class AddUserValidator implements InputFilterAwareInterface
                         'options' => array(
                             'encoding' => 'UTF-8',
                             'min' => '1',
-                            'max' => '100',
-
+                            'max' => '2',
                         ),
-                    ),
-                    array (
-                        'name' => 'Digits',
+                        array (
+                            'name' => 'float',
+                        ),
                     ),
 
                 ),

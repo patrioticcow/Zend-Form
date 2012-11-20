@@ -307,11 +307,13 @@ var formValidatorOther = function formValidatorOther (l, v){
         lMax = '',
         lengthForm = '';
 
-    if(l.length.min && l.length.min != ''){
-        lMin = tttttt + "'min' => '" + l.length.min  + "', <br>";
-    }
-    if(l.length.max && l.length.max != ''){
-        lMax = tttttt + "'max' => '" + l.length.max  + "', <br>";
+    if(l.length){
+        if(l.length.min && l.length.min != ''){
+            lMin = tttttt + "'min' => '" + l.length.min  + "', <br>";
+        }
+        if(l.length.max && l.length.max != ''){
+            lMax = tttttt + "'max' => '" + l.length.max  + "', <br>";
+        }
     }
 
     if(lMin != '' || lMax != ''){
@@ -406,11 +408,13 @@ var formValidatorToken = function formValidatorToken (p){
 
 var formValidatorNumber = function formValidatorNumber (digits){
     var digitsName = '';
-    if(digits.validators && digits.validators.name){
-        digitsName = tttt + "array ( <br>" +
-            ttttt + "'name' => '" + digits.validators.name + "', <br>" +
-        tttt + "), <br>" +
-        " <br>";
+    if(digits.validators && !digits.validators.html5 ){
+        if(digits.validators.name){
+            digitsName = tttt + "array ( <br>" +
+                ttttt + "'name' => '" + digits.validators.name + "', <br>" +
+            tttt + "), <br>" +
+            " <br>";
+        }
     }
 
     var digitsForm = digitsName;
@@ -464,7 +468,7 @@ var formAttr = function formAttr (attr){
     if(attr.required != 'false'){
         attrs += tttt + "'required' => 'required', <br>";
     }
-    if(attr.default != 'false'){
+    if(attr.default && attr.default != 'false'){
         attrs += tttt + "'value' => '" + attr.default  + "', <br>";
     }
     if(attr.date){
@@ -476,12 +480,28 @@ var formAttr = function formAttr (attr){
         if(attr.date.max != ''){
             attrs += tttt + "'max' => '" + attr.date.max  + "', <br>";
         } else {
-            attrs += tttt + "'max' => date('Y-m-d'), <br>";
+            attrs += tttt + "'max' => " + date() + ", <br>";
+        }
+        attrs += tttt + "'step' => '1', <br>";
+    }
+    if(attr.length){
+        if(attr.length.min_str){
+            attrs += tttt + "'min' => '" + attr.length.min_str  + "', <br>";
+        }
+        if(attr.length.max_str ){
+            attrs += tttt + "'max' => '" + attr.length.max_str  + "', <br>";
         }
         attrs += tttt + "'step' => '1', <br>";
     }
 
     return (attrs);
+};
+
+var date = function date (){
+    var d = new Date();
+    var Ymd = d.getFullYear() + '-' + d.getMonth() + '-' + d.getDay();
+
+    return Ymd;
 };
 
 /**
@@ -519,8 +539,8 @@ var formOptions = function formOptions (opt){
     if(opt.dropdownValues){
         options += tttt + "'value_options' => array(" + "<br>";
             for(var i = 0; i < opt.dropdownValues.length; i++){
-                if(opt.dropdownValues[i].dropdown_values){
-                    options += ttttt + "'" + i + "' => '" + opt.dropdownValues[i].dropdown_values  + "', <br>";
+                if(opt.dropdownValues[i].dropdown_label){
+                    options += ttttt + "'" + i + "' => '" + opt.dropdownValues[i].dropdown_label  + "', <br>";
                 }
             }
         options += tttt + ")," + "<br>";
@@ -571,17 +591,7 @@ function zfController(prop){
 
     return (file);
 }
-/*
-    if($request->isPost())
-    {
-        if($form->isValid()){
-            $user->exchangeArray($form->getData());
-        }
-    }
 
-    return ['form' => $form];
-
-*/
 function zfView(){
     var file =
         "echo $this->formLabel($form->get('email')) . PHP_EOL; <br>" +

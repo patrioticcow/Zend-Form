@@ -34,11 +34,14 @@ class AddUser extends Form
 
         $this->add(array(
                         'name' => 'number',
-                        'type' => 'Zend\Form\Element\Text',
+                        'type' => 'Zend\Form\Element\Number',
                         'attributes' => array(
                             'class' => '3',
                             'id' => '4',
                             'placeholder' => '1234567890',
+                            'step' => '10',
+                            'min' => '1',
+                            'max' => '100',
                         ),
                         'options' => array(
                             'label' => 'Number Label',
