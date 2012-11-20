@@ -65,6 +65,14 @@ $(document).ready(function()
 	});
 
     /**
+     * add_form_phone
+     */
+    $('#add_form_phone').live("click", function(e){
+		e.preventDefault();
+		addForm($('#add_form_data'), 'input', 'form_data', 'number');
+	});
+
+    /**
      * add_form_paragraph
      */
 	$('#add_form_paragraph').live("click", function(e){
@@ -318,6 +326,8 @@ $(document).ready(function()
             $.each(formJson, function(index, value) {
                 $('#' + formField).find(' #dropdown_' + index).html(value);
             });
+
+            $('#' + formField + ' input[name="notinarray"]').attr("value", formJson.number_notinarray);
         }
 
         $('#' + formField).css({'background-color' : '#87ffc1'}).animate({backgroundColor: '#ffffff'},{duration:1000});

@@ -81,6 +81,12 @@ class IndexController extends AbstractActionController
 		return $result;
 	}
 
+	public function phoneAction()
+	{
+		$result = $this->getAjax();
+		return $result;
+	}
+
 	public function paragraphAction()
 	{
 	    $result = $this->getAjax();

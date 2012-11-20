@@ -202,6 +202,36 @@ var line_number = function (liId, theForm, fieldProp, uniqueId, liClass)
     clearBoth().appendTo(li);
 };
 
+var line_phone = function (liId, theForm, fieldProp, uniqueId, liClass)
+{
+	var li = addLi(liId, liClass).appendTo(theForm);
+
+    hiddenRequired('required', '0').appendTo(li);
+
+	$("<label/>", {
+		text: "Number Label",
+        "class" : "main_label",
+		"for": "form_number"
+	}).appendTo(li);
+
+	$("<input/>", {
+		type: "text",
+		"class": "form_number",
+		placeholder: "7025555555"
+	}).appendTo(li);
+
+    hiddenRequired('input_name', '').appendTo(li);
+    hiddenRequired('class', '').appendTo(li);
+    hiddenRequired('id', '').appendTo(li);
+    hiddenRequired('min', '').appendTo(li);
+    hiddenRequired('max', '').appendTo(li);
+
+	formButton("Delete", "delete_li").appendTo(li);
+	formButton("Edit", "edit_li").appendTo(li);
+
+    clearBoth().appendTo(li);
+};
+
 var line_paragraph = function (liId, theForm, fieldProp, uniqueId, liClass)
 {
 	var li = addLi(liId, liClass).appendTo(theForm);
@@ -254,12 +284,23 @@ var line_checkbox = function (liId, theForm, fieldProp, uniqueId, liClass)
 			"style":"float:left"
 		}).appendTo(checkbox_span);
 
-		$("<input/>", {
-			type: "checkbox",
-			'disabled': "disabled",
-			id: "form_checkbox_" + i,
-            "style":"float:left"
-		}).insertBefore(checkboxx);
+        if(i === 0){
+            $("<input/>", {
+                type: "checkbox",
+                'disabled': "disabled",
+                'checked' : 'checked',
+                id: "form_checkbox_" + i,
+                "style":"float:left"
+            }).insertBefore(checkboxx);
+        } else {
+            $("<input/>", {
+                type: "checkbox",
+                'disabled': "disabled",
+                id: "form_checkbox_" + i,
+                "style":"float:left"
+            }).insertBefore(checkboxx);
+        }
+
 	}
 
     hiddenRequired('input_name', '').appendTo(li);
@@ -296,12 +337,22 @@ var line_radio = function (liId, theForm, fieldProp, uniqueId, liClass)
             "style":"float:left"
         }).appendTo(radio_span);
 
-        $("<input/>", {
-            type: "radio",
-            'disabled': "disabled",
-            id: "form_radio_" + i,
-            "style":"float:left"
-        }).insertBefore(radioo);
+        if(i === 0){
+            $("<input/>", {
+                type: "radio",
+                'disabled': "disabled",
+                'checked' : 'checked',
+                id: "form_radio_" + i,
+                "style":"float:left"
+            }).insertBefore(radioo);
+        } else {
+            $("<input/>", {
+                type: "radio",
+                'disabled': "disabled",
+                id: "form_radio_" + i,
+                "style":"float:left"
+            }).insertBefore(radioo);
+        }
     }
 
     hiddenRequired('input_name', '').appendTo(li);
@@ -332,16 +383,26 @@ var line_dropdown = function (liId, theForm, fieldProp, uniqueId, liClass)
 
 	for (var i=0;i<2;i++)
 	{
-		$("<option/>", {
-			text: "Dropdown",
-			"id": "dropdown_rem" + i,
-			"class": "dropdown_option"
-		}).appendTo(radio);
+        if(i === 0){
+            $("<option/>", {
+                text: "Dropdown",
+                "id": "dropdown_rem" + i,
+                "selected": "selected",
+                "class": "dropdown_option"
+            }).appendTo(radio);
+        } else {
+            $("<option/>", {
+                text: "Dropdown",
+                "id": "dropdown_rem" + i,
+                "class": "dropdown_option"
+            }).appendTo(radio);
+        }
 	}
 
     hiddenRequired('input_name', '').appendTo(li);
     hiddenRequired('class', '').appendTo(li);
     hiddenRequired('id', '').appendTo(li);
+    hiddenRequired('notinarray', '').appendTo(li);
 
 	formButton("Delete", "delete_li").appendTo(li);
 	formButton("Edit", "edit_li").appendTo(li);

@@ -122,6 +122,24 @@ $(document).ready(function() {
 	});
 
 	/**
+	 * line_phone
+	 */
+	$('#line_phone').click(function () {
+		var liId = "edit_form_number" + uniqueId;
+
+		line_phone(liId, theForm, fieldProp, uniqueId, "edit_form_phone");
+
+		$('#'+ liId +' .edit_li').click(function () {
+			secondTab.tab('show');
+			$.get('/formgen/phone', { name: "Edit Phone Field", id: liId}).done(function(data) {
+				fieldProp.html(data);
+		    });
+		});
+
+		uniqueId++;
+	});
+
+	/**
 	 * line_password
 	 */
 	$('#line_password').click(function () {

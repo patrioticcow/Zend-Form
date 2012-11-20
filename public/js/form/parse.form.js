@@ -262,7 +262,6 @@ var text = function text (lineText){
 };
 
 /**
- *
  * @param lineText
  * @param val
  * @return {String}
@@ -291,13 +290,13 @@ var textValidator = function textValidator (lineText, val){
             formValidatorNumber(lineText.data) +
             formValidatorToken(lineText.data) +
             formValidatorDate(lineText.data) +
+            formValidatorDropdown(lineText.data) +
         ttt + "), <br>" +
     tt + "])); <br> <br>";
     return (textForm);
 };
 
 /**
- *
  * @param l
  * @param v
  * @return {String}
@@ -308,10 +307,10 @@ var formValidatorOther = function formValidatorOther (l, v){
         lMax = '',
         lengthForm = '';
 
-    if(l.length && l.length.min != ''){
+    if(l.length.min && l.length.min != ''){
         lMin = tttttt + "'min' => '" + l.length.min  + "', <br>";
     }
-    if(l.length && l.length.max != ''){
+    if(l.length.max && l.length.max != ''){
         lMax = tttttt + "'max' => '" + l.length.max  + "', <br>";
     }
 
@@ -329,12 +328,10 @@ var formValidatorOther = function formValidatorOther (l, v){
 };
 
 /**
- *
  * @param l
- * @param v
  * @return {String}
  */
-var formValidatorDate = function formValidatorOther (l, v){
+var formValidatorDate = function formValidatorOther (l){
 
     var validation = '';
 
@@ -420,20 +417,38 @@ var formValidatorNumber = function formValidatorNumber (digits){
     return (digitsForm);
 };
 
+var formValidatorDropdown = function formValidatorDropdown (select){
+    var tokenForm = '', key = [];
+
+    if(select && select.dropdownValues){
+
+        for(var i=0; i<select.dropdownValues.length; i++){
+            key.push(i);
+        }
+
+        tokenForm =
+            tttt + "array ( <br>" +
+                ttttt + "'name' => 'InArray', <br>" +
+                ttttt + "'options' => array( <br>" +
+                    tttttt + "'haystack' => array( <br>" +
+                        ttttttt + "'haystack' => array(" + key  + ") <br>" +
+                    tttttt + "), <br>" +
+                    tttttt + "'messages' => array(, <br>" +
+                        ttttttt + "'notInArray' => '" + select.notinarray + "' <br>" +
+                    tttttt + "), <br>" +
+                ttttt + "), <br>" +
+                tttt + "), <br>" +
+                "<br>";
+    }
+    return (tokenForm);
+};
+
 /**
  * form attr validator
  * @param attr
  * @return {String}
  */
 
-/*
- 'attributes' => array(
- 'class' => '123',
- 'id' => '234',
- 'required' => 'required',
- 'value' => '1'
-
- */
 var formAttr = function formAttr (attr){
     var attrs = '';
 
@@ -496,6 +511,16 @@ var formOptions = function formOptions (opt){
             for(var i = 0; i < opt.innerData.length; i++){
                 if(opt.innerData[i].label){
                     options += ttttt + "'" + i + "' => '" + opt.innerData[i].label  + "', <br>";
+                }
+            }
+        options += tttt + ")," + "<br>";
+    }
+
+    if(opt.dropdownValues){
+        options += tttt + "'value_options' => array(" + "<br>";
+            for(var i = 0; i < opt.dropdownValues.length; i++){
+                if(opt.dropdownValues[i].dropdown_values){
+                    options += ttttt + "'" + i + "' => '" + opt.dropdownValues[i].dropdown_values  + "', <br>";
                 }
             }
         options += tttt + ")," + "<br>";

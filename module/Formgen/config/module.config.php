@@ -72,6 +72,16 @@ return array(
                 			),
                 		),
                 	),
+                    'phone' => array(
+                		'type' => 'Literal',
+                		'options' => array(
+                			'route' => '/phone',
+                			'defaults' => array(
+                				'controller' => 'Index',
+                				'action'     => 'phone',
+                			),
+                		),
+                	),
                     'checkbox' => array(
                 		'type' => 'Literal',
                 		'options' => array(

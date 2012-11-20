@@ -61,6 +61,11 @@ var lineNumberJson = function(formElements) {
     return (data);
 };
 
+var linePhoneJson = function(formElements) {
+    var data = commonsJson(formElements, 'form_input', 'form_phone', "Zend\\Form\\Element\\Text");
+    return (data);
+};
+
 var lineParagraphJson = function(formElements) {
     var data = commonsJson(formElements, 'form_input', 'form_paragraph', "Zend\\Form\\Element\\Textarea");
     return (data);
@@ -77,12 +82,12 @@ var lineRadioJson = function(formElements) {
 };
 
 var lineDropdownJson = function(formElements) {
-    var data = commonsJson(formElements, 'form_input', 'form_dropdown', "Zend\\Form\\Element\\Dropdown");
+    var data = commonsJson(formElements, 'form_input', 'form_dropdown', "Zend\\Form\\Element\\Select");
     return (data);
 };
 
 var lineUploadJson = function(formElements) {
-    var data = commonsJson(formElements, 'form_input', 'form_fileupload', "Zend\Form\Element\File");
+    var data = commonsJson(formElements, 'form_input', 'form_fileupload', "Zend\\Form\\Element\\File");
     return (data);
 };
 
@@ -156,9 +161,11 @@ var commonsJson = function(formElements, typeName, classType, typeType){
                 'order' : order,
                 'data' : {
                     'label': $(this).find('label.main_label').text(),
-                    'innerData': innerData,
+                    'dropdownValues': innerData,
                     'class': li.find('[name="class"]').attr("value"),
-                    'id': li.find('[name="id"]').attr("value")
+                    'id': li.find('[name="id"]').attr("value"),
+                    'notinarray': li.find('[name="notinarray"]').attr("value"),
+                    'default': $(this).find('[selected="selected"]').attr('id').replace(/[^\d.]/g, "")
                 }
             });
         } else if (classType === 'form_input'){
@@ -247,6 +254,22 @@ var commonsJson = function(formElements, typeName, classType, typeType){
                     'messages' : {
                         'emailAddressInvalidFormat' : li.find('[name="invalid_type"]').attr("value"),
                         'isEmpty' : li.find('[name="is_empty_type"]').attr("value")
+                    }
+                }
+            });
+        } else if (classType === 'form_fileupload'){
+            myData.push({
+                'name' : li.find('[name="input_name"]').attr("value"),
+                'type' : typeType,
+                'order' : order,
+                'data' : {
+                    'placeholder': li.find('.' + typeName).attr("placeholder"),
+                    'label': li.find('[for="' + typeName + '"]').text(),
+                    'class': li.find('[name="class"]').attr("value"),
+                    'id': li.find('[name="id"]').attr("value"),
+                    'length' : {
+                        'min' : li.find('[name="min"]').attr("value"),
+                        'max' : li.find('[name="max"]').attr("value")
                     }
                 }
             });
