@@ -33,104 +33,42 @@ class AddUser extends Form
         ));
 
         $this->add(array(
-                        'name' => 'number',
-                        'type' => 'Zend\Form\Element\Number',
-                        'attributes' => array(
-                            'class' => '3',
-                            'id' => '4',
-                            'placeholder' => '1234567890',
-                            'step' => '10',
-                            'min' => '1',
-                            'max' => '100',
-                        ),
-                        'options' => array(
-                            'label' => 'Number Label',
-                        ),
-                   ));
-
-        $this->add(array(
-                        'name' => 'testtt',
-                        'type' => 'Zend\Form\Element\Textarea',
-                        'attributes' => array(
-                            'class' => '1',
-                            'id' => '2',
-                            'placeholder' => 'Type something...',
-                        ),
-                        'options' => array(
-                            'label' => 'Paragraph',
-                        ),
-                   ));
-
-        $this->add(array(
-            'name' => 'email',
-            'type' => 'Zend\Form\Element\Email',
-            'attributes' => array('maxlength' => '128', 'size' => '32', 'type' => 'email'),
-            'options' => array('label' => 'Email', 'appendText' => '@'),
+             'name' => 'number',
+             'type' => 'Zend\Form\Element\Number',
+             'attributes' => array(
+                 'class' => '3',
+                 'id' => '4',
+                 'placeholder' => '1234567890',
+                 'step' => '10',
+                 'min' => '1',
+                 'max' => '100',
+             ),
+             'options' => array(
+                 'label' => 'Number Label',
+             ),
         ));
 
-
         $this->add(array(
-                        'name' => 'password1',
-                        'type' => 'Zend\Form\Element\Password',
-                        'attributes' => array(
-                            'class' => '12',
-                            'id' => '12',
-                            'placeholder' => 'Password Here...',
-                            'required' => 'required',
-                            'value' => 'undefined',
-                        ),
-                        'options' => array(
-                            'label' => 'Password',
-                        ),
-                   ));
-
-        $this->add(array(
-                        'name' => 'password_verify',
-                        'type' => 'Zend\Form\Element\Password',
-                        'attributes' => array(
-                            'class' => '3',
-                            'id' => '33',
-                            'placeholder' => 'Verify Password Here...',
-                            'required' => 'required',
-                            'value' => 'undefined',
-                        ),
-                        'options' => array(
-                            'label' => 'Password verify',
-                        ),
-                   ));
-
-        $this->add(array(
-                        'name' => 'radio',
-                        'type' => 'Zend\Form\Element\Radio',
-                        'attributes' => array(
-                            'class' => '1',
-                            'id' => '2',
-                            'required' => 'required',
-                            'value' => '0',
-                        ),
-                        'options' => array(
-                            'label' => 'Radio Label',
-                            'label_attributes' => array(
-                                'class' => '3',
-                                'id' => '4',
-                            ),
-                            'value_options' => array(
-                                '0' => 'Radio11',
-                                '1' => 'Radio22',
-                            ),
-                        ),
-                   ));
-
-        $this->add(array(
-            'type' => 'Zend\Form\Element\Date',
-            'name' => 'appointment_date',
-            'options' => array(
-                'label' => 'Appointment Date'
-            ),
+             'name' => 'testtt',
+             'type' => 'Zend\Form\Element\Textarea',
              'attributes' => array(
-                     'min' => '2012-01-01',
-                     'step' => '1',
-             )
+                 'class' => '1',
+                 'id' => '2',
+                 'placeholder' => 'Type something...',
+             ),
+             'options' => array(
+                 'label' => 'Paragraph',
+             ),
+        ));
+
+        $this->add(array(
+            'name' => 'fileuploadd',
+            'attributes' => array(
+                'type'  => 'file',
+            ),
+            'options' => array(
+                'label' => 'File Upload',
+            ),
         ));
 
         $this->add(array(

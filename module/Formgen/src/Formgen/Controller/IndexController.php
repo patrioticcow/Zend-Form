@@ -39,6 +39,7 @@ class IndexController extends AbstractActionController
             if($form->isValid()){
                 $user->exchangeArray($form->getData());
             }
+            echo '<pre>'; var_dump($form->getData()); echo '</pre>';
         }
 
         return ['form' => $form];

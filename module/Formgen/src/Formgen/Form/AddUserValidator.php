@@ -90,83 +90,33 @@ class AddUserValidator implements InputFilterAwareInterface
                 ),
             ]));
 
-            $inputFilter->add($factory->createInput([
-                'name' => 'email',
-                'required' => true,
-                'filters' => [
-                    ['name' => 'StripTags'],
-                    ['name' => 'StringTrim'],
-                ],
-                'validators' => array(
-                    array(
-                        'name' => 'StringLength',
-                        'options' => [
-                            'encoding' => 'UTF-8', 'min'=>5, 'max'=>255,
-                        ],
+            $inputFilter->add(
+                $factory->createInput(array(
+                    'name'     => 'fileuploadd',
+                    'required' => true,
+                    'filters'    => array(
+                        array('name' => 'filerename', 'options' => array(
+                            'target' => 'C:/xampp/htdocs/Zend-Form/public/file',
+                        )),
+                        //array('name' => 'filelowercase'),
                     ),
-                    array(
-                        'name' => 'EmailAddress',
-                        'options' => [
-                            'messages' => array(
-                                'emailAddressInvalidFormat' => 'Email address format is not invalid'
-                            )
-                        ],
+                    'validators' => array(
+                        array('name' => 'fileupload'),
+                        array('name' => 'filesize', 'options' => array(
+                            'min' => 4000, 'max' => 5000,
+                        )),
+                        array('name' => 'fileexists', 'options' => array(
+                            'C:\xampp\htdocs\Zend-Form\public\file'
+                        )),
+                        array('name' => 'filecount', 'options' => array(
+                            'min' => 1, 'max' => 4,
+                        )),
+                        array('name' => 'fileexcludeextension', 'options' => array(
+                            'php', 'jpg'
+                        )),
                     ),
-                    array(
-                        'name' => 'NotEmpty',
-                        'break_chain_on_failure' => true,
-                        'options' => [
-                            'messages' => array(
-                                'isEmpty' => 'Email address is required'
-                            )
-                        ],
-                    ),
-                ),
-            ]));
-
-        $inputFilter->add($factory->createInput([
-            'name' => 'password1',
-            'filters' => array(
-                array('name' => 'StripTags'),
-                array('name' => 'StringTrim'),
-            ),
-        'validators' => array(
-            array (
-                'name' => 'StringLength',
-                'options' => array(
-                    'encoding' => 'UTF-8',
-                    'min' => '1',
-                    'max' => '122',
-                ),
-        ))
-        ]));
-
-            $inputFilter->add($factory->createInput([
-                'name' => 'password_verify',
-                'filters' => array(
-                    array('name' => 'StripTags'),
-                    array('name' => 'StringTrim'),
-                ),
-                'validators' => array(
-                    array (
-                        'name' => 'identical',
-                        'options' => array(
-                            'token' => 'password1',
-                        ),
-                    ),
-
-                ),
-            ]));
-
-            $inputFilter->add($factory->createInput([
-                'name' => 'radio',
-                'filters' => array(
-                    array('name' => 'StripTags'),
-                    array('name' => 'StringTrim'),
-                ),
-                'validators' => array(
-                ),
-            ]));
+                ))
+            );
 
             $this->inputFilter = $inputFilter;
         }

@@ -322,6 +322,28 @@ $(document).ready(function()
             });
         }
 
+        if(specificType === 'upload'){
+            $('#' + formField + ' input[name="upload_min_size"]').attr("value", formJson.filesize_min);
+            $('#' + formField + ' input[name="upload_max_size"]').attr("value", formJson.filesize_max);
+            $('#' + formField + ' input[name="upload_min_file_size"]').attr("value", formJson.filefilessize_min);
+            $('#' + formField + ' input[name="upload_max_file_size"]').attr("value", formJson.filefilessize_max);
+            $('#' + formField + ' input[name="upload_min_count"]').attr("value", formJson.filewordcount_min);
+            $('#' + formField + ' input[name="upload_max_count"]').attr("value", formJson.filewordcount_max);
+            $('#' + formField + ' input[name="upload_file_extension"]').attr("value", formJson.fileextension);
+            $('#' + formField + ' input[name="upload_file_exclude_extension"]').attr("value", formJson.fileexcludeextension);
+            $('#' + formField + ' input[name="upload_mime_type"]').attr("value", formJson.filemimetype);
+            $('#' + formField + ' input[name="upload_exclude_mime_type"]').attr("value", formJson.fileexcludemimetype);
+            $('#' + formField + ' input[name="upload_file_exists"]').attr("value", formJson.fileexists);
+            $('#' + formField + ' input[name="upload_minheight_size"]').attr("value", formJson.fileimagesize_minheight);
+            $('#' + formField + ' input[name="upload_maxheight_size"]').attr("value", formJson.fileimagesize_maxheight);
+            $('#' + formField + ' input[name="upload_minwidth_size"]').attr("value", formJson.fileimagesize_minwidth);
+            $('#' + formField + ' input[name="upload_maxwidth_size"]').attr("value", formJson.fileimagesize_maxwidth);
+            $('#' + formField + ' input[name="upload_exclude_is_compressed"]').attr("value", formJson.fileiscompressed);
+            $('#' + formField + ' input[name="upload_exclude_is_image"]').attr("value", formJson.fileisimage);
+            $('#' + formField + ' input[name="upload_min_word_count"]').attr("value", formJson.filewordcount_min);
+            $('#' + formField + ' input[name="upload_max_word_count"]').attr("value", formJson.filewordcount_max);
+        }
+
         if(specificType === 'number'){
             var html5 = formJson.number_html5 ? 1 : 0;
 

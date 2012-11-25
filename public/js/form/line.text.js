@@ -435,6 +435,26 @@ var line_upload = function (liId, theForm, fieldProp, uniqueId, liClass)
     hiddenRequired('class', '').appendTo(li);
     hiddenRequired('id', '').appendTo(li);
 
+    hiddenRequired('filefilessize_min', '').appendTo(li);
+    hiddenRequired('filefilessize_max', '').appendTo(li);
+    hiddenRequired('fileimagesize_minheight', '').appendTo(li);
+    hiddenRequired('fileimagesize_maxheight', '').appendTo(li);
+    hiddenRequired('fileimagesize_minwidth', '').appendTo(li);
+    hiddenRequired('fileimagesize_maxwidth', '').appendTo(li);
+    hiddenRequired('filesize_min', '').appendTo(li);
+    hiddenRequired('filesize_max', '').appendTo(li);
+    hiddenRequired('filecount_min', '').appendTo(li);
+    hiddenRequired('filecount_max', '').appendTo(li);
+    hiddenRequired('fileextension', '').appendTo(li);
+    hiddenRequired('fileexcludeextension', '').appendTo(li);
+    hiddenRequired('filemimetype', '').appendTo(li);
+    hiddenRequired('fileexcludemimetype', '').appendTo(li);
+    hiddenRequired('fileexists', '').appendTo(li);
+    hiddenRequired('filewordcount_min', '').appendTo(li);
+    hiddenRequired('filewordcount_max', '').appendTo(li);
+    hiddenRequired('fileiscompressed', '').appendTo(li);
+    hiddenRequired('fileisimage', '').appendTo(li);
+
     formButton("Delete", "delete_li").appendTo(li);
     formButton("Edit", "edit_li").appendTo(li);
 
