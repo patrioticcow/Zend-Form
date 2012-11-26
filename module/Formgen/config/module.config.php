@@ -214,12 +214,7 @@ return array(
         'exception_template'       => 'error/index',
         'template_map' => array(
             'layout/left-menu'        => __DIR__ . '/../view/formgen/layout/left_menu.phtml',
-            'layout/layout'           => __DIR__ . '/../../Application/view/layout/layout.phtml',
-        	'layout/top_menu'     	  => __DIR__ . '/../../Application/view/layout/top_menu.phtml',
-        	'layout/footer'     	  => __DIR__ . '/../../Application/view/layout/footer.phtml',
             'admin/index/index' 	  => __DIR__ . '/../view/formgen/index/index.phtml',
-            'error/404'               => __DIR__ . '/../../Application/view/error/404.phtml',
-            'error/index'             => __DIR__ . '/../../Application/view/error/index.phtml',
         ),
         'template_path_stack' => array(
             __DIR__ . '/../view',
