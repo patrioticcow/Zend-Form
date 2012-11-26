@@ -162,6 +162,36 @@ return array(
                             ),
                         ),
                     ),
+                    'creditcard' => array(
+                        'type' => 'Literal',
+                        'options' => array(
+                            'route' => '/creditcard',
+                            'defaults' => array(
+                                'controller' => 'Index',
+                                'action'     => 'creditcard',
+                            ),
+                        ),
+                    ),
+                    'url' => array(
+                        'type' => 'Literal',
+                        'options' => array(
+                            'route' => '/url',
+                            'defaults' => array(
+                                'controller' => 'Index',
+                                'action'     => 'url',
+                            ),
+                        ),
+                    ),
+                    'hidden' => array(
+                        'type' => 'Literal',
+                        'options' => array(
+                            'route' => '/hidden',
+                            'defaults' => array(
+                                'controller' => 'Index',
+                                'action'     => 'hidden',
+                            ),
+                        ),
+                    ),
                     'test' => array(
                 		'type' => 'Literal',
                 		'options' => array(

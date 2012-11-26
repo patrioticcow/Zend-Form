@@ -1,17 +1,10 @@
 /**
- * copyright Cristi Citea
+ * Cristi Citea (http://123easywebsites.com/)
  *
- * Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated
- * documentation files (the "Software"), to deal in the Software without restriction, including without limitation the
- * rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software,
- * and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-
- The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
- THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE
- WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
- COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
- TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ * @link      http://github.com/zendframework/zf2 for the canonical source repository
+ * @copyright Copyright (c) 2012 Cristi Citea
+ * @license   http://framework.zend.com/license/new-bsd New BSD License
+ * @package   Form_Generator
  */
 
 $(document).ready(function() {
@@ -133,6 +126,30 @@ $(document).ready(function() {
 
             formElements.push(text(lineUpload));
             formValidatorElements.push(textValidator(lineUpload, 'upload'));
+        }
+
+        // form credit card
+        if(form[i].line_credit_card ){
+            var lineCreditCard = form[i].line_credit_card[0];
+
+            formElements.push(text(lineCreditCard));
+            formValidatorElements.push(textValidator(lineCreditCard, 'credit_card'));
+        }
+
+        // form url
+        if(form[i].line_url ){
+            var lineUrl = form[i].line_url[0];
+
+            formElements.push(text(lineUrl));
+            formValidatorElements.push(textValidator(lineUrl, 'url'));
+        }
+
+        // form hidden
+        if(form[i].line_hidden ){
+            var lineHidden = form[i].line_hidden[0];
+
+            formElements.push(text(lineHidden));
+            //formValidatorElements.push(textValidator(lineHidden, 'hidden'));
         }
 
         console.log(form[i]);
@@ -292,6 +309,7 @@ var textValidator = function textValidator (lineText, val){
             formValidatorDate(lineText.data) +
             formValidatorDropdown(lineText.data) +
             formValidatorUpload(lineText.data) +
+            formValidatorCreditCard(lineText.data) +
         ttt + "), <br>" +
     tt + "])); <br> <br>";
     return (textForm);
@@ -302,13 +320,13 @@ var textValidator = function textValidator (lineText, val){
  * @return {String}
  */
 var formValidatorUpload = function formValidatorOther (d){
-    console.log(d);
+
     var filesizeMin = '', filefilessizeMin = '', filecountMin = '', filewordcountMin = '',
         filesizeMax = '', filefilessizeMax = '', filecountMax = '', filewordcountMax = '',
         minheight = '', maxheight = '', minwidth = '', maxwidth = '',
         fileextension = '', fileexcludeextension = '', filemimetype = '',
         fileexcludemimetype = '', fileexists = '', fileiscompressed = '',
-        fileisimage = '';
+        fileisimage = '', toReturn = '';
 
     if(d.filesize){
         if(d.filesize.min && d.filesize.min != ''){
@@ -403,7 +421,7 @@ var formValidatorUpload = function formValidatorOther (d){
         }
     }
 
-    var toReturn = '';
+
     toReturn += genericValidator('Size', 'array', [filesizeMin, filesizeMax], '');
     toReturn += genericValidator('FilesSize', 'array', [filefilessizeMin, filefilessizeMax], '');
     toReturn += genericValidator('Count', 'array', [filecountMin, filecountMax], '');
@@ -451,6 +469,33 @@ var formValidatorOther = function formValidatorOther (l, v){
             tttt + "), <br>";
     }
     return (lengthForm);
+};
+
+/**
+ * @param d
+ * @return {String}
+ */
+var formValidatorCreditCard = function formValidatorCreditCard (d){
+
+    var institutes = '',
+        cc = '';
+
+    if(d.institutes){
+        if(d.institutes && d.institutes != ''){
+            institutes = tttttt + "'type' => \\Zend\\Validator\\CreditCard::" + d.institutes  + ", <br>";
+        }
+    }
+
+    if(institutes != ''){
+        cc =
+            tttt + "array ( <br>" +
+                ttttt + "'name' => 'CreditCard', <br>" +
+                ttttt + "'options' => array( <br>" +
+                    institutes +
+                ttttt + "), <br>" +
+            tttt + "), <br>";
+    }
+    return (cc);
 };
 
 /**
@@ -608,6 +653,7 @@ var formAttr = function formAttr (attr){
         }
         attrs += tttt + "'step' => '1', <br>";
     }
+
     if(attr.length){
         if(attr.length.min_str){
             attrs += tttt + "'min' => '" + attr.length.min_str  + "', <br>";
@@ -615,7 +661,9 @@ var formAttr = function formAttr (attr){
         if(attr.length.max_str ){
             attrs += tttt + "'max' => '" + attr.length.max_str  + "', <br>";
         }
-        attrs += tttt + "'step' => '1', <br>";
+        if(attr.length.min_str || attr.length.max_str){
+            attrs += tttt + "'step' => '1', <br>";
+        }
     }
 
     return (attrs);
@@ -748,11 +796,11 @@ var genericValidator = function genericValidator (nameV, typeV, arrayV, stringV)
         tttt + "array ( <br>" +
             ttttt + "'name' => '" + nameV + "', <br>" +
             ttttt + "'options' => array( <br>" +
-            tttttt + options + "<br>" +
+                options +
             ttttt + "), <br>" +
-            tttt + "), <br>";
+        tttt + "), <br>";
 
-    return (validator);
+    return options != '' ? options : '';
 }
 
 function zfViewHelper(){

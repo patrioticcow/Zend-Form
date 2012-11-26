@@ -1,0 +1,27 @@
+<?= '<h3>'.$this->result->name.'</h3>'; ?>
+
+<form action="/form" method="post" name="add_form_data" id="add_form_data" class="<?= $this->result->id; ?>">
+	<ul class="nav nav-list">
+		<li>
+			<label>Input Name</label>
+			<input type="text" name="input_name" maxlength="255" value="hidden">
+		</li>
+        <li>
+			<label>Value</label>
+			<input type="text" name="input_value" maxlength="255" value="some value">
+		</li>
+        <li>
+            <label>Class</label>
+            <input type="text" name="number_class" maxlength="255" placeholder="class1 class2..">
+        </li>
+        <li>
+            <label>Id</label>
+            <input type="text" name="number_id" maxlength="255" placeholder="custom id">
+        </li>
+		<li>
+			<button class="btn btn-primary" id="add_form_hidden">Save</button>
+		</li>
+	</ul>
+</form>
+
+<?= '<code>'.$this->result->id.'</code>'; ?>

@@ -1,0 +1,55 @@
+<?= '<h3>'.$this->result->name.'</h3>'; ?>
+
+<form action="/form" method="post" name="add_form_data" id="add_form_data" class="<?= $this->result->id; ?>">
+    <ul class="nav nav-list">
+        <li>
+            <label>Input Name</label>
+            <input type="text" name="input_name" maxlength="255" value="cc">
+        </li>
+        <li>
+            <label>Replace Label Text</label>
+            <input type="text" name="text_label" maxlength="255" value="Number Label">
+        </li>
+        <li>
+            <label>Placeholder Text</label>
+            <input type="text" name="placeholder_text" maxlength="255" value="1234123412341234">
+        </li>
+        <li>
+            <label>Required</label>
+            <select name="required">
+                <option value="no">No</option>
+                <option value="yes">Yes</option>
+            </select>
+        </li>
+        <li>
+            <label>Institutes</label>
+            <select name="institutes">
+                <option value="ALL">All</option>
+                <option value="VISA">Visa</option>
+                <option value="AMERICAN_EXPRESS">American Express</option>
+                <option value="UNIONPAY">Unionpay</option>
+                <option value="DINERS_CLUB">Diners Club</option>
+                <option value="DINERS_CLUB_US">Diners Club US</option>
+                <option value="DISCOVER">Discover</option>
+                <option value="JCB">JCB</option>
+                <option value="LASER">Laser</option>
+                <option value="MAESTRO">Maestro</option>
+                <option value="MASTERCARD">Mastercard</option>
+                <option value="SOLO">Solo</option>
+            </select>
+        </li>
+        <li>
+            <label>Class</label>
+            <input type="text" name="number_class" maxlength="255" placeholder="class1 class2..">
+        </li>
+        <li>
+            <label>Id</label>
+            <input type="text" name="number_id" maxlength="255" placeholder="custom id">
+        </li>
+        <li>
+            <button class="btn btn-primary" id="add_form_credit_card">Save</button>
+        </li>
+    </ul>
+</form>
+
+<?= '<code>'.$this->result->id.'</code>'; ?>

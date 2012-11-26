@@ -1,17 +1,10 @@
 /**
- * copyright Cristi Citea
+ * Cristi Citea (http://123easywebsites.com/)
  *
- * Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated
- * documentation files (the "Software"), to deal in the Software without restriction, including without limitation the
- * rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software,
- * and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-
- The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
- THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE
- WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
- COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
- TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ * @link      http://github.com/zendframework/zf2 for the canonical source repository
+ * @copyright Copyright (c) 2012 Cristi Citea
+ * @license   http://framework.zend.com/license/new-bsd New BSD License
+ * @package   Form_Generator
  */
 
 var formPropertiesJson = function(formData) {
@@ -88,6 +81,21 @@ var lineDropdownJson = function(formElements) {
 
 var lineUploadJson = function(formElements) {
     var data = commonsJson(formElements, 'form_input', 'form_fileupload', "file");
+    return (data);
+};
+
+var lineCreditCardJson = function(formElements) {
+    var data = commonsJson(formElements, 'form_input', 'form_credit_card', "Zend\\Form\\Element\\Text");
+    return (data);
+};
+
+var lineUrlJson = function(formElements) {
+    var data = commonsJson(formElements, 'form_input', 'form_url', "Zend\\Form\\Element\\Url");
+    return (data);
+};
+
+var lineHiddenJson = function(formElements) {
+    var data = commonsJson(formElements, 'form_input', 'form_hidden', "Zend\\Form\\Element\\Hidden");
     return (data);
 };
 
@@ -321,14 +329,40 @@ var commonsJson = function(formElements, typeName, classType, typeType){
                     }
                 }
             });
-        } else {
+        } else if (classType === 'form_credit_card'){
             myData.push({
                 'name' : li.find('[name="input_name"]').attr("value"),
                 'type' : typeType,
                 'order' : order,
                 'data' : {
                     'placeholder': li.find('.' + classType).attr("placeholder"),
-                    'label': li.find('[for="' + classType + '"]').text(),
+                    'label': li.find('[for="' + typeName + '"]').text(),
+                    'required': li.find('[name="required"]').attr("value"),
+                    'class': li.find('[name="class"]').attr("value"),
+                    'id': li.find('[name="id"]').attr("value"),
+                    'institutes': li.find('[name="institutes"]').attr("value")
+                }
+            });
+        } else if (classType === 'form_hidden'){
+            myData.push({
+                'name' : li.find('[name="input_name"]').attr("value"),
+                'type' : typeType,
+                'order' : order,
+                'data' : {
+                    'required': li.find('[name="required"]').attr("value"),
+                    'class': li.find('[name="class"]').attr("value"),
+                    'id': li.find('[name="id"]').attr("value"),
+                    'default': li.find('[name="value"]').attr("value")
+                }
+            });
+        } else {
+            myData.push({
+                'name' : li.find('[name="input_name"]').attr("value"),
+                'type' : typeType,
+                'order' : order,
+                'data' : {
+                    'placeholder': li.find('.' + typeName).attr("placeholder"),
+                    'label': li.find('[for="' + typeName + '"]').text(),
                     'required': li.find('[name="required"]').attr("value"),
                     'class': li.find('[name="class"]').attr("value"),
                     'id': li.find('[name="id"]').attr("value"),

@@ -1,17 +1,10 @@
 /**
- * copyright Cristi Citea
+ * Cristi Citea (http://123easywebsites.com/)
  *
- * Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated
- * documentation files (the "Software"), to deal in the Software without restriction, including without limitation the
- * rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software,
- * and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-
- The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
- THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE
- WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
- COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
- TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ * @link      http://github.com/zendframework/zf2 for the canonical source repository
+ * @copyright Copyright (c) 2012 Cristi Citea
+ * @license   http://framework.zend.com/license/new-bsd New BSD License
+ * @package   Form_Generator
  */
 
 $(document).ready(function() {
@@ -289,6 +282,60 @@ $(document).ready(function() {
         uniqueId++;
     });
 
+    /**
+     * line_credit_card
+     */
+    $('#line_credit_card').click(function () {
+        var liId = "edit_form_credit_card" + uniqueId;
+
+        line_credit_card(liId, theForm, fieldProp, uniqueId, "edit_form_credit_card");
+
+        $('#'+ liId +' .edit_li').click(function () {
+            secondTab.tab('show');
+            $.get('/formgen/creditcard', { name: "Edit Credit Card Field", id: liId}).done(function(data) {
+                fieldProp.html(data);
+            });
+        });
+
+        uniqueId++;
+    });
+
+    /**
+     * line_url
+     */
+    $('#line_url').click(function () {
+        var liId = "edit_form_url" + uniqueId;
+
+        line_url(liId, theForm, fieldProp, uniqueId, "edit_form_url");
+
+        $('#'+ liId +' .edit_li').click(function () {
+            secondTab.tab('show');
+            $.get('/formgen/url', { name: "Edit Web Site / Url Field", id: liId}).done(function(data) {
+                fieldProp.html(data);
+            });
+        });
+
+        uniqueId++;
+    });
+
+    /**
+     * line_hidden
+     */
+    $('#line_hidden').click(function () {
+        var liId = "edit_form_hidden" + uniqueId;
+
+        line_hidden(liId, theForm, fieldProp, uniqueId, "edit_form_hidden");
+
+        $('#'+ liId +' .edit_li').click(function () {
+            secondTab.tab('show');
+            $.get('/formgen/hidden', { name: "Edit Hidden Field", id: liId}).done(function(data) {
+                fieldProp.html(data);
+            });
+        });
+
+        uniqueId++;
+    });
+
 	/**
 	 * generate the form
 	 * convert form to json
@@ -348,6 +395,18 @@ $(document).ready(function() {
 		        var addUploadText = lineUploadJson($(this));
                 allData.push({'line_upload' : addUploadText});
 		    }
+            if($(this).hasClass('edit_form_credit_card') === true) {
+		        var addCreditCardJson = lineCreditCardJson($(this));
+                allData.push({'line_credit_card' : addCreditCardJson});
+		    }
+            if($(this).hasClass('edit_form_url') === true) {
+		        var addUrlJson = lineUrlJson($(this));
+                allData.push({'line_url' : addUrlJson});
+		    }
+            if($(this).hasClass('edit_form_hidden') === true) {
+		        var addHiddenJson = lineHiddenJson($(this));
+                allData.push({'line_hidden' : addHiddenJson});
+		    }
 		});
 
         var formTitle = addFormProperties[0].title.trim().replace(/ /g,'');
@@ -359,7 +418,10 @@ $(document).ready(function() {
         if(typeof(Storage)!=="undefined"){
             localStorage.setItem(key, JSON.stringify(value));
             if (localStorage.key){
-                window.location.href="/formgen/view/" + key;
+                window.open(
+                    "/formgen/view/" + key,
+                    '_blank'
+                );
             }
         }
         else

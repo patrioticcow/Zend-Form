@@ -1,17 +1,10 @@
 /**
- * copyright Cristi Citea
+ * Cristi Citea (http://123easywebsites.com/)
  *
- * Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated
- * documentation files (the "Software"), to deal in the Software without restriction, including without limitation the
- * rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software,
- * and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-
- The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
- THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE
- WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
- COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
- TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ * @link      http://github.com/zendframework/zf2 for the canonical source repository
+ * @copyright Copyright (c) 2012 Cristi Citea
+ * @license   http://framework.zend.com/license/new-bsd New BSD License
+ * @package   Form_Generator
  */
 
 $(document).ready(function()
@@ -22,6 +15,14 @@ $(document).ready(function()
 	$('#add_form_text').live("click", function(e){
 		e.preventDefault();
 		addForm($('#add_form_data'), 'input', 'form_input', 'text');
+	});
+
+    /**
+     * add_form_url
+     */
+	$('#add_form_url').live("click", function(e){
+		e.preventDefault();
+		addForm($('#add_form_data'), 'input', 'form_input', 'url');
 	});
 
     /**
@@ -246,6 +247,22 @@ $(document).ready(function()
     });
 
     /**
+     * add_form_credit_card
+     */
+    $('#add_form_credit_card').live("click", function(e){
+        e.preventDefault();
+        addForm($('#add_form_data'), 'input', 'form_input', 'credit_card');
+    });
+
+    /**
+     * add_form_hidden
+     */
+    $('#add_form_hidden').live("click", function(e){
+        e.preventDefault();
+        addForm($('#add_form_data'), 'input', 'form_input', 'hidden');
+    });
+
+    /**
      * edit individual field form preferences
      * @param formId
      * @param fieldType
@@ -299,6 +316,16 @@ $(document).ready(function()
             $('#' + formField + ' input[name="is_empty_type"]').attr("value", formJson.is_empty_type);
         }
 
+        // set credit card
+        if(specificType === 'credit_card'){
+            $('#' + formField + ' input[name="institutes"]').attr("value", formJson.institutes);
+        }
+
+        // set hidden
+        if(specificType === 'hidden'){
+            $('#' + formField + ' input[name="value"]').attr("value", formJson.input_value);
+        }
+
         // set date
         if(specificType === 'date'){
             $('#' + formField + ' input[name="date_min_validate"]').attr("value", formJson.date_min_validate);
@@ -323,7 +350,6 @@ $(document).ready(function()
         }
 
         if(specificType === 'fileupload'){
-            console.log(formJson);
             $('#' + formField + ' input[name="filesize_min"]').attr("value", formJson.upload_filesize_min);
             $('#' + formField + ' input[name="filesize_max"]').attr("value", formJson.upload_filesize_max);
             $('#' + formField + ' input[name="filefilessize_min"]').attr("value", formJson.upload_filefilessize_min);

@@ -1,36 +1,29 @@
 /**
- * copyright Cristi Citea
+ * Cristi Citea (http://123easywebsites.com/)
  *
- * Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated
- * documentation files (the "Software"), to deal in the Software without restriction, including without limitation the
- * rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software,
- * and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-
- The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
- THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE
- WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
- COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
- TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ * @link      http://github.com/zendframework/zf2 for the canonical source repository
+ * @copyright Copyright (c) 2012 Cristi Citea
+ * @license   http://framework.zend.com/license/new-bsd New BSD License
+ * @package   Form_Generator
  */
 
 var line_text = function (liId, theForm, fieldProp, uniqueId, liClass)
 {
-	var li = addLi(liId, liClass).appendTo(theForm);
+    var li = addLi(liId, liClass).appendTo(theForm);
 
     hiddenRequired('required', '0').appendTo(li);
 
-	$("<label/>", {
-		text: "Text",
+    $("<label/>", {
+        text: "Text",
         "class" : "main_label",
-		"for": "form_input"
-	}).appendTo(li);
+        "for": "form_input"
+    }).appendTo(li);
 
-	$("<input/>", {
-		type: "text",
-		"class": "form_input",
-		placeholder: "Type something..."
-	}).appendTo(li);
+    $("<input/>", {
+        type: "text",
+        "class": "form_input",
+        placeholder: "Type something..."
+    }).appendTo(li);
 
     hiddenRequired('input_name', '').appendTo(li);
     hiddenRequired('class', '').appendTo(li);
@@ -38,8 +31,59 @@ var line_text = function (liId, theForm, fieldProp, uniqueId, liClass)
     hiddenRequired('min', '').appendTo(li);
     hiddenRequired('max', '').appendTo(li);
 
-	formButton("Delete", "delete_li").appendTo(li);
-	formButton("Edit", "edit_li").appendTo(li);
+    formButton("Delete", "delete_li").appendTo(li);
+    formButton("Edit", "edit_li").appendTo(li);
+
+    clearBoth().appendTo(li);
+};
+
+var line_hidden = function (liId, theForm, fieldProp, uniqueId, liClass)
+{
+    var li = addLi(liId, liClass).appendTo(theForm);
+
+    hiddenRequired('required', '0').appendTo(li);
+
+    $("<div/>", {
+        'text': "hidden field"
+    }).appendTo(li);
+
+    hiddenRequired('input_name', '').appendTo(li);
+    hiddenRequired('class', '').appendTo(li);
+    hiddenRequired('id', '').appendTo(li);
+    hiddenRequired('value', '').appendTo(li);
+
+    formButton("Delete", "delete_li").appendTo(li);
+    formButton("Edit", "edit_li").appendTo(li);
+
+    clearBoth().appendTo(li);
+};
+
+var line_url = function (liId, theForm, fieldProp, uniqueId, liClass)
+{
+    var li = addLi(liId, liClass).appendTo(theForm);
+
+    hiddenRequired('required', '0').appendTo(li);
+
+    $("<label/>", {
+        text: "Text",
+        "class" : "main_label",
+        "for": "form_input"
+    }).appendTo(li);
+
+    $("<input/>", {
+        type: "text",
+        "class": "form_input",
+        placeholder: "http://www.test.com"
+    }).appendTo(li);
+
+    hiddenRequired('input_name', '').appendTo(li);
+    hiddenRequired('class', '').appendTo(li);
+    hiddenRequired('id', '').appendTo(li);
+    hiddenRequired('min', '').appendTo(li);
+    hiddenRequired('max', '').appendTo(li);
+
+    formButton("Delete", "delete_li").appendTo(li);
+    formButton("Edit", "edit_li").appendTo(li);
 
     clearBoth().appendTo(li);
 };
@@ -195,40 +239,6 @@ var line_number = function (liId, theForm, fieldProp, uniqueId, liClass)
     hiddenRequired('id', '').appendTo(li);
     hiddenRequired('min', '').appendTo(li);
     hiddenRequired('max', '').appendTo(li);
-    hiddenRequired('validation', '').appendTo(li);
-    hiddenRequired('html5', '').appendTo(li);
-    hiddenRequired('min_str', '').appendTo(li);
-    hiddenRequired('max_str', '').appendTo(li);
-
-	formButton("Delete", "delete_li").appendTo(li);
-	formButton("Edit", "edit_li").appendTo(li);
-
-    clearBoth().appendTo(li);
-};
-
-var line_phone = function (liId, theForm, fieldProp, uniqueId, liClass)
-{
-	var li = addLi(liId, liClass).appendTo(theForm);
-
-    hiddenRequired('required', '0').appendTo(li);
-
-	$("<label/>", {
-		text: "Number Label",
-        "class" : "main_label",
-		"for": "form_number"
-	}).appendTo(li);
-
-	$("<input/>", {
-		type: "text",
-		"class": "form_number",
-		placeholder: "7025555555"
-	}).appendTo(li);
-
-    hiddenRequired('input_name', '').appendTo(li);
-    hiddenRequired('class', '').appendTo(li);
-    hiddenRequired('id', '').appendTo(li);
-    hiddenRequired('min', '').appendTo(li);
-    hiddenRequired('max', '').appendTo(li);
 
 	formButton("Delete", "delete_li").appendTo(li);
 	formButton("Edit", "edit_li").appendTo(li);
@@ -288,23 +298,12 @@ var line_checkbox = function (liId, theForm, fieldProp, uniqueId, liClass)
 			"style":"float:left"
 		}).appendTo(checkbox_span);
 
-        if(i === 0){
-            $("<input/>", {
-                type: "checkbox",
-                'disabled': "disabled",
-                'checked' : 'checked',
-                id: "form_checkbox_" + i,
-                "style":"float:left"
-            }).insertBefore(checkboxx);
-        } else {
-            $("<input/>", {
-                type: "checkbox",
-                'disabled': "disabled",
-                id: "form_checkbox_" + i,
-                "style":"float:left"
-            }).insertBefore(checkboxx);
-        }
-
+		$("<input/>", {
+			type: "checkbox",
+			'disabled': "disabled",
+			id: "form_checkbox_" + i,
+            "style":"float:left"
+		}).insertBefore(checkboxx);
 	}
 
     hiddenRequired('input_name', '').appendTo(li);
@@ -341,22 +340,12 @@ var line_radio = function (liId, theForm, fieldProp, uniqueId, liClass)
             "style":"float:left"
         }).appendTo(radio_span);
 
-        if(i === 0){
-            $("<input/>", {
-                type: "radio",
-                'disabled': "disabled",
-                'checked' : 'checked',
-                id: "form_radio_" + i,
-                "style":"float:left"
-            }).insertBefore(radioo);
-        } else {
-            $("<input/>", {
-                type: "radio",
-                'disabled': "disabled",
-                id: "form_radio_" + i,
-                "style":"float:left"
-            }).insertBefore(radioo);
-        }
+        $("<input/>", {
+            type: "radio",
+            'disabled': "disabled",
+            id: "form_radio_" + i,
+            "style":"float:left"
+        }).insertBefore(radioo);
     }
 
     hiddenRequired('input_name', '').appendTo(li);
@@ -387,26 +376,16 @@ var line_dropdown = function (liId, theForm, fieldProp, uniqueId, liClass)
 
 	for (var i=0;i<2;i++)
 	{
-        if(i === 0){
-            $("<option/>", {
-                text: "Dropdown",
-                "id": "dropdown_rem" + i,
-                "selected": "selected",
-                "class": "dropdown_option"
-            }).appendTo(radio);
-        } else {
-            $("<option/>", {
-                text: "Dropdown",
-                "id": "dropdown_rem" + i,
-                "class": "dropdown_option"
-            }).appendTo(radio);
-        }
+		$("<option/>", {
+			text: "Dropdown",
+			"id": "dropdown_rem" + i,
+			"class": "dropdown_option"
+		}).appendTo(radio);
 	}
 
     hiddenRequired('input_name', '').appendTo(li);
     hiddenRequired('class', '').appendTo(li);
     hiddenRequired('id', '').appendTo(li);
-    hiddenRequired('notinarray', '').appendTo(li);
 
 	formButton("Delete", "delete_li").appendTo(li);
 	formButton("Edit", "edit_li").appendTo(li);
@@ -435,26 +414,6 @@ var line_upload = function (liId, theForm, fieldProp, uniqueId, liClass)
     hiddenRequired('class', '').appendTo(li);
     hiddenRequired('id', '').appendTo(li);
 
-    hiddenRequired('filesize_min', '').appendTo(li);
-    hiddenRequired('filesize_max', '').appendTo(li);
-    hiddenRequired('filefilessize_min', '').appendTo(li);
-    hiddenRequired('filefilessize_max', '').appendTo(li);
-    hiddenRequired('filecount_min', '').appendTo(li);
-    hiddenRequired('filecount_max', '').appendTo(li);
-    hiddenRequired('fileextension', '').appendTo(li);
-    hiddenRequired('fileexcludeextension', '').appendTo(li);
-    hiddenRequired('filemimetype', '').appendTo(li);
-    hiddenRequired('fileexcludemimetype', '').appendTo(li);
-    hiddenRequired('fileexists', '').appendTo(li);
-    hiddenRequired('fileimagesize_minheight', '').appendTo(li);
-    hiddenRequired('fileimagesize_maxheight', '').appendTo(li);
-    hiddenRequired('fileimagesize_minwidth', '').appendTo(li);
-    hiddenRequired('fileimagesize_maxwidth', '').appendTo(li);
-    hiddenRequired('fileiscompressed', '').appendTo(li);
-    hiddenRequired('fileisimage', '').appendTo(li);
-    hiddenRequired('filewordcount_min', '').appendTo(li);
-    hiddenRequired('filewordcount_max', '').appendTo(li);
-
     formButton("Delete", "delete_li").appendTo(li);
     formButton("Edit", "edit_li").appendTo(li);
 
@@ -467,6 +426,35 @@ var addLi = function(liId, liClass){
 		"class": liClass
 	});
 	return(list);
+};
+
+var line_credit_card = function (liId, theForm, fieldProp, uniqueId, liClass)
+{
+    var li = addLi(liId, liClass).appendTo(theForm);
+
+    hiddenRequired('required', '0').appendTo(li);
+
+    $("<label/>", {
+        text: "Text",
+        "class" : "main_label",
+        "for": "form_input"
+    }).appendTo(li);
+
+    $("<input/>", {
+        type: "text",
+        "class": "form_input",
+        placeholder: "Type something..."
+    }).appendTo(li);
+
+    hiddenRequired('input_name', '').appendTo(li);
+    hiddenRequired('class', '').appendTo(li);
+    hiddenRequired('id', '').appendTo(li);
+    hiddenRequired('institutes', '').appendTo(li);
+
+    formButton("Delete", "delete_li").appendTo(li);
+    formButton("Edit", "edit_li").appendTo(li);
+
+    clearBoth().appendTo(li);
 };
 
 var formButton = function(textForm, deleteLi){
