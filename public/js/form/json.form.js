@@ -267,35 +267,35 @@ var commonsJson = function(formElements, typeName, classType, typeType){
                     'label': li.find('[for="' + typeName + '"]').text(),
                     'class': li.find('[name="class"]').attr("value"),
                     'id': li.find('[name="id"]').attr("value"),
+                    'filesize' : {
+                        'min' : li.find('[name="filesize_min"]').attr("value"),
+                        'max' : li.find('[name="filesize_max"]').attr("value")
+                    },
                     'filefilessize' : {
                         'min' : li.find('[name="filefilessize_min"]').attr("value"),
                         'max' : li.find('[name="filefilessize_max"]').attr("value")
                     },
+                    'filecount' : {
+                        'min' : li.find('[name="filecount_min"]').attr("value"),
+                        'max' : li.find('[name="filecount_max"]').attr("value")
+                    },
+                    'fileextension' : li.find('[name="fileextension"]').attr("value"),
+                    'fileexcludeextension' : li.find('[name="fileexcludeextension"]').attr("value"),
+                    'filemimetype' : li.find('[name="filemimetype"]').attr("value"),
+                    'fileexcludemimetype' : li.find('[name="fileexcludemimetype"]').attr("value"),
+                    'fileexists' : li.find('[name="fileexists"]').attr("value"),
                     'fileimagesize' : {
                         'minheight' : li.find('[name="fileimagesize_minheight"]').attr("value"),
                         'maxheight' : li.find('[name="fileimagesize_maxheight"]').attr("value"),
                         'minwidth' : li.find('[name="fileimagesize_minwidth"]').attr("value"),
                         'maxwidth' : li.find('[name="fileimagesize_maxwidth"]').attr("value")
                     },
-                    'filesize' : {
-                        'min' : li.find('[name="filesize_min"]').attr("value"),
-                        'max' : li.find('[name="filesize_max"]').attr("value")
-                    },
-                    'filecount' : {
-                        'min' : li.find('[name="filecount_min"]').attr("value"),
-                        'max' : li.find('[name="filecount_max"]').attr("value")
-                    },
-                    'fileexcludeextension' : li.find('[name="fileexcludeextension"]').attr("value"),
-                    'filemimetype' : li.find('[name="filemimetype"]').attr("value"),
-                    'fileexcludemimetype' : li.find('[name="fileexcludemimetype"]').attr("value"),
-                    'fileexists' : li.find('[name="fileexists"]').attr("value"),
+                    'fileiscompressed' : li.find('[name="fileiscompressed"]').attr("value"),
+                    'fileisimage' : li.find('[name="fileisimage"]').attr("value"),
                     'filewordcount' : {
                         'min' : li.find('[name="filewordcount_min"]').attr("value"),
                         'max' : li.find('[name="filewordcount_max"]').attr("value")
-                    },
-                    'fileiscompressed' : li.find('[name="fileiscompressed"]').attr("value"),
-                    'fileisimage' : li.find('[name="fileisimage"]').attr("value")
-
+                    }
                 }
             });
         } else if (classType === 'form_number'){

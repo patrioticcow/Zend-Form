@@ -291,9 +291,133 @@ var textValidator = function textValidator (lineText, val){
             formValidatorToken(lineText.data) +
             formValidatorDate(lineText.data) +
             formValidatorDropdown(lineText.data) +
+            formValidatorUpload(lineText.data) +
         ttt + "), <br>" +
     tt + "])); <br> <br>";
     return (textForm);
+};
+
+/**
+ * @param d
+ * @return {String}
+ */
+var formValidatorUpload = function formValidatorOther (d){
+    console.log(d);
+    var filesizeMin = '', filefilessizeMin = '', filecountMin = '', filewordcountMin = '',
+        filesizeMax = '', filefilessizeMax = '', filecountMax = '', filewordcountMax = '',
+        minheight = '', maxheight = '', minwidth = '', maxwidth = '',
+        fileextension = '', fileexcludeextension = '', filemimetype = '',
+        fileexcludemimetype = '', fileexists = '', fileiscompressed = '',
+        fileisimage = '';
+
+    if(d.filesize){
+        if(d.filesize.min && d.filesize.min != ''){
+            filesizeMin = tttttt + "'min' => '" + d.filesize.min  + "', <br>";
+        }
+        if(d.filesize.max && d.filesize.max != ''){
+            filesizeMax = tttttt + "'max' => '" + d.filesize.max  + "', <br>";
+        }
+    }
+
+    if(d.filefilessize){
+        if(d.filefilessize.min && d.filefilessize.min != ''){
+            filefilessizeMin = tttttt + "'min' => '" + d.filefilessize.min  + "', <br>";
+        }
+        if(d.filefilessize.max && d.filefilessize.max != ''){
+            filefilessizeMax = tttttt + "'max' => '" + d.filefilessize.max  + "', <br>";
+        }
+    }
+
+    if(d.filecount){
+        if(d.filecount.min && d.filecount.min != ''){
+            filecountMin = tttttt + "'min' => '" + d.filecount.min  + "', <br>";
+        }
+        if(d.filefilessize.max && d.filefilessize.max != ''){
+            filecountMax = tttttt + "'max' => '" + d.filecount.max  + "', <br>";
+        }
+    }
+
+    if(d.filewordcount){
+        if(d.filewordcount.min && d.filewordcount.min != ''){
+            filewordcountMin = tttttt + "'min' => '" + d.filewordcount.min  + "', <br>";
+        }
+        if(d.filewordcount.max && d.filewordcount.max != ''){
+            filewordcountMax = tttttt + "'max' => '" + d.filewordcount.max  + "', <br>";
+        }
+    }
+
+    if(d.fileimagesize){
+        if(d.fileimagesize.minheight && d.fileimagesize.minheight != ''){
+            minheight = tttttt + "'minwidth' => '" + d.fileimagesize.minheight  + "', <br>";
+        }
+        if(d.filewordcount.maxheight && d.fileimagesize.maxheight != ''){
+            maxheight = tttttt + "'maxwidth' => '" + d.fileimagesize.maxheight  + "', <br>";
+        }
+        if(d.filewordcount.minwidth && d.fileimagesize.minwidth != ''){
+            minwidth = tttttt + "'minheight' => '" + d.fileimagesize.minwidth  + "', <br>";
+        }
+        if(d.filewordcount.maxwidth && d.fileimagesize.maxwidth != ''){
+            maxwidth = tttttt + "'maxheight' => '" + d.fileimagesize.maxwidth  + "', <br>";
+        }
+    }
+
+    if(d.fileextension){
+        if(d.fileextension && d.fileextension != ''){
+            fileextension = tttttt + d.fileextension  + ", <br>";
+        }
+    }
+
+    if(d.fileexcludeextension){
+        if(d.fileexcludeextension && d.fileexcludeextension != ''){
+            fileexcludeextension = tttttt + d.fileexcludeextension  + ", <br>";
+        }
+    }
+
+    if(d.filemimetype){
+        if(d.filemimetype && d.filemimetype != ''){
+            filemimetype = tttttt + d.filemimetype  + ", <br>";
+        }
+    }
+
+    if(d.fileexcludemimetype){
+        if(d.fileexcludemimetype && d.fileexcludemimetype != ''){
+            fileexcludemimetype = tttttt + d.fileexcludemimetype  + ", <br>";
+        }
+    }
+
+    if(d.fileexists){
+        if(d.fileexists && d.fileexists != ''){
+            fileexists = tttttt + d.fileexists  + ", <br>";
+        }
+    }
+
+    if(d.fileiscompressed){
+        if(d.fileiscompressed && d.fileiscompressed != ''){
+            fileiscompressed = tttttt + d.fileiscompressed  + ", <br>";
+        }
+    }
+
+    if(d.fileisimage){
+        if(d.fileisimage && d.fileisimage != ''){
+            fileisimage = tttttt + d.fileisimage  + ", <br>";
+        }
+    }
+
+    var toReturn = '';
+    toReturn += genericValidator('Size', 'array', [filesizeMin, filesizeMax], '');
+    toReturn += genericValidator('FilesSize', 'array', [filefilessizeMin, filefilessizeMax], '');
+    toReturn += genericValidator('Count', 'array', [filecountMin, filecountMax], '');
+    toReturn += genericValidator('WordCount', 'array', [filewordcountMin, filewordcountMax], '');
+    toReturn += genericValidator('ImageSize', 'multy_array', [minheight, maxheight, minwidth, maxwidth], '');
+    toReturn += genericValidator('Extension', 'string', [], fileextension);
+    toReturn += genericValidator('ExcludeExtension', 'string', [], fileexcludeextension);
+    toReturn += genericValidator('MimeType', 'string', [], filemimetype);
+    toReturn += genericValidator('ExcludeMimeType', 'string', [], fileexcludemimetype);
+    toReturn += genericValidator('Exists', 'string', [], fileexists);
+    toReturn += genericValidator('IsCompressed', 'string', [], fileiscompressed);
+    toReturn += genericValidator('IsImage', 'string', [], fileisimage);
+
+    return (toReturn);
 };
 
 /**
@@ -605,6 +729,30 @@ function zfView(){
         '<br>';
 
     return (file);
+}
+
+var genericValidator = function genericValidator (nameV, typeV, arrayV, stringV){
+    var options = '';
+
+    if(typeV == 'string'){
+        options = stringV;
+    }
+    if(typeV == 'array'){
+        options = arrayV[0] +  arrayV[1];
+    }
+    if(typeV == 'multy_array'){
+        options = arrayV[0] + arrayV[1] + arrayV[2] + arrayV[3];
+    }
+
+    var validator =
+        tttt + "array ( <br>" +
+            ttttt + "'name' => '" + nameV + "', <br>" +
+            ttttt + "'options' => array( <br>" +
+            tttttt + options + "<br>" +
+            ttttt + "), <br>" +
+            tttt + "), <br>";
+
+    return (validator);
 }
 
 function zfViewHelper(){

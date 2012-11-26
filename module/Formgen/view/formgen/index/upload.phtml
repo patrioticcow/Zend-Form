@@ -39,8 +39,8 @@
                     <div id="collapseZero" class="accordion-body collapse">
                         <div class="accordion-inner">
                             <small>The Size validator checks for the size of a single file.</small><br>
-                            <input type="number" name="upload_min_size" class="input-small" placeholder="10kB">
-                            <input type="number" name="upload_max_size" class="input-small" placeholder="4MB">
+                            <input type="text" name="upload_filesize_min" class="input-small" placeholder="10kB">
+                            <input type="text" name="upload_filesize_max" class="input-small" placeholder="4MB">
                         </div>
                     </div>
                 </div>
@@ -53,8 +53,8 @@
                     <div id="collapseOne" class="accordion-body collapse">
                         <div class="accordion-inner">
                             <small>The FilesSize validator checks for the aggregate size of all transferred files.</small><br>
-                            <input type="number" name="upload_min_file_size" class="input-small" placeholder="min">
-                            <input type="number" name="upload_max_file_size" class="input-small" placeholder="max">
+                            <input type="number" name="upload_filefilessize_min" class="input-small" placeholder="min">
+                            <input type="number" name="upload_filefilessize_max" class="input-small" placeholder="max">
                         </div>
                     </div>
                 </div>
@@ -66,21 +66,9 @@
                     </div>
                     <div id="collapseTwo" class="accordion-body collapse">
                         <div class="accordion-inner">
-                            <input type="number" name="upload_min_count" class="input-small" placeholder="min">
-                            <input type="number" name="upload_max_count" class="input-small" placeholder="max">
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion-group">
-                    <div class="accordion-heading">
-                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseThreee">
-                            File Extension
-                        </a>
-                    </div>
-                    <div id="collapseThreee" class="accordion-body collapse">
-                        <div class="accordion-inner">
-                            <small>The Extension validator checks the file extension of the specified files.</small>
-                            <input type="text" name="upload_file_extension" placeholder="jpeg, mov, txt">
+                            <small>The Count validator checks for the number of files which are provided.</small><br>
+                            <input type="number" name="upload_filecount_min" class="input-small" placeholder="min">
+                            <input type="number" name="upload_filecount_max" class="input-small" placeholder="max">
                         </div>
                     </div>
                 </div>
@@ -93,7 +81,7 @@
                     <div id="collapseThree" class="accordion-body collapse">
                         <div class="accordion-inner">
                             <small>The ExcludeExtension validator checks the file extension of the specified files.</small>
-                            <input type="text" name="upload_file_exclude_extension" placeholder="jpeg, mov, txt">
+                            <input type="text" name="upload_fileexcludeextension" placeholder="jpeg, mov, txt">
                         </div>
                     </div>
                 </div>
@@ -106,7 +94,7 @@
                     <div id="collapseFourr" class="accordion-body collapse">
                         <div class="accordion-inner">
                             <small>The MimeType validator checks the MIME type of transferred files.</small>
-                            <input type="text" name="upload_mime_type" placeholder="image, audio, video, text">
+                            <input type="text" name="upload_filemimetype" placeholder="image, audio, video, text">
                         </div>
                     </div>
                 </div>
@@ -119,7 +107,7 @@
                     <div id="collapseFour" class="accordion-body collapse">
                         <div class="accordion-inner">
                             <small>The ExcludeMimeType validator checks the MIME type of transferred files.</small>
-                            <input type="text" name="upload_exclude_mime_type" placeholder="image, audio, video, text">
+                            <input type="text" name="upload_fileexcludemimetype" placeholder="image, audio, video, text">
                         </div>
                     </div>
                 </div>
@@ -133,7 +121,7 @@
                         <div class="accordion-inner">
                             <small>The Exists validator checks for the existence of specified files.
                                 To check in multiple folders add the locations separated by coma</small>
-                            <input type="text" name="upload_file_exists" placeholder="\home\images, \home\uploads">
+                            <input type="text" name="upload_fileexists" placeholder="\home\images, \home\uploads">
                         </div>
                     </div>
                 </div>
@@ -146,7 +134,7 @@
                     <div id="collapseSix" class="accordion-body collapse">
                         <div class="accordion-inner">
                             <small>The Extension validator checks the file extension of the specified files.</small>
-                            <input type="text" name="upload_exclude_extension" placeholder="jpeg, png">
+                            <input type="text" name="upload_fileextension" placeholder="jpeg, png">
                         </div>
                     </div>
                 </div>
@@ -159,10 +147,10 @@
                     <div id="collapseSeven" class="accordion-body collapse">
                         <div class="accordion-inner">
                             <small>The ImageSize validator checks the size of image files.</small><br>
-                            <input type="number" name="upload_minheight_size" class="input-small" placeholder="min height">
-                            <input type="number" name="upload_maxheight_size" class="input-small" placeholder="max height">
-                            <input type="number" name="upload_minwidth_size" class="input-small" placeholder="min width">
-                            <input type="number" name="upload_maxwidth_size" class="input-small" placeholder="max width">
+                            <input type="number" name="upload_fileimagesize_minheight" class="input-small" placeholder="min height">
+                            <input type="number" name="upload_fileimagesize_maxheight" class="input-small" placeholder="max height">
+                            <input type="number" name="upload_fileimagesize_minwidth" class="input-small" placeholder="min width">
+                            <input type="number" name="upload_fileimagesize_maxwidth" class="input-small" placeholder="max width">
                         </div>
                     </div>
                 </div>
@@ -175,7 +163,7 @@
                     <div id="collapseEight" class="accordion-body collapse">
                         <div class="accordion-inner">
                             <small>The IsCompressed validator checks if a transferred file is a compressed archive, such as zip or arc.</small>
-                            <input type="text" name="upload_exclude_is_compressed" placeholder="zip">
+                            <input type="text" name="upload_fileiscompressed" placeholder="zip">
                         </div>
                     </div>
                 </div>
@@ -188,7 +176,7 @@
                     <div id="collapseNine" class="accordion-body collapse">
                         <div class="accordion-inner">
                             <small>The IsImage validator checks if a transferred file is a image file, such as gif or jpeg.</small>
-                            <input type="text" name="upload_exclude_is_image" placeholder="jpeg">
+                            <input type="text" name="upload_fileisimage" placeholder="jpeg">
                         </div>
                     </div>
                 </div>
@@ -201,15 +189,15 @@
                     <div id="collapseTen" class="accordion-body collapse">
                         <div class="accordion-inner">
                             <small>The WordCount validator checks for the number of words within provided files.</small>
-                            <input type="number" name="upload_min_word_count" class="input-small" placeholder="min">
-                            <input type="number" name="upload_max_word_count" class="input-small" placeholder="max">
+                            <input type="number" name="upload_filewordcount_min" class="input-small" placeholder="min">
+                            <input type="number" name="upload_filewordcount_max" class="input-small" placeholder="max">
                         </div>
                     </div>
                 </div>
             </div>
         </li>
 		<li>
-			<button class="btn btn-primary" id="add_form_text">Save</button>
+			<button class="btn btn-primary" id="add_form_fileupload">Save</button>
 		</li>
 	</ul>
 </form>
