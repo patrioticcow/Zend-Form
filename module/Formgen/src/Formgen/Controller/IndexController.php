@@ -20,7 +20,7 @@ class IndexController extends AbstractActionController
 
         $formId = $this->params('form');
 
-		return ['form_id' => $formId];
+		return array('form_id' => $formId);
 	}
 
     public function testAction()
@@ -42,7 +42,7 @@ class IndexController extends AbstractActionController
             echo '<pre>'; var_dump($form->getData()); echo '</pre>';
         }
 
-        return ['form' => $form];
+        return array('form' => $form);
 	}
 
 	public function createAction()
@@ -55,7 +55,7 @@ class IndexController extends AbstractActionController
 
 		$form = '';
 
-		return ['form' => $form];
+		return array('form' => $form);
 	}
 
 	public function inputAction()
