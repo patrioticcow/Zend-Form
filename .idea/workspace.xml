@@ -2,11 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c14fcf7d-f23e-4e6e-affd-bd36bf0297aa" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/Zend-Form.iml" afterPath="$PROJECT_DIR$/.idea/Zend-Form.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/Application/language/ar_SY.po" afterPath="$PROJECT_DIR$/module/Application/language/ar_SY.po" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/Application/language/ja_JP.po" afterPath="$PROJECT_DIR$/module/Application/language/ja_JP.po" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/Application/language/pl_PL.po" afterPath="$PROJECT_DIR$/module/Application/language/pl_PL.po" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/Formgen/src/Formgen/Controller/IndexController.php" afterPath="$PROJECT_DIR$/module/Formgen/src/Formgen/Controller/IndexController.php" />
     </list>
     <ignored path="Zend-Form.iws" />
@@ -814,13 +809,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/module/Formgen/src/Formgen/Controller/IndexController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="132" column="20" selection-start="2716" selection-end="2726" vertical-scroll-proportion="0.3898305">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/module/Application/view/application/index/index.phtml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="7" column="67" selection-start="389" selection-end="389" vertical-scroll-proportion="-6.322581">
@@ -831,6 +819,13 @@
     <entry file="file://$PROJECT_DIR$/public/js/form/parse.form.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="544" column="0" selection-start="17566" selection-end="17566" vertical-scroll-proportion="0.031042129">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/Formgen/src/Formgen/Controller/IndexController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="138" column="20" selection-start="2816" selection-end="2819" vertical-scroll-proportion="0.70035255">
           <folding />
         </state>
       </provider>

@@ -136,6 +136,12 @@ class IndexController extends AbstractActionController
 	    return $result;
 	}
 
+    public function urlAction()
+	{
+	    $result = $this->getAjax();
+	    return $result;
+	}
+
     public function hiddenAction()
 	{
 	    $result = $this->getAjax();
