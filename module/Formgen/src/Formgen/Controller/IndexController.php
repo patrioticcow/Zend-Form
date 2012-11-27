@@ -130,6 +130,12 @@ class IndexController extends AbstractActionController
 	    return $result;
 	}
 
+    public function creditcardAction()
+	{
+	    $result = $this->getAjax();
+	    return $result;
+	}
+
     public function hiddenAction()
 	{
 	    $result = $this->getAjax();
