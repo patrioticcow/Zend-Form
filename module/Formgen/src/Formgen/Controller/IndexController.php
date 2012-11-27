@@ -140,9 +140,9 @@ class IndexController extends AbstractActionController
 		$request = $this->getRequest ();
 	    $results = $request->getQuery ();
 
-	    $result = new ViewModel ([
+	    $result = new ViewModel (array(
 	        'result' => $results,
-	    ]);
+	    ));
 
 	    $result->setTerminal ( true );
 

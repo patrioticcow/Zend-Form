@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c14fcf7d-f23e-4e6e-affd-bd36bf0297aa" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/cache/ZDT_ZF_Version.cache" afterPath="$PROJECT_DIR$/data/cache/ZDT_ZF_Version.cache" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/Formgen/src/Formgen/Controller/IndexController.php" afterPath="$PROJECT_DIR$/module/Formgen/src/Formgen/Controller/IndexController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/Formgen/src/Formgen/Form/AddUserValidator.php" afterPath="$PROJECT_DIR$/module/Formgen/src/Formgen/Form/AddUserValidator.php" />
     </list>
     <ignored path="Zend-Form.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -52,19 +53,19 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="IndexController.php" pinned="false" current="false" current-in-tab="false">
+          <file leaf-file-name="IndexController.php" pinned="false" current="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/module/Formgen/src/Formgen/Controller/IndexController.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="57" column="37" selection-start="1575" selection-end="1575" vertical-scroll-proportion="-6.064516">
+                <state line="145" column="0" selection-start="2973" selection-end="2973" vertical-scroll-proportion="0.4822695">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="User.php" pinned="false" current="true" current-in-tab="true">
+          <file leaf-file-name="User.php" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/module/Formgen/src/Formgen/Model/User.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="13" column="42" selection-start="232" selection-end="232" vertical-scroll-proportion="0.45921987">
+                <state line="13" column="42" selection-start="232" selection-end="232" vertical-scroll-proportion="-8.354838">
                   <folding />
                 </state>
               </provider>
@@ -92,10 +93,10 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="module.config.php" pinned="false" current="false" current-in-tab="true">
+          <file leaf-file-name="module.config.php" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/module/Formgen/config/module.config.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="219" column="26" selection-start="8384" selection-end="8384" vertical-scroll-proportion="1.1968085">
+                <state line="219" column="26" selection-start="8384" selection-end="8384" vertical-scroll-proportion="-21.774193">
                   <folding />
                 </state>
               </provider>
@@ -119,10 +120,10 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="AddUserValidator.php" pinned="false" current="false" current-in-tab="false">
+          <file leaf-file-name="AddUserValidator.php" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/module/Formgen/src/Formgen/Form/AddUserValidator.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="108" column="61" selection-start="3703" selection-end="3703" vertical-scroll-proportion="0.0">
+                <state line="68" column="0" selection-start="2078" selection-end="2078" vertical-scroll-proportion="0.28368795">
                   <folding />
                 </state>
               </provider>
@@ -150,7 +151,6 @@
         <option value="$PROJECT_DIR$/module/Formgen/view/formgen/index/paragraph.phtml" />
         <option value="$PROJECT_DIR$/module/Formgen/view/formgen/index/password.phtml" />
         <option value="$PROJECT_DIR$/module/Formgen/view/formgen/index/email.phtml" />
-        <option value="$PROJECT_DIR$/module/Formgen/src/Formgen/Form/AddUserValidator.php" />
         <option value="$PROJECT_DIR$/public/js/form/add.form.js" />
         <option value="$PROJECT_DIR$/module/Formgen/view/formgen/index/upload.phtml" />
         <option value="$PROJECT_DIR$/public/js/form/line.text.js" />
@@ -159,6 +159,7 @@
         <option value="$PROJECT_DIR$/module/Formgen/view/formgen/index/test.phtml" />
         <option value="$PROJECT_DIR$/module/Formgen/config/module.config.php" />
         <option value="$PROJECT_DIR$/module/Formgen/src/Formgen/Controller/IndexController.php" />
+        <option value="$PROJECT_DIR$/module/Formgen/src/Formgen/Form/AddUserValidator.php" />
       </list>
     </option>
   </component>
@@ -508,7 +509,7 @@
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="options.lastSelected" value="reference.settingsdialog.IDE.editor.colors.General" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/module/Formgen" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/module/Formgen/src/Formgen" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
   </component>
@@ -566,11 +567,11 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="3836" y="24" width="1928" height="1060" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32659575" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32659575" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19370331" sideWeight="0.6734043" order="0" side_tool="false" content_ui="combo" />
@@ -697,13 +698,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/module/Formgen/src/Formgen/Form/AddUserValidator.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="108" column="61" selection-start="3703" selection-end="3703" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/js/form/add.form.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="344" column="0" selection-start="13992" selection-end="14009" vertical-scroll-proportion="0.0">
@@ -725,13 +719,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/module/Formgen/config/module.config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="219" column="26" selection-start="8384" selection-end="8384" vertical-scroll-proportion="1.1968085">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/js/form/parse.form.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="499" column="0" selection-start="16134" selection-end="16134" vertical-scroll-proportion="0.0">
@@ -739,16 +726,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/module/Formgen/src/Formgen/Controller/IndexController.php">
+    <entry file="file://$PROJECT_DIR$/module/Formgen/src/Formgen/Model/User.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="57" column="37" selection-start="1575" selection-end="1575" vertical-scroll-proportion="-6.064516">
+        <state line="13" column="42" selection-start="232" selection-end="232" vertical-scroll-proportion="-8.354838">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/module/Formgen/src/Formgen/Model/User.php">
+    <entry file="file://$PROJECT_DIR$/module/Formgen/src/Formgen/Controller/IndexController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="42" selection-start="232" selection-end="232" vertical-scroll-proportion="0.45921987">
+        <state line="145" column="0" selection-start="2973" selection-end="2973" vertical-scroll-proportion="0.4822695">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/Formgen/config/module.config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="219" column="26" selection-start="8384" selection-end="8384" vertical-scroll-proportion="-21.774193">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/Formgen/src/Formgen/Form/AddUserValidator.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="68" column="0" selection-start="2078" selection-end="2078" vertical-scroll-proportion="0.28368795">
           <folding />
         </state>
       </provider>

@@ -22,12 +22,12 @@ class AddUserValidator implements InputFilterAwareInterface
             $inputFilter = new InputFilter();
             $factory = new InputFactory();
 
-            $inputFilter->add($factory->createInput([
+            $inputFilter->add($factory->createInput(array(
                 'name' => 'hidden',
                 'required' => false,
-            ]));
+            )));
 
-            $inputFilter->add($factory->createInput([
+            $inputFilter->add($factory->createInput(array(
                 'name' => 'text',
                 'required' => true,
                 'filters' => array(
@@ -45,9 +45,9 @@ class AddUserValidator implements InputFilterAwareInterface
                         ),
                     ),
                 ),
-            ]));
+            )));
 
-            $inputFilter->add($factory->createInput([
+            $inputFilter->add($factory->createInput(array(
                 'name' => 'testtt',
                 'required' => true,
                 'filters' => array(
@@ -65,9 +65,9 @@ class AddUserValidator implements InputFilterAwareInterface
                     ),
 
                 ),
-            ]));
+            )));
 
-            $inputFilter->add($factory->createInput([
+            $inputFilter->add($factory->createInput(array(
                 'name' => 'number',
                 'required' => 'true',
                 'filters' => array(
@@ -88,7 +88,7 @@ class AddUserValidator implements InputFilterAwareInterface
                     ),
 
                 ),
-            ]));
+            )));
 
             $inputFilter->add(
                 $factory->createInput(array(
