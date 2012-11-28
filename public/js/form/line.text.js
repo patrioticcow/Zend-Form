@@ -304,6 +304,10 @@ var line_checkbox = function (liId, theForm, fieldProp, uniqueId, liClass)
 			id: "form_checkbox_" + i,
             "style":"float:left"
 		}).insertBefore(checkboxx);
+
+        if(i == 0){
+            $("#form_checkbox_" + i).attr("checked", "checked");
+        }
 	}
 
     hiddenRequired('input_name', '').appendTo(li);
@@ -346,6 +350,10 @@ var line_radio = function (liId, theForm, fieldProp, uniqueId, liClass)
             id: "form_radio_" + i,
             "style":"float:left"
         }).insertBefore(radioo);
+
+        if(i == 0){
+            $("#form_radio_" + i).attr("checked", "checked");
+        }
     }
 
     hiddenRequired('input_name', '').appendTo(li);

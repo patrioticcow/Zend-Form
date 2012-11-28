@@ -6,11 +6,14 @@ $form->prepare();
 $form->setAttribute('action', $this->url('formgen/test'));
 
 echo $this->form()->openTag($form);
-    echo $this->formHidden($form->get('csrf'));
-    echo $this->formHidden($form->get('hidden'));
     echo $this->formRow($form->get('text'));
-    echo $this->formRow($form->get('number'));
-    //echo $this->formRow($form->get('cc'));
     echo "<br>";
     echo $this->formSubmit($form->get('submit'));
+
+echo $this->formLabel($form->get('text')) ;
+echo $this->formInput($form->get('text')) ;
+echo $this->formElementErrors($form->get('text')) ;
+
+//echo $this->formRow($form->get('text')) . PHP_EOL;
+
 echo $this->form()->closeTag();

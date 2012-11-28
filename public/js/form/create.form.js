@@ -438,8 +438,6 @@ $(document).ready(function() {
 
 	var formElements = function(options){
 		var config = $.extend({}, defaults, options);
-
-		console.log(config.test);
 	};
 	*/
 
