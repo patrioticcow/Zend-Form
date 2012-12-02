@@ -825,12 +825,12 @@ var toView = function toView (name, type)
 {
     var form = '';
     if(type == 'view'){
-        var form =
+        form =
             "echo $this->formLabel($form->get('" + name + "'));" + "<br>" +
                 "echo $this->formInput($form->get('" + name + "'));" + "<br>" +
                 "echo $this->formElementErrors($form->get('" + name + "'));" + "<br>";
     } else if (type == 'row') {
-        var form = "echo $this->formElementErrors($form->get('" + name + "'));";
+        form = "echo $this->formElementErrors($form->get('" + name + "'));";
     }
     return form;
 }
