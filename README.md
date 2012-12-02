@@ -3,7 +3,7 @@ ZendSkeletonApplication
 
 Introduction
 ------------
-Simple form generator. head to [Zend Framework 2 Form Generator] page (http://zend-form-generator.123easywebsites.com/)
+Simple form generator. head to [Zend Framework 2 Form Generator](http://zend-form-generator.123easywebsites.com/) page
 
 Disclaimer
 ----------
