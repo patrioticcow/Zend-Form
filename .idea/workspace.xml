@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c14fcf7d-f23e-4e6e-affd-bd36bf0297aa" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/cache/ZDT_ZF_Version.cache" afterPath="$PROJECT_DIR$/data/cache/ZDT_ZF_Version.cache" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/form/add.form.js" afterPath="$PROJECT_DIR$/public/js/form/add.form.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/form/create.form.js" afterPath="$PROJECT_DIR$/public/js/form/create.form.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/form/edit.form.js" afterPath="$PROJECT_DIR$/public/js/form/edit.form.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/form/line.text.js" afterPath="$PROJECT_DIR$/public/js/form/line.text.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/form/parse.form.js" afterPath="$PROJECT_DIR$/public/js/form/parse.form.js" />
-    </list>
+    <list default="true" id="c14fcf7d-f23e-4e6e-affd-bd36bf0297aa" name="Default" comment="" />
     <ignored path="Zend-Form.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Dummy.txt" changelist="c14fcf7d-f23e-4e6e-affd-bd36bf0297aa" time="1354080619230" ignored="false" />
