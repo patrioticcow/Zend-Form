@@ -272,7 +272,7 @@ $(document).ready(function()
 
 		var formField = formId.attr('class');
 		var formJson = formId.serializeFormJSON();
-		var formSel = $('#' + formField + ' ' + fieldType + '.' + formClass);
+		var formSel = $('#' + formField).find('.' + formClass);
 		var formReq = $('#' + formField + ' input[name="required"]');
 
         // set label text

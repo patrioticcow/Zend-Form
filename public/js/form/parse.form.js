@@ -152,7 +152,7 @@ $(document).ready(function() {
             //formValidatorElements.push(textValidator(lineHidden, 'hidden'));
         }
 
-        //console.log(form[i]);
+        console.log(form[i]);
     }
 
     formElements.push(csrf());
@@ -582,17 +582,16 @@ var formValidatorToken = function formValidatorToken (p){
 
 var formValidatorNumber = function formValidatorNumber (digits){
     var digitsName = '';
-    if(digits.validators && !digits.validators.html5 ){
+    if(digits.validators && digits.validators.html5 == 0 ){
         if(digits.validators.name){
-            digitsName = tttt + "array ( <br>" +
+            digitsName += tttt + "array ( <br>" +
                 ttttt + "'name' => '" + digits.validators.name + "', <br>" +
             tttt + "), <br>" +
             " <br>";
         }
     }
 
-    var digitsForm = digitsName;
-    return (digitsForm);
+    return (digitsName);
 };
 
 var formValidatorDropdown = function formValidatorDropdown (select){
@@ -668,6 +667,12 @@ var formAttr = function formAttr (attr){
         }
         if(attr.length.min_str || attr.length.max_str){
             attrs += tttt + "'step' => '1', <br>";
+        }
+    }
+
+    if(attr.validators){
+        if(attr.validators.html5 == 1){
+            attrs += tttt + "'type' => 'number', <br>";
         }
     }
 

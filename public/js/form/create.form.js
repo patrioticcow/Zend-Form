@@ -71,8 +71,8 @@ $(document).ready(function() {
 		$('#'+ liId +' .edit_li').click(function () {
 			secondTab.tab('show');
 			$.get('/formgen/input', { name: "Edit Input Field", id: liId}).done(function(data) {
-
 				fieldProp.html(data);
+                editLineText(liId, 'line_text');
 		    });
 		});
 
@@ -91,6 +91,7 @@ $(document).ready(function() {
 			secondTab.tab('show');
 			$.get('/formgen/date', { name: "Edit Date Field", id: liId}).done(function(data) {
 				fieldProp.html(data);
+                editLineText(liId, 'line_date');
 		    });
 		});
 
@@ -109,6 +110,7 @@ $(document).ready(function() {
 			secondTab.tab('show');
 			$.get('/formgen/number', { name: "Edit Number Field", id: liId}).done(function(data) {
 				fieldProp.html(data);
+                editLineText(liId, 'line_number');
 		    });
 		});
 
