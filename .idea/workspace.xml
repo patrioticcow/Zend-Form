@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c14fcf7d-f23e-4e6e-affd-bd36bf0297aa" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/cache/ZDT_ZF_Version.cache" afterPath="$PROJECT_DIR$/data/cache/ZDT_ZF_Version.cache" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/Application/view/application/index/index.phtml" afterPath="$PROJECT_DIR$/module/Application/view/application/index/index.phtml" />
     </list>
     <ignored path="Zend-Form.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -55,10 +56,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="README.md" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="README.md" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="118" selection-start="193" selection-end="193" vertical-scroll-proportion="0.14460512">
+            <state line="5" column="118" selection-start="193" selection-end="193" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.phtml" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/module/Application/view/application/index/index.phtml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="30" column="16" selection-start="1370" selection-end="1370" vertical-scroll-proportion="0.9101517">
               <folding />
             </state>
           </provider>
@@ -126,7 +136,6 @@
         <option value="$PROJECT_DIR$/module/Formgen/view/formgen/index/upload.phtml" />
         <option value="$PROJECT_DIR$/public/js/form/json.form.js" />
         <option value="$PROJECT_DIR$/module/Application/view/layout/top_menu.phtml" />
-        <option value="$PROJECT_DIR$/module/Application/view/application/index/index.phtml" />
         <option value="$PROJECT_DIR$/module/Formgen/src/Formgen/Controller/IndexController.php" />
         <option value="$PROJECT_DIR$/module/Formgen/config/module.config.php" />
         <option value="$PROJECT_DIR$/module/Formgen/view/formgen/layout/left_menu.phtml" />
@@ -138,6 +147,7 @@
         <option value="$PROJECT_DIR$/module/Formgen/view/formgen/index/view.phtml" />
         <option value="$PROJECT_DIR$/public/js/form/parse.form.js" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/module/Application/view/application/index/index.phtml" />
       </list>
     </option>
   </component>
@@ -646,7 +656,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-4" y="-4" width="1928" height="1044" extended-state="7" />
+    <frame x="-4" y="-4" width="1928" height="1044" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -732,11 +742,6 @@
         <state line="370" column="0" selection-start="14102" selection-end="14119" vertical-scroll-proportion="0.1489842" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/module/Application/view/application/index/index.phtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="67" selection-start="389" selection-end="389" vertical-scroll-proportion="0.21236873" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/js/bootstrap.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="2010" column="46" selection-start="56182" selection-end="56201" vertical-scroll-proportion="0.33277592" />
@@ -815,7 +820,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="118" selection-start="193" selection-end="193" vertical-scroll-proportion="0.14460512">
+        <state line="5" column="118" selection-start="193" selection-end="193" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/Application/view/application/index/index.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="16" selection-start="1370" selection-end="1370" vertical-scroll-proportion="0.9101517">
           <folding />
         </state>
       </provider>
