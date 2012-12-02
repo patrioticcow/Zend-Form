@@ -1,7 +1,7 @@
 /**
- * Cristi Citea (http://123easywebsites.com/)
+ * Cristi Citea (http://zend-form-generator.123easywebsites.com/)
  *
- * @link      http://github.com/zendframework/zf2 for the canonical source repository
+ * @link      https://github.com/patrioticcow/Zend-Form for the canonical source repository
  * @copyright Copyright (c) 2012 Cristi Citea
  * @license   http://framework.zend.com/license/new-bsd New BSD License
  * @package   Form_Generator
@@ -71,6 +71,7 @@ $(document).ready(function() {
 		$('#'+ liId +' .edit_li').click(function () {
 			secondTab.tab('show');
 			$.get('/formgen/input', { name: "Edit Input Field", id: liId}).done(function(data) {
+
 				fieldProp.html(data);
 		    });
 		});

@@ -52,6 +52,7 @@ class IndexController extends AbstractActionController
 		$headScript->headScript ()->appendFile ( '/js/form/line.text.js' );
 		$headScript->headScript ()->appendFile ( '/js/form/add.form.js' );
 		$headScript->headScript ()->appendFile ( '/js/form/json.form.js' );
+		$headScript->headScript ()->appendFile ( '/js/form/edit.form.js' );
 
 		$form = '';
 

@@ -2,17 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c14fcf7d-f23e-4e6e-affd-bd36bf0297aa" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/cache/ZDT_ZF_Version.cache" afterPath="$PROJECT_DIR$/data/cache/ZDT_ZF_Version.cache" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/Application/view/application/index/index.phtml" afterPath="$PROJECT_DIR$/module/Application/view/application/index/index.phtml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/Formgen/src/Formgen/Controller/IndexController.php" afterPath="$PROJECT_DIR$/module/Formgen/src/Formgen/Controller/IndexController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/style.css" afterPath="$PROJECT_DIR$/public/css/style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/form/add.form.js" afterPath="$PROJECT_DIR$/public/js/form/add.form.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/form/create.form.js" afterPath="$PROJECT_DIR$/public/js/form/create.form.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/form/json.form.js" afterPath="$PROJECT_DIR$/public/js/form/json.form.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/form/line.text.js" afterPath="$PROJECT_DIR$/public/js/form/line.text.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/form/parse.form.js" afterPath="$PROJECT_DIR$/public/js/form/parse.form.js" />
     </list>
     <ignored path="Zend-Form.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/view.phtml" changelist="c14fcf7d-f23e-4e6e-affd-bd36bf0297aa" time="1354086580036" ignored="false" />
-    <file path="/test.phtml" changelist="c14fcf7d-f23e-4e6e-affd-bd36bf0297aa" time="1354084565087" ignored="false" />
-    <file path="/line.text.js" changelist="c14fcf7d-f23e-4e6e-affd-bd36bf0297aa" time="1354083389988" ignored="false" />
-    <file path="/parse.form.js" changelist="c14fcf7d-f23e-4e6e-affd-bd36bf0297aa" time="1354089815481" ignored="false" />
-    <file path="/a.php" changelist="c14fcf7d-f23e-4e6e-affd-bd36bf0297aa" time="1354081390467" ignored="false" />
     <file path="/Dummy.txt" changelist="c14fcf7d-f23e-4e6e-affd-bd36bf0297aa" time="1354080619230" ignored="false" />
+    <file path="/a.php" changelist="c14fcf7d-f23e-4e6e-affd-bd36bf0297aa" time="1354081390467" ignored="false" />
+    <file path="/parse.form.js" changelist="c14fcf7d-f23e-4e6e-affd-bd36bf0297aa" time="1354089815481" ignored="false" />
+    <file path="/line.text.js" changelist="c14fcf7d-f23e-4e6e-affd-bd36bf0297aa" time="1354083389988" ignored="false" />
+    <file path="/test.phtml" changelist="c14fcf7d-f23e-4e6e-affd-bd36bf0297aa" time="1354084565087" ignored="false" />
+    <file path="/view.phtml" changelist="c14fcf7d-f23e-4e6e-affd-bd36bf0297aa" time="1354086580036" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,19 +36,46 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="line.text.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/js/form/line.text.js">
+      <file leaf-file-name="create.form.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/js/form/create.form.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="289" column="0" selection-start="8005" selection-end="8005" vertical-scroll-proportion="0.0">
+            <state line="73" column="0" selection-start="2398" selection-end="2398" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="create.form.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/js/form/create.form.js">
+      <file leaf-file-name="edit.form.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/public/js/form/edit.form.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="439" column="53" selection-start="12736" selection-end="12736" vertical-scroll-proportion="0.0">
+            <state line="15" column="3" selection-start="464" selection-end="464" vertical-scroll-proportion="0.43381536">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="input.phtml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/module/Formgen/view/formgen/index/input.phtml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="IndexController.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/module/Formgen/src/Formgen/Controller/IndexController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="56" column="19" selection-start="1612" selection-end="1612" vertical-scroll-proportion="-0.8965517">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="line.text.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/js/form/line.text.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="90" column="4" selection-start="2499" selection-end="2499" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -50,34 +84,16 @@
       <file leaf-file-name="parse.form.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/js/form/parse.form.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="835" column="1" selection-start="28056" selection-end="28056" vertical-scroll-proportion="0.0">
+            <state line="7" column="3" selection-start="315" selection-end="315" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="README.md" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/README.md">
+      <file leaf-file-name="add.form.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/js/form/add.form.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="118" selection-start="193" selection-end="193" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.phtml" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/module/Application/view/application/index/index.phtml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="30" column="16" selection-start="1370" selection-end="1370" vertical-scroll-proportion="0.9101517">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="view.phtml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/module/Formgen/view/formgen/index/view.phtml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="33" selection-start="961" selection-end="961" vertical-scroll-proportion="0.0">
+            <state line="273" column="26" selection-start="8675" selection-end="8675" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -86,34 +102,7 @@
       <file leaf-file-name="json.form.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/js/form/json.form.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="142" column="47" selection-start="5154" selection-end="5154" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="radio.phtml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/module/Formgen/view/formgen/index/radio.phtml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="98" selection-start="808" selection-end="808" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="User.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/module/Formgen/src/Formgen/Model/User.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="42" selection-start="232" selection-end="232" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="test.phtml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/module/Formgen/view/formgen/index/test.phtml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="0" selection-start="344" selection-end="344" vertical-scroll-proportion="0.0">
+            <state line="7" column="3" selection-start="315" selection-end="315" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -132,22 +121,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/public/js/form/add.form.js" />
-        <option value="$PROJECT_DIR$/module/Formgen/view/formgen/index/upload.phtml" />
-        <option value="$PROJECT_DIR$/public/js/form/json.form.js" />
-        <option value="$PROJECT_DIR$/module/Application/view/layout/top_menu.phtml" />
-        <option value="$PROJECT_DIR$/module/Formgen/src/Formgen/Controller/IndexController.php" />
         <option value="$PROJECT_DIR$/module/Formgen/config/module.config.php" />
-        <option value="$PROJECT_DIR$/module/Formgen/view/formgen/layout/left_menu.phtml" />
-        <option value="$PROJECT_DIR$/public/js/form/create.form.js" />
-        <option value="$PROJECT_DIR$/public/js/form/line.text.js" />
         <option value="$PROJECT_DIR$/module/Formgen/src/Formgen/Form/AddUser.php" />
         <option value="$PROJECT_DIR$/module/Formgen/src/Formgen/Form/AddUserValidator.php" />
         <option value="$PROJECT_DIR$/module/Formgen/view/formgen/index/test.phtml" />
         <option value="$PROJECT_DIR$/module/Formgen/view/formgen/index/view.phtml" />
-        <option value="$PROJECT_DIR$/public/js/form/parse.form.js" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/module/Application/view/application/index/index.phtml" />
+        <option value="$PROJECT_DIR$/public/js/form/add.form.js" />
+        <option value="$PROJECT_DIR$/public/js/form/json.form.js" />
+        <option value="$PROJECT_DIR$/public/js/form/parse.form.js" />
+        <option value="$PROJECT_DIR$/public/css/style.css" />
+        <option value="$PROJECT_DIR$/public/js/form/line.text.js" />
+        <option value="$PROJECT_DIR$/module/Formgen/view/formgen/layout/left_menu.phtml" />
+        <option value="$PROJECT_DIR$/module/Formgen/src/Formgen/Controller/IndexController.php" />
+        <option value="$PROJECT_DIR$/public/js/form/edit.form.js" />
+        <option value="$PROJECT_DIR$/public/js/form/create.form.js" />
       </list>
     </option>
   </component>
@@ -200,7 +189,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -494,88 +482,6 @@
               <option name="myItemId" value="module" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Zend-Form" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Zend-Form" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="module" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="view" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="layout" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Zend-Form" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Zend-Form" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="module" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="view" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Zend-Form" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Zend-Form" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="module" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="view" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="index" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -593,6 +499,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -600,8 +507,8 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="options.lastSelected" value="preferences.externalTools" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/module/Formgen/src/Formgen" />
-    <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -663,7 +570,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20490928" sideWeight="0.67424244" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20704375" sideWeight="0.67424244" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -672,7 +579,7 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32575756" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.32575756" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" x="1422" y="461" width="455" height="527" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -732,102 +639,98 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/module/Formgen/view/formgen/index/view.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="33" selection-start="961" selection-end="961" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="118" selection-start="193" selection-end="193" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="0" selection-start="1" selection-end="1" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/module/Formgen/view/formgen/layout/left_menu.phtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="46" selection-start="1534" selection-end="1534" vertical-scroll-proportion="0.39439908" />
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/form/add.form.js">
+    <entry file="file://$PROJECT_DIR$/module/Application/view/application/index/index.phtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="370" column="0" selection-start="14102" selection-end="14119" vertical-scroll-proportion="0.1489842" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/bootstrap.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2010" column="46" selection-start="56182" selection-end="56201" vertical-scroll-proportion="0.33277592" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/Formgen/view/formgen/index/radio.phtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="98" selection-start="808" selection-end="808" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="14" column="29" selection-start="528" selection-end="528" vertical-scroll-proportion="0.27187866" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/js/form/json.form.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="142" column="47" selection-start="5154" selection-end="5154" vertical-scroll-proportion="0.0">
+        <state line="7" column="3" selection-start="315" selection-end="315" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/module/Formgen/src/Formgen/Model/User.php">
+    <entry file="file://$PROJECT_DIR$/module/Formgen/view/formgen/index/checkbox.phtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="42" selection-start="232" selection-end="232" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/module/Formgen/src/Formgen/Form/AddUserValidator.php">
+    <entry file="file://$PROJECT_DIR$/module/Formgen/view/formgen/index/index.phtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="0" selection-start="587" selection-end="587" vertical-scroll-proportion="0.2520138" />
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/module/Formgen/src/Formgen/Form/AddUser.php">
+    <entry file="file://$PROJECT_DIR$/public/js/json.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="1" selection-start="779" selection-end="779" vertical-scroll-proportion="0.8204833" />
+        <state line="1" column="9" selection-start="21" selection-end="21" vertical-scroll-proportion="0.028921023" />
       </provider>
     </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/com/jetbrains/php/lang/psi/stubs/data/Core_d.php">
+    <entry file="file://$PROJECT_DIR$/public/js/form/add.form.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="296" column="0" selection-start="7554" selection-end="9781" vertical-scroll-proportion="0.33886257" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/Formgen/view/formgen/index/test.phtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="0" selection-start="344" selection-end="344" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/form/create.form.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="439" column="53" selection-start="12736" selection-end="12736" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/form/line.text.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="289" column="0" selection-start="8005" selection-end="8005" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/Formgen/view/formgen/index/view.phtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="33" selection-start="961" selection-end="961" vertical-scroll-proportion="0.0">
+        <state line="273" column="26" selection-start="8675" selection-end="8675" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/js/form/parse.form.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="835" column="1" selection-start="28056" selection-end="28056" vertical-scroll-proportion="0.0">
+        <state line="7" column="3" selection-start="315" selection-end="315" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
+    <entry file="file://$PROJECT_DIR$/public/js/form/line.text.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="118" selection-start="193" selection-end="193" vertical-scroll-proportion="0.0">
+        <state line="90" column="4" selection-start="2499" selection-end="2499" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/module/Application/view/application/index/index.phtml">
+    <entry file="file://$PROJECT_DIR$/module/Formgen/view/formgen/index/input.phtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="16" selection-start="1370" selection-end="1370" vertical-scroll-proportion="0.9101517">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/Formgen/src/Formgen/Controller/IndexController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="56" column="19" selection-start="1612" selection-end="1612" vertical-scroll-proportion="-0.8965517">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/form/create.form.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="73" column="0" selection-start="2398" selection-end="2398" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/form/edit.form.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="3" selection-start="464" selection-end="464" vertical-scroll-proportion="0.43381536">
           <folding />
         </state>
       </provider>

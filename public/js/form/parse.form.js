@@ -1,7 +1,7 @@
 /**
- * Cristi Citea (http://123easywebsites.com/)
+ * Cristi Citea (http://zend-form-generator.123easywebsites.com/)
  *
- * @link      http://github.com/zendframework/zf2 for the canonical source repository
+ * @link      https://github.com/patrioticcow/Zend-Form for the canonical source repository
  * @copyright Copyright (c) 2012 Cristi Citea
  * @license   http://framework.zend.com/license/new-bsd New BSD License
  * @package   Form_Generator
