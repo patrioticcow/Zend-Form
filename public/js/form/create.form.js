@@ -129,6 +129,7 @@ $(document).ready(function() {
 			secondTab.tab('show');
 			$.get('/formgen/phone', { name: "Edit Phone Field", id: liId}).done(function(data) {
 				fieldProp.html(data);
+                editLineText(liId, 'line_phone');
 		    });
 		});
 
@@ -147,6 +148,7 @@ $(document).ready(function() {
 			secondTab.tab('show');
 			$.get('/formgen/password', { name: "Edit Password Field", id: liId}).done(function(data) {
 				fieldProp.html(data);
+                editLineText(liId, 'line_password');
 		    });
 		});
 
@@ -165,6 +167,7 @@ $(document).ready(function() {
 			secondTab.tab('show');
 			$.get('/formgen/passwordverify', { name: "Edit Password Verify Field", id: liId}).done(function(data) {
 				fieldProp.html(data);
+                editLineText(liId, 'line_password_verify');
 		    });
 		});
 
@@ -183,6 +186,7 @@ $(document).ready(function() {
 			secondTab.tab('show');
 			$.get('/formgen/email', { name: "Edit Email Field", id: liId}).done(function(data) {
 				fieldProp.html(data);
+                editLineText(liId, 'line_email');
 		    });
 		});
 
@@ -201,6 +205,7 @@ $(document).ready(function() {
 			secondTab.tab('show');
 			$.get('/formgen/paragraph', { name: "Edit Textarea Field", id: liId}).done(function(data) {
 				fieldProp.html(data);
+                editLineText(liId, 'line_paragraph');
 			});
 		});
 
@@ -221,6 +226,7 @@ $(document).ready(function() {
 			secondTab.tab('show');
 			$.get('/formgen/checkbox', { name: "Edit Checkbox Field", id: liId, 'length': lengthNr}).done(function(data) {
 				fieldProp.html(data);
+                editLineText(liId, 'line_checkbox');
 		    });
 		});
 
@@ -241,6 +247,7 @@ $(document).ready(function() {
 			secondTab.tab('show');
 			$.get('/formgen/radio', { name: "Edit Radio Field", id: liId, 'length': lengthNr}).done(function(data) {
 				fieldProp.html(data);
+                editLineText(liId, 'line_radio');
 		    });
 		});
 
@@ -261,6 +268,7 @@ $(document).ready(function() {
 			secondTab.tab('show');
 			$.get('/formgen/dropdown', { name: "Edit Drop Down Field", id: liId, 'length': lengthNr}).done(function(data) {
 				fieldProp.html(data);
+                editLineText(liId, 'line_dropdown');
 			});
 		});
 
@@ -279,6 +287,7 @@ $(document).ready(function() {
             secondTab.tab('show');
             $.get('/formgen/upload', { name: "Edit Input Field", id: liId}).done(function(data) {
                 fieldProp.html(data);
+                editLineText(liId, 'line_upload');
             });
         });
 
@@ -297,6 +306,7 @@ $(document).ready(function() {
             secondTab.tab('show');
             $.get('/formgen/creditcard', { name: "Edit Credit Card Field", id: liId}).done(function(data) {
                 fieldProp.html(data);
+                editLineText(liId, 'line_credit_card');
             });
         });
 
@@ -315,6 +325,7 @@ $(document).ready(function() {
             secondTab.tab('show');
             $.get('/formgen/url', { name: "Edit Web Site / Url Field", id: liId}).done(function(data) {
                 fieldProp.html(data);
+                editLineText(liId, 'line_url');
             });
         });
 
@@ -333,6 +344,7 @@ $(document).ready(function() {
             secondTab.tab('show');
             $.get('/formgen/hidden', { name: "Edit Hidden Field", id: liId}).done(function(data) {
                 fieldProp.html(data);
+                editLineText(liId, 'line_hidden');
             });
         });
 

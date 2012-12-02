@@ -9,6 +9,7 @@
 
 var line_text = function (liId, theForm, fieldProp, uniqueId, liClass)
 {
+    "use strict";
     var li = addLi(liId, liClass).appendTo(theForm);
 
     hiddenRequired('required', '0').appendTo(li);
@@ -25,7 +26,7 @@ var line_text = function (liId, theForm, fieldProp, uniqueId, liClass)
         placeholder: "Type something..."
     }).appendTo(li);
 
-    hiddenRequired('input_name', '').appendTo(li);
+    hiddenRequired('input_name', 'text').appendTo(li);
     hiddenRequired('class', '').appendTo(li);
     hiddenRequired('id', '').appendTo(li);
     hiddenRequired('min', '').appendTo(li);
@@ -39,6 +40,7 @@ var line_text = function (liId, theForm, fieldProp, uniqueId, liClass)
 
 var line_hidden = function (liId, theForm, fieldProp, uniqueId, liClass)
 {
+    "use strict";
     var li = addLi(liId, liClass).appendTo(theForm);
 
     hiddenRequired('required', '0').appendTo(li);
@@ -47,7 +49,7 @@ var line_hidden = function (liId, theForm, fieldProp, uniqueId, liClass)
         'text': "hidden field"
     }).appendTo(li);
 
-    hiddenRequired('input_name', '').appendTo(li);
+    hiddenRequired('input_name', 'hidden').appendTo(li);
     hiddenRequired('class', '').appendTo(li);
     hiddenRequired('id', '').appendTo(li);
     hiddenRequired('value', '').appendTo(li);
@@ -60,6 +62,7 @@ var line_hidden = function (liId, theForm, fieldProp, uniqueId, liClass)
 
 var line_url = function (liId, theForm, fieldProp, uniqueId, liClass)
 {
+    "use strict";
     var li = addLi(liId, liClass).appendTo(theForm);
 
     hiddenRequired('required', '0').appendTo(li);
@@ -76,7 +79,7 @@ var line_url = function (liId, theForm, fieldProp, uniqueId, liClass)
         placeholder: "http://www.test.com"
     }).appendTo(li);
 
-    hiddenRequired('input_name', '').appendTo(li);
+    hiddenRequired('input_name', 'url').appendTo(li);
     hiddenRequired('class', '').appendTo(li);
     hiddenRequired('id', '').appendTo(li);
     hiddenRequired('min', '').appendTo(li);
@@ -90,6 +93,7 @@ var line_url = function (liId, theForm, fieldProp, uniqueId, liClass)
 
 var line_date = function (liId, theForm, fieldProp, uniqueId, liClass)
 {
+    "use strict";
     var li = addLi(liId, liClass).appendTo(theForm);
 
     hiddenRequired('required', '0').appendTo(li);
@@ -112,7 +116,7 @@ var line_date = function (liId, theForm, fieldProp, uniqueId, liClass)
         placeholder: "Type something..."
     }).appendTo(li);
 
-    hiddenRequired('input_name', '').appendTo(li);
+    hiddenRequired('input_name', 'date').appendTo(li);
     hiddenRequired('class', '').appendTo(li);
     hiddenRequired('id', '').appendTo(li);
     hiddenRequired('min', '').appendTo(li);
@@ -126,6 +130,7 @@ var line_date = function (liId, theForm, fieldProp, uniqueId, liClass)
 
 var line_password = function (liId, theForm, fieldProp, uniqueId, liClass)
 {
+    "use strict";
     var li = addLi(liId, liClass).appendTo(theForm);
 
     hiddenRequired('required', '0').appendTo(li);
@@ -143,7 +148,7 @@ var line_password = function (liId, theForm, fieldProp, uniqueId, liClass)
         placeholder: "Password Here..."
     }).appendTo(li);
 
-    hiddenRequired('input_name', '').appendTo(li);
+    hiddenRequired('input_name', 'password').appendTo(li);
     hiddenRequired('class', '').appendTo(li);
     hiddenRequired('id', '').appendTo(li);
     hiddenRequired('min', '').appendTo(li);
@@ -157,6 +162,7 @@ var line_password = function (liId, theForm, fieldProp, uniqueId, liClass)
 
 var line_password_verify = function (liId, theForm, fieldProp, uniqueId, liClass)
 {
+    "use strict";
     var li = addLi(liId, liClass).appendTo(theForm);
 
     hiddenRequired('required', '0').appendTo(li);
@@ -174,7 +180,7 @@ var line_password_verify = function (liId, theForm, fieldProp, uniqueId, liClass
         placeholder: "Verify Password Here..."
     }).appendTo(li);
 
-    hiddenRequired('input_name', '').appendTo(li);
+    hiddenRequired('input_name', 'password_verify').appendTo(li);
     hiddenRequired('class', '').appendTo(li);
     hiddenRequired('id', '').appendTo(li);
 
@@ -186,6 +192,7 @@ var line_password_verify = function (liId, theForm, fieldProp, uniqueId, liClass
 
 var line_email = function (liId, theForm, fieldProp, uniqueId, liClass)
 {
+    "use strict";
     var li = addLi(liId, liClass).appendTo(theForm);
 
     hiddenRequired('required', '0').appendTo(li);
@@ -204,7 +211,7 @@ var line_email = function (liId, theForm, fieldProp, uniqueId, liClass)
         placeholder: "Email Address..."
     }).appendTo(li);
 
-    hiddenRequired('input_name', '').appendTo(li);
+    hiddenRequired('input_name', 'email').appendTo(li);
     hiddenRequired('class', '').appendTo(li);
     hiddenRequired('id', '').appendTo(li);
     hiddenRequired('min', '').appendTo(li);
@@ -218,6 +225,7 @@ var line_email = function (liId, theForm, fieldProp, uniqueId, liClass)
 
 var line_number = function (liId, theForm, fieldProp, uniqueId, liClass)
 {
+    "use strict";
 	var li = addLi(liId, liClass).appendTo(theForm);
 
     hiddenRequired('required', '0').appendTo(li);
@@ -239,7 +247,7 @@ var line_number = function (liId, theForm, fieldProp, uniqueId, liClass)
     hiddenRequired('min_str', '').appendTo(li);
     hiddenRequired('max_str', '').appendTo(li);
 
-    hiddenRequired('input_name', '').appendTo(li);
+    hiddenRequired('input_name', 'number').appendTo(li);
     hiddenRequired('class', '').appendTo(li);
     hiddenRequired('id', '').appendTo(li);
     hiddenRequired('min', '').appendTo(li);
@@ -253,6 +261,7 @@ var line_number = function (liId, theForm, fieldProp, uniqueId, liClass)
 
 var line_phone = function (liId, theForm, fieldProp, uniqueId, liClass)
 {
+    "use strict";
     var li = addLi(liId, liClass).appendTo(theForm);
 
     hiddenRequired('required', '0').appendTo(li);
@@ -269,7 +278,7 @@ var line_phone = function (liId, theForm, fieldProp, uniqueId, liClass)
         placeholder: "7025555555"
     }).appendTo(li);
 
-    hiddenRequired('input_name', '').appendTo(li);
+    hiddenRequired('input_name', 'phone').appendTo(li);
     hiddenRequired('class', '').appendTo(li);
     hiddenRequired('id', '').appendTo(li);
     hiddenRequired('min', '').appendTo(li);
@@ -283,6 +292,7 @@ var line_phone = function (liId, theForm, fieldProp, uniqueId, liClass)
 
 var line_paragraph = function (liId, theForm, fieldProp, uniqueId, liClass)
 {
+    "use strict";
 	var li = addLi(liId, liClass).appendTo(theForm);
 
     hiddenRequired('required', '0').appendTo(li);
@@ -299,7 +309,7 @@ var line_paragraph = function (liId, theForm, fieldProp, uniqueId, liClass)
 		placeholder: "Type something..."
 	}).appendTo(li);
 
-    hiddenRequired('input_name', '').appendTo(li);
+    hiddenRequired('input_name', 'paragraph').appendTo(li);
     hiddenRequired('class', '').appendTo(li);
     hiddenRequired('id', '').appendTo(li);
     hiddenRequired('min', '').appendTo(li);
@@ -313,6 +323,7 @@ var line_paragraph = function (liId, theForm, fieldProp, uniqueId, liClass)
 
 var line_checkbox = function (liId, theForm, fieldProp, uniqueId, liClass)
 {
+    "use strict";
 	var li = addLi(liId, liClass).appendTo(theForm);
 
 	$("<label/>", {
@@ -345,7 +356,7 @@ var line_checkbox = function (liId, theForm, fieldProp, uniqueId, liClass)
         }
 	}
 
-    hiddenRequired('input_name', '').appendTo(li);
+    hiddenRequired('input_name', 'checkbox').appendTo(li);
     hiddenRequired('class', '').appendTo(li);
     hiddenRequired('id', '').appendTo(li);
     hiddenRequired('label_class', '').appendTo(li);
@@ -359,6 +370,7 @@ var line_checkbox = function (liId, theForm, fieldProp, uniqueId, liClass)
 
 var line_radio = function (liId, theForm, fieldProp, uniqueId, liClass)
 {
+    "use strict";
     var li = addLi(liId, liClass).appendTo(theForm);
 
     $("<label/>", {
@@ -391,7 +403,7 @@ var line_radio = function (liId, theForm, fieldProp, uniqueId, liClass)
         }
     }
 
-    hiddenRequired('input_name', '').appendTo(li);
+    hiddenRequired('input_name', 'radio').appendTo(li);
     hiddenRequired('class', '').appendTo(li);
     hiddenRequired('id', '').appendTo(li);
     hiddenRequired('label_class', '').appendTo(li);
@@ -405,6 +417,7 @@ var line_radio = function (liId, theForm, fieldProp, uniqueId, liClass)
 
 var line_dropdown = function (liId, theForm, fieldProp, uniqueId, liClass)
 {
+    "use strict";
 	var li = addLi(liId, liClass).appendTo(theForm);
 
 	$("<label/>", {
@@ -426,7 +439,8 @@ var line_dropdown = function (liId, theForm, fieldProp, uniqueId, liClass)
 		}).appendTo(radio);
 	}
 
-    hiddenRequired('input_name', '').appendTo(li);
+    hiddenRequired('number_notinarray', 'Please select your gender !').appendTo(li);
+    hiddenRequired('input_name', 'dropdown').appendTo(li);
     hiddenRequired('class', '').appendTo(li);
     hiddenRequired('id', '').appendTo(li);
 
@@ -438,6 +452,7 @@ var line_dropdown = function (liId, theForm, fieldProp, uniqueId, liClass)
 
 var line_upload = function (liId, theForm, fieldProp, uniqueId, liClass)
 {
+    "use strict";
     var li = addLi(liId, liClass).appendTo(theForm);
 
     hiddenRequired('required', '0').appendTo(li);
@@ -453,9 +468,29 @@ var line_upload = function (liId, theForm, fieldProp, uniqueId, liClass)
         "class": "form_input"
     }).appendTo(li);
 
-    hiddenRequired('input_name', '').appendTo(li);
+    hiddenRequired('input_name', 'upload').appendTo(li);
     hiddenRequired('class', '').appendTo(li);
     hiddenRequired('id', '').appendTo(li);
+
+    hiddenRequired('filesize_min', '').appendTo(li);
+    hiddenRequired('filesize_max', '').appendTo(li);
+    hiddenRequired('filefilessize_min', '').appendTo(li);
+    hiddenRequired('filefilessize_max', '').appendTo(li);
+    hiddenRequired('filecount_min', '').appendTo(li);
+    hiddenRequired('filecount_max', '').appendTo(li);
+    hiddenRequired('fileextension', '').appendTo(li);
+    hiddenRequired('fileexcludeextension', '').appendTo(li);
+    hiddenRequired('filemimetype', '').appendTo(li);
+    hiddenRequired('fileexcludemimetype', '').appendTo(li);
+    hiddenRequired('fileexists', '').appendTo(li);
+    hiddenRequired('fileimagesize_minheight', '').appendTo(li);
+    hiddenRequired('fileimagesize_maxheight', '').appendTo(li);
+    hiddenRequired('fileimagesize_minwidth', '').appendTo(li);
+    hiddenRequired('fileimagesize_maxwidth', '').appendTo(li);
+    hiddenRequired('fileiscompressed', '').appendTo(li);
+    hiddenRequired('fileisimage', '').appendTo(li);
+    hiddenRequired('filewordcount_min', '').appendTo(li);
+    hiddenRequired('filewordcount_max', '').appendTo(li);
 
     formButton("Delete", "delete_li").appendTo(li);
     formButton("Edit", "edit_li").appendTo(li);
@@ -463,7 +498,9 @@ var line_upload = function (liId, theForm, fieldProp, uniqueId, liClass)
     clearBoth().appendTo(li);
 };
 
-var addLi = function(liId, liClass){
+var addLi = function(liId, liClass)
+{
+    "use strict";
 	var list = $("<li/>", {
 		"id": liId,
 		"class": liClass
@@ -473,6 +510,7 @@ var addLi = function(liId, liClass){
 
 var line_credit_card = function (liId, theForm, fieldProp, uniqueId, liClass)
 {
+    "use strict";
     var li = addLi(liId, liClass).appendTo(theForm);
 
     hiddenRequired('required', '0').appendTo(li);
@@ -489,7 +527,7 @@ var line_credit_card = function (liId, theForm, fieldProp, uniqueId, liClass)
         placeholder: "Type something..."
     }).appendTo(li);
 
-    hiddenRequired('input_name', '').appendTo(li);
+    hiddenRequired('input_name', 'credit_card').appendTo(li);
     hiddenRequired('class', '').appendTo(li);
     hiddenRequired('id', '').appendTo(li);
     hiddenRequired('institutes', '').appendTo(li);
@@ -500,7 +538,9 @@ var line_credit_card = function (liId, theForm, fieldProp, uniqueId, liClass)
     clearBoth().appendTo(li);
 };
 
-var formButton = function(textForm, deleteLi){
+var formButton = function(textForm, deleteLi)
+{
+    "use strict";
 	return(
 		$("<button/>", {
 			type: "button",
@@ -510,7 +550,9 @@ var formButton = function(textForm, deleteLi){
 	);
 };
 
-var hiddenRequired = function(htype, hvalue){
+var hiddenRequired = function(htype, hvalue)
+{
+    "use strict";
     return(
         $("<input/>", {
             type: "hidden",
@@ -520,7 +562,9 @@ var hiddenRequired = function(htype, hvalue){
     );
 };
 
-var clearBoth = function(){
+var clearBoth = function()
+{
+    "use strict";
     return(
         $("<div/>", {
             "style": "clear:both;"

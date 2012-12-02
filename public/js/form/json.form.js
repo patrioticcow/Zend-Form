@@ -24,92 +24,92 @@ var formPropertiesJson = function(formData) {
     return (data);
 };
 
-var lineTextJson = function(formElements) {
+var lineTextJson = function (formElements) {
     var data = commonsJson(formElements, 'form_input', 'form_input', "Zend\\Form\\Element\\Text");
     return (data);
 };
 
-var lineDateJson = function(formElements) {
+var lineDateJson = function (formElements) {
     var data = commonsJson(formElements, 'form_input', 'form_date', "Zend\\Form\\Element\\Date");
     return (data);
 };
 
-var linePasswordJson = function(formElements) {
+var linePasswordJson = function (formElements) {
     var data = commonsJson(formElements, 'form_input', 'form_input_password', "Zend\\Form\\Element\\Password");
     return (data);
 };
 
-var linePasswordVerifyJson = function(formElements) {
+var linePasswordVerifyJson = function (formElements) {
     var data = commonsJson(formElements, 'form_input', 'form_input_password_verify', "Zend\\Form\\Element\\Password");
     return (data);
 };
 
-var lineEmailJson = function(formElements) {
+var lineEmailJson = function (formElements) {
     var data = commonsJson(formElements, 'form_input', 'form_input_email', "Zend\\Form\\Element\\Email");
     return (data);
 };
 
-var lineNumberJson = function(formElements) {
+var lineNumberJson = function (formElements) {
     var data = commonsJson(formElements, 'form_input', 'form_number', "Zend\\Form\\Element\\Text");
     return (data);
 };
 
-var linePhoneJson = function(formElements) {
+var linePhoneJson = function (formElements) {
     var data = commonsJson(formElements, 'form_input', 'form_phone', "Zend\\Form\\Element\\Text");
     return (data);
 };
 
-var lineParagraphJson = function(formElements) {
+var lineParagraphJson = function (formElements) {
     var data = commonsJson(formElements, 'form_input', 'form_paragraph', "Zend\\Form\\Element\\Textarea");
     return (data);
 };
 
-var lineCheckboxJson = function(formElements) {
+var lineCheckboxJson = function (formElements) {
     var data = commonsJson(formElements, 'form_input', 'form_checkbox', "Zend\\Form\\Element\\MultiCheckbox");
     return (data);
 };
 
-var lineRadioJson = function(formElements) {
+var lineRadioJson = function (formElements) {
     var data = commonsJson(formElements, 'form_input', 'form_radio', "Zend\\Form\\Element\\Radio");
     return (data);
 };
 
-var lineDropdownJson = function(formElements) {
+var lineDropdownJson = function (formElements) {
     var data = commonsJson(formElements, 'form_input', 'form_dropdown', "Zend\\Form\\Element\\Select");
     return (data);
 };
 
-var lineUploadJson = function(formElements) {
+var lineUploadJson = function (formElements) {
     var data = commonsJson(formElements, 'form_input', 'form_fileupload', "file");
     return (data);
 };
 
-var lineCreditCardJson = function(formElements) {
+var lineCreditCardJson = function (formElements) {
     var data = commonsJson(formElements, 'form_input', 'form_credit_card', "Zend\\Form\\Element\\Text");
     return (data);
 };
 
-var lineUrlJson = function(formElements) {
+var lineUrlJson = function (formElements) {
     var data = commonsJson(formElements, 'form_input', 'form_url', "Zend\\Form\\Element\\Url");
     return (data);
 };
 
-var lineHiddenJson = function(formElements) {
+var lineHiddenJson = function (formElements) {
     var data = commonsJson(formElements, 'form_input', 'form_hidden', "Zend\\Form\\Element\\Hidden");
     return (data);
 };
 
-var commonsJson = function(formElements, typeName, classType, typeType){
+var commonsJson = function (formElements, typeName, classType, typeType){
     var myData = [];
 
-    formElements.each(function() {
+    formElements.each(function () {
         var li = $(this);
         var order = li.attr('id').replace(/[^\d.]/g, "");
 
         if (classType === 'form_checkbox'){
             var innerData = [];
 
-            $('span.span_checkbox').each(function(){
+            $('span.span_checkbox').each(function (){
                 innerData.push({
                     'label': $(this).find('label.checkbox').text()
                 });

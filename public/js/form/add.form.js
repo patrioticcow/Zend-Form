@@ -385,7 +385,8 @@ $(document).ready(function()
                 $('#' + formField).find(' #dropdown_' + index).html(value);
             });
 
-            $('#' + formField + ' input[name="notinarray"]').attr("value", formJson.number_notinarray);
+            $('#' + formField + ' input[name="number_notinarray"]').attr("value", formJson.number_notinarray);
+            console.log(formField);
         }
 
         $('#' + formField).css({'background-color' : '#87ffc1'}).animate({backgroundColor: '#ffffff'},{duration:1000});
