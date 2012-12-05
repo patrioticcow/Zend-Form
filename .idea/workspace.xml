@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="c14fcf7d-f23e-4e6e-affd-bd36bf0297aa" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/form/edit.form.js" afterPath="$PROJECT_DIR$/public/js/form/edit.form.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/Formgen/view/formgen/index/view.phtml" afterPath="$PROJECT_DIR$/module/Formgen/view/formgen/index/view.phtml" />
     </list>
     <ignored path="Zend-Form.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -17,7 +15,7 @@
     <file path="/a.dummy" changelist="c14fcf7d-f23e-4e6e-affd-bd36bf0297aa" time="1354487383394" ignored="false" />
     <file path="/edit.form.js" changelist="c14fcf7d-f23e-4e6e-affd-bd36bf0297aa" time="1354681771429" ignored="false" />
     <file path="/add.form.js" changelist="c14fcf7d-f23e-4e6e-affd-bd36bf0297aa" time="1354486341117" ignored="false" />
-    <file path="/README.md" changelist="c14fcf7d-f23e-4e6e-affd-bd36bf0297aa" time="1354682019617" ignored="false" />
+    <file path="/README.md" changelist="c14fcf7d-f23e-4e6e-affd-bd36bf0297aa" time="1354682083508" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,7 +62,7 @@
       <file leaf-file-name="README.md" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="26" selection-start="353" selection-end="353" vertical-scroll-proportion="0.43429846">
+            <state line="1" column="30" selection-start="61" selection-end="61" vertical-scroll-proportion="0.02895323">
               <folding />
             </state>
           </provider>
@@ -647,7 +645,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="26" selection-start="353" selection-end="353" vertical-scroll-proportion="0.43429846">
+        <state line="1" column="30" selection-start="61" selection-end="61" vertical-scroll-proportion="0.02895323">
           <folding />
         </state>
       </provider>

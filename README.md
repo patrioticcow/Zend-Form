@@ -1,14 +1,9 @@
-ZendSkeletonApplication
-=======================
+ZF2 Form Generator Application
+==============================
 
 Introduction
 ------------
 Simple form generator. head to [Zend Framework 2 Form Generator](http://zend-form-generator.123easywebsites.com/) page
-
-Disclaimer
-----------
-This code is used for testing purposses only, primarily for my playground.
-
 
 Modules
 -------
