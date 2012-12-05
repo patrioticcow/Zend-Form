@@ -69,9 +69,9 @@ var editLineText = function editLineText (id, type){
     //line_upload
     var filesizeMinEdit          = liId.find('input[name="upload_filesize_min"]').attr('value');
     var filesizeMaxEdit          = liId.find('input[name="upload_filesize_max"]').attr('value');
-    var filefilesizeMaxEdit      = liId.find('input[name="upload_filefilessize_min"]').attr('value');
+    var filefilesizeMinEdit      = liId.find('input[name="upload_filefilessize_min"]').attr('value');
     var filefilesizeMaxEdit      = liId.find('input[name="upload_filefilessize_max"]').attr('value');
-    var filecounMaxEdit          = liId.find('input[name="upload_filecount_min"]').attr('value');
+    var filecounMinEdit          = liId.find('input[name="upload_filecount_min"]').attr('value');
     var filecounMaxEdit          = liId.find('input[name="upload_filecount_max"]').attr('value');
     var fileexcludeextensionEdit = liId.find('input[name="upload_fileexcludeextension"]').attr('value');
     var filemimetypeEdit         = liId.find('input[name="upload_filemimetype"]').attr('value');
@@ -162,9 +162,9 @@ var editLineText = function editLineText (id, type){
 
         liClass.find('input[name="filesize_min"]').val(filesizeMinEdit);
         liClass.find('input[name="filesize_max"]').val(filesizeMaxEdit);
-        liClass.find('input[name="filefilessize_min"]').val(filefilesizeMaxEdit);
+        liClass.find('input[name="filefilessize_min"]').val(filefilesizeMinEdit);
         liClass.find('input[name="filefilessize_max"]').val(filefilesizeMaxEdit);
-        liClass.find('input[name="filecount_min"]').val(filecounMaxEdit);
+        liClass.find('input[name="filecount_min"]').val(filecounMinEdit);
         liClass.find('input[name="filecount_max"]').val(filecounMaxEdit);
         liClass.find('input[name="fileexcludeextension"]').val(fileexcludeextensionEdit);
         liClass.find('input[name="filemimetype"]').val(filemimetypeEdit);

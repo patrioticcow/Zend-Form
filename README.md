@@ -12,8 +12,8 @@ This code is used for testing purposses only, primarily for my playground.
 
 Modules
 -------
-* Admin (for testing)
-* Application (for testing)
+* Form Generator
+* Application (main layout)
 * [Zend Framework 2](https://github.com/zendframework/zf2) (latest master)
 * [ZendDeveloperTools](https://github.com/zendframework/ZendDeveloperTools) (latest master)
 * [BjyProfiler](https://github.com/bjyoungblood/BjyProfiler) (latest master)
