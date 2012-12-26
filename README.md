@@ -20,3 +20,7 @@ What is inside / working
 - Master Layout
 - Form Creator
 
+Disclaimer
+----------
+The module is in Alpha, some orrors might occur. This module is not necesarily made to be included in your application. 
+This git container is the entire form generator application that you can use localy and change some things. 
