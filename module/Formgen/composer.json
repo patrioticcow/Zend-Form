@@ -1,0 +1,27 @@
+{
+    "name": "form generator",
+    "description": "ZF2 Form Generator",
+    "type": "module",
+    "license": "BSD-2-Clause",
+    "keywords": [
+        "zf2",
+        "zend",
+        "module",
+        "form"
+        "form generator"
+    ],
+    "homepage": "https://github.com/patrioticcow/Formgen",
+    "authors": [
+        {
+            "name": "Cristi Citea",
+            "email": "cristi.catea@gmail.com",
+            "homepage": "http://123easywebsites.com/"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.3.3",
+        "zendframework/zendframework": "2.*",
+    }
+
+}
