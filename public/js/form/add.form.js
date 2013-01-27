@@ -141,6 +141,9 @@ $(document).ready(function()
             .clone().insertBefore('#' + mainCheckbox + ' .delete_li')
             .attr({'id':nextIdNext})
             .find('input').attr({'id': 'form_checkbox_' + nextIdNr});
+
+        $("button:contains('remove')").removeClass("disabled");
+        $("button:contains('remove')").prop("disabled", false);
     });
 
     /**
@@ -193,6 +196,9 @@ $(document).ready(function()
             .clone().insertBefore('#' + mainRadio + ' .delete_li')
             .attr({'id':nextIdNext})
             .find('input').attr({'id': 'form_radio_' + nextIdNr});
+        
+        $("button:contains('remove')").removeClass("disabled");
+        $("button:contains('remove')").prop("disabled", false);
     });
 
     /**
@@ -205,6 +211,13 @@ $(document).ready(function()
 
     $("button:contains('remove')").live("click", function(e){
         e.preventDefault();
+        
+        // if only one remove button is left, disable it
+        if($("button:contains('remove')").length == 1) {
+            $("button:contains('remove')").addClass("disabled");
+            $("button:contains('remove')").prop("disabled", true);
+        }
+
         $(this).parent('li').remove();
 
         var remIdTemp = $(this).attr('id');
@@ -244,6 +257,9 @@ $(document).ready(function()
             .find('option').last()
             .clone().appendTo('#' + mainRadio + ' select')
             .attr({'id':nextIdNext});
+
+        $("button:contains('remove')").removeClass("disabled");
+        $("button:contains('remove')").prop("disabled", false);
     });
 
     /**
