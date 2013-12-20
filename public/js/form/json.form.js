@@ -162,6 +162,8 @@ var commonsJson = function (formElements, typeName, classType, typeType){
                     'default': $(this).attr("selected")
                 });
             });
+            
+            var selectedId = $(this).find('[selected="selected"]').attr('id');
 
             myData.push({
                 'name' : li.find('[name="input_name"]').attr("value"),
@@ -173,7 +175,7 @@ var commonsJson = function (formElements, typeName, classType, typeType){
                     'class': li.find('[name="class"]').attr("value"),
                     'id': li.find('[name="id"]').attr("value"),
                     'notinarray': li.find('[name="notinarray"]').attr("value"),
-                    'default': $(this).find('[selected="selected"]').attr('id').replace(/[^\d.]/g, "")
+                    'default': typeof selectedId === 'undefined' ? '' : selectedId.replace(/[^\d.]/g, "")
                 }
             });
         } else if (classType === 'form_input'){
