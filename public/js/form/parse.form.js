@@ -607,9 +607,7 @@ var formValidatorDropdown = function formValidatorDropdown (select){
             tttt + "array ( <br>" +
                 ttttt + "'name' => 'InArray', <br>" +
                 ttttt + "'options' => array( <br>" +
-                    tttttt + "'haystack' => array( <br>" +
-                        ttttttt + "'haystack' => array(" + key  + ") <br>" +
-                    tttttt + "), <br>" +
+                    tttttt + "'haystack' => array(" + key  + ") <br>" +
                     tttttt + "'messages' => array(, <br>" +
                         ttttttt + "'notInArray' => '" + select.notinarray + "' <br>" +
                     tttttt + "), <br>" +
@@ -832,7 +830,7 @@ var toView = function toView (name, type)
     if(type == 'view'){
         form =
             "echo $this->formLabel($form->get('" + name + "'));" + "<br>" +
-                "echo $this->formElement($form->get('" + name + "'));" + "<br>" +
+                "echo $this->formElementhaystackgetFilterValue($form->get('" + name + "'));" + "<br>" +
                 "echo $this->formElementErrors($form->get('" + name + "'));" + "<br>";
     } else if (type == 'row') {
         form = "echo $this->formElementErrors($form->get('" + name + "'));";
