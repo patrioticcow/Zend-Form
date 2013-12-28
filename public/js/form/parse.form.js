@@ -832,7 +832,7 @@ var toView = function toView (name, type)
     if(type == 'view'){
         form =
             "echo $this->formLabel($form->get('" + name + "'));" + "<br>" +
-                "echo $this->formInput($form->get('" + name + "'));" + "<br>" +
+                "echo $this->formElement($form->get('" + name + "'));" + "<br>" +
                 "echo $this->formElementErrors($form->get('" + name + "'));" + "<br>";
     } else if (type == 'row') {
         form = "echo $this->formElementErrors($form->get('" + name + "'));";
