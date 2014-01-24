@@ -109,7 +109,7 @@ var commonsJson = function (formElements, typeName, classType, typeType){
         if (classType === 'form_checkbox'){
             var innerData = [];
 
-            $('span.span_checkbox').each(function (){
+            li.find('span.span_checkbox').each(function (){
                 innerData.push({
                     'label': $(this).find('label.checkbox').text()
                 });
@@ -133,7 +133,7 @@ var commonsJson = function (formElements, typeName, classType, typeType){
         } else if (classType === 'form_radio'){
             var innerData = [];
 
-            $('span.span_radio').each(function(){
+            li.find('span.span_radio').each(function(){
                 innerData.push({
                     'label': $(this).find('label.radio').text()
                 });
@@ -156,7 +156,7 @@ var commonsJson = function (formElements, typeName, classType, typeType){
         } else if (classType === 'form_dropdown'){
             var innerData = [];
 
-            $('option.dropdown_option').each(function(){
+            li.find('option.dropdown_option').each(function(){
                 innerData.push({
                     'dropdown_label': $(this).html(),
                     'default': $(this).attr("selected")
