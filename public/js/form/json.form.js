@@ -11,14 +11,14 @@ var formPropertiesJson = function(formData) {
     var data = [];
 
     data.push({
-        'name' : 'form_properties',
-        'namespace' : formData.find('[name="form_namespace_placeholder"]').attr('value'),
-        'title' : formData.find('.form_title_placeholder').html(),
+        'name'        : 'form_properties',
+        'namespace'   : formData.find('[name="form_namespace_placeholder"]').val(),
+        'title'       : formData.find('.form_title_placeholder').html(),
         'description' : formData.find('.form_description_placeholder').html(),
-        'class' : formData.find('[name="form_class_placeholder"]').attr('value'),
-        'model_name' : formData.find('[name="form_model_placeholder"]').attr('value'),
-        'id' : formData.find('[name="form_id_placeholder"]').attr('value'),
-        'class_name' : formData.find('[name="form_class_name_placeholder"]').attr('value')
+        'class'       : formData.find('[name="form_class_placeholder"]').val(),
+        'model_name'  : formData.find('[name="form_model_placeholder"]').val(),
+        'id'          : formData.find('[name="form_id_placeholder"]').val(),
+        'class_name'  : formData.find('[name="form_class_name_placeholder"]').val()
     });
 
     return (data);
@@ -109,11 +109,16 @@ var commonsJson = function (formElements, typeName, classType, typeType){
         if (classType === 'form_checkbox'){
             var innerData = [];
 
-            $('span.span_checkbox').each(function (){
+            li.find('span.span_checkbox').each(function (){
                 innerData.push({
                     'label': $(this).find('label.checkbox').text()
                 });
             });
+
+            defautCheckout = "";
+            if($(this).find('[checked="checked"]').attr('id')){
+                defautCheckout = $(this).find('[checked="checked"]').attr('id').replace(/[^\d.]/g, "");
+            }
 
             myData.push({
                 'name' : li.find('[name="input_name"]').attr("value"),
@@ -124,7 +129,7 @@ var commonsJson = function (formElements, typeName, classType, typeType){
                     'innerData': innerData,
                     'class': li.find('[name="class"]').attr("value"),
                     'id': li.find('[name="id"]').attr("value"),
-                    'default': $(this).find('[checked="checked"]').attr('id').replace(/[^\d.]/g, ""),
+                    'default': defautCheckout,
                     'label_class': li.find('[name="label_class"]').attr("value"),
                     'label_id': li.find('[name="label_id"]').attr("value")
                 }
@@ -132,12 +137,16 @@ var commonsJson = function (formElements, typeName, classType, typeType){
 
         } else if (classType === 'form_radio'){
             var innerData = [];
-
-            $('span.span_radio').each(function(){
+            li.find('span.span_radio').each(function(){
                 innerData.push({
                     'label': $(this).find('label.radio').text()
                 });
             });
+
+            defautCheckout = "";
+            if($(this).find('[checked="checked"]').attr('id')){
+                defautCheckout = $(this).find('[checked="checked"]').attr('id').replace(/[^\d.]/g, "");
+            }
 
             myData.push({
                 'name' : li.find('[name="input_name"]').attr("value"),
@@ -148,7 +157,7 @@ var commonsJson = function (formElements, typeName, classType, typeType){
                     'innerData': innerData,
                     'class': li.find('[name="class"]').attr("value"),
                     'id': li.find('[name="id"]').attr("value"),
-                    'default': $(this).find('[checked="checked"]').attr('id').replace(/[^\d.]/g, ""),
+                    'default': defautCheckout,
                     'label_class': li.find('[name="label_class"]').attr("value"),
                     'label_id': li.find('[name="label_id"]').attr("value")
                 }
@@ -156,14 +165,12 @@ var commonsJson = function (formElements, typeName, classType, typeType){
         } else if (classType === 'form_dropdown'){
             var innerData = [];
 
-            $('option.dropdown_option').each(function(){
+            li.find('option.dropdown_option').each(function(){
                 innerData.push({
                     'dropdown_label': $(this).html(),
                     'default': $(this).attr("selected")
                 });
             });
-            
-            var selectedId = $(this).find('[selected="selected"]').attr('id');
 
             myData.push({
                 'name' : li.find('[name="input_name"]').attr("value"),
@@ -175,7 +182,7 @@ var commonsJson = function (formElements, typeName, classType, typeType){
                     'class': li.find('[name="class"]').attr("value"),
                     'id': li.find('[name="id"]').attr("value"),
                     'notinarray': li.find('[name="notinarray"]').attr("value"),
-                    'default': typeof selectedId === 'undefined' ? '' : selectedId.replace(/[^\d.]/g, "")
+                    'default': $(this).find('[selected="selected"]').attr('id').replace(/[^\d.]/g, "")
                 }
             });
         } else if (classType === 'form_input'){
@@ -275,6 +282,7 @@ var commonsJson = function (formElements, typeName, classType, typeType){
                 'data' : {
                     'placeholder': li.find('.' + typeName).attr("placeholder"),
                     'label': li.find('[for="' + typeName + '"]').text(),
+                    'required': li.find('[name="required"]').attr("value"),
                     'class': li.find('[name="class"]').attr("value"),
                     'id': li.find('[name="id"]').attr("value"),
                     'filesize' : {
@@ -355,6 +363,23 @@ var commonsJson = function (formElements, typeName, classType, typeType){
                     'class': li.find('[name="class"]').attr("value"),
                     'id': li.find('[name="id"]').attr("value"),
                     'default': li.find('[name="value"]').attr("value")
+                }
+            });
+        } else if (classType === 'form_paragraph'){
+             myData.push({
+                'name' : li.find('[name="input_name"]').attr("value"),
+                'type' : typeType,
+                'order' : order,
+                'data' : {
+                    'placeholder': li.find('.' + classType).attr("placeholder"),
+                    'label': li.find('[for="' + classType + '"]').text(),
+                    'required': li.find('[name="required"]').attr("value"),
+                    'class': li.find('[name="class"]').attr("value"),
+                    'id': li.find('[name="id"]').attr("value"),
+                    'length' : {
+                        'min' : li.find('[name="min"]').attr("value"),
+                        'max' : li.find('[name="max"]').attr("value")
+                    }
                 }
             });
         } else {
